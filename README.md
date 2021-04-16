@@ -17,7 +17,7 @@ Dividir a su equipo para realizar las siguientes tres tareas. **Ustedes deciden 
 
 2. 2 personas que realicen reimplementación / adición / eliminación de secciones al código de acuerdo al perfilamiento realizado. 
 
-3. 1 persona que sea *project manager* (más detalles de este rol en las notas) y cree nuevos *tests* para la reimplementación / adición / eliminación de secciones al código.
+3. 1 persona que sea *project manager* (más detalles de este rol en las notas), cree nuevos *tests* para la reimplementación / adición / eliminación de secciones al código, haga actualización de documentación hecha con *Sphinx* y *software* en las imágenes de *docker*.
 
 Entre todos los y las integrantes tienen que dar *feedback* si es necesario en la resolución de las tareas que haya duda entre ustedes. El *feedback* consiste en resolver/explicar las dudas que existan. **Las personas asignadas a la tarea correspondiente son las que realizan los *commits* una vez resueltas las dudas**.
 
