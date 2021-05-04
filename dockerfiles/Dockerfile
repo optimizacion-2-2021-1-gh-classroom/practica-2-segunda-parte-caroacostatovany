@@ -1,4 +1,3 @@
-# Dummy line to trigger github actions
 FROM ubuntu:bionic
 USER root
 ENV TIMEZONE America/Mexico_City
