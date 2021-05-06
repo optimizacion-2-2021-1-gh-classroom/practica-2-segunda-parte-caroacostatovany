@@ -13,6 +13,8 @@
 
 [![Build Status](https://github.com/optimizacion-2-2021-1-gh-classroom/practica-2-segunda-parte-caroacostatovany/workflows/docker-image-build-and-push/badge.svg)](https://github.com/optimizacion-2-2021-1-gh-classroom/practica-2-segunda-parte-caroacostatovany/actions?query=workflow%3Adocker-image-build-and-push+branch%3Amaster)
 
+[![Build Status](https://github.com/optimizacion-2-2021-1-gh-classroom/practica-2-segunda-parte-caroacostatovany/workflows/sphinx-doc/badge.svg)](https://github.com/optimizacion-2-2021-1-gh-classroom/practica-2-segunda-parte-caroacostatovany/actions?query=workflow%3Asphinx-doc+branch%3Amaster)
+
 
 
 - La documentación de nuestro paquete ***`mex`*** la puedes encontrar [aquí](https://optimizacion-2-2021-1-gh-classroom.github.io/practica-1-segunda-parte-caroacostatovany/).
