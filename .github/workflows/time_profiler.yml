@@ -44,7 +44,7 @@ jobs:
       run: pip install scipy
 
     - name: Install kernprof
-      run: sudo apt-install python3-line-profiler -y
+      run: sudo apt install python3-line-profiler -y
 
     - name: Commit files
       run: |
