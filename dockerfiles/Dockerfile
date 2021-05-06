@@ -4,7 +4,7 @@ ENV TIMEZONE America/Mexico_City
 ENV LANG C.UTF-8
 ENV LC_ALL C.UTF-8
 ENV DEBIAN_FRONTEND noninteractive
-ENV DEB_BUILD_DEPS="sudo nano less git wget curl python3-dev python3-pip python3-setuptools"
+ENV DEB_BUILD_DEPS="sudo nano less git wget curl python3-dev python3-pip python3-setuptools python3-line-profiler "
 ENV DEB_PACKAGES=""
 ENV PIP_PACKAGES_COMMON=""
 
@@ -21,7 +21,7 @@ RUN pip3 install jupyter "jupyterlab>=2.0.0,<3.0.0" --upgrade
 RUN jupyter notebook --generate-config && \
     sed -i "s/#c.NotebookApp.password = .*/c.NotebookApp.password = u'sha1:115e429a919f:21911277af52f3e7a8b59380804140d9ef3e2380'/" ~/.jupyter/jupyter_notebook_config.py 
 
-RUN pip install --quiet "git+https://github.com/optimizacion-2-2021-1-gh-classroom/practica-1-segunda-parte-caroacostatovany.git#egg=mex&subdirectory=src"
+RUN pip install --quiet "git+https://github.com/optimizacion-2-2021-1-gh-classroom/practica-2-segunda-parte-caroacostatovany.git#egg=mex&subdirectory=src"
 RUN pip install matplotlib
 RUN pip install scipy
 RUN pip install networkx
