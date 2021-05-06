@@ -2,6 +2,7 @@ import numpy as np
 import logging
 
 
+@profile
 def create_matrix(variables, constraints):
     """
     Creates a matrix with enough rows for each constraint plus the objective function
@@ -23,6 +24,7 @@ def create_matrix(variables, constraints):
     return matrix
 
 
+@profile
 def pivots_col(matrix):
     """
     Checks to see if pivots are required due to negative values in right column,
@@ -44,6 +46,7 @@ def pivots_col(matrix):
         return True
 
 
+@profile
 def pivots_row(matrix):
     """
     Checks to see if pivots are required due to negative values in bottom row, 
@@ -66,6 +69,7 @@ def pivots_row(matrix):
         return True
 
 
+@profile
 def find_negative_col(matrix):
     """
     Finds location of negative values in right column.
@@ -89,6 +93,7 @@ def find_negative_col(matrix):
     return n
 
 
+@profile
 def find_negative_row(matrix):
     """
     Finds location of negative values in bottom row.
@@ -112,6 +117,7 @@ def find_negative_row(matrix):
     return n
 
 
+@profile
 def find_pivot_col(matrix):
     """
     Finds pivot element corresponding to a negative value in right column.
@@ -143,6 +149,7 @@ def find_pivot_col(matrix):
     return [index,c]
 
 
+@profile
 def find_pivot_row(matrix):
     """
     Finds pivot element corresponding to a negative value in bottom row.
@@ -171,6 +178,7 @@ def find_pivot_row(matrix):
         return [index,neg]
 
 
+@profile
 def pivot(row,col,matrix):
     """
     Pivot about a value to remove negative in final column or row.

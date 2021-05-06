@@ -1,3 +1,4 @@
+@profile
 def convert_min(matrix):
     """
     This function multiplies by -1 the objective function for maximization problems. This is because
@@ -17,7 +18,7 @@ def convert_min(matrix):
     
     return matrix
 
-
+@profile
 def gen_var(matrix):
     """
     Generates the required number of variables. They are defined by the problem.
@@ -42,7 +43,7 @@ def gen_var(matrix):
     
     return v
 
-
+@profile
 def convert(eq):
     """
     Converts equation into a list containing the coefficients of the equation.
