@@ -33,7 +33,7 @@ jobs:
     # Publish built docs to gh-pages branch.
     # ===============================
       run: |
-        docker run -v $(pwd):/datos --entrypoint /bin/bash --rm caroacostatovany/optimizacion-2-practica-2-parte-2:0.1 -c "export PATH=$PATH:/home/miuser/.local/bin/ && cd /datos/reports && pip install -e . && cd ..
+        docker run -v $(pwd):/datos --entrypoint /bin/bash --rm caroacostatovany/optimizacion-2-practica-2-parte-2:0.1 -c "export PATH=$PATH:/home/miuser/.local/bin/ && cd /datos/reports && pip install -e . && cd .."
         git config user.name ${{ secrets.GH_USER }}
         git config user.email "${{ secrets.GH_MAIL }}"
         git remote add gh-token "https://${{ secrets.GITHUB_TOKEN}}@github.com/:user/:repo.git"
