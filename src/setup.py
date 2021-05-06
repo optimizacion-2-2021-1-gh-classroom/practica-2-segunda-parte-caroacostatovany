@@ -12,6 +12,8 @@ setup(name="mex",
       install_requires = [
                           "numpy",
                           "pandas",
-                          "sphinx"
+                          "sphinx",
+                          "scipy",
+                          "line_profiler"
                           ],
       )
