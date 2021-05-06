@@ -1,0 +1,32 @@
+﻿mex.simplex
+===========
+
+.. automodule:: mex.simplex
+
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   
+
+
+
+.. rubric:: Modules
+
+.. autosummary::
+   :toctree:
+   :recursive:
+
+   mex.simplex.problem_definition
+   mex.simplex.simplex_networks
+
