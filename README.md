@@ -17,7 +17,7 @@
 
 
 
-- La documentación de nuestro paquete ***`mex`*** la puedes encontrar [aquí](https://optimizacion-2-2021-1-gh-classroom.github.io/practica-1-segunda-parte-caroacostatovany/).
+- La documentación de nuestro paquete ***`mex`*** la puedes encontrar [aquí](https://optimizacion-2-2021-1-gh-classroom.github.io/practica-2-segunda-parte-caroacostatovany/).
 
 - Para probar nuestro pipeline puedes hacer uso del siguiente botón de binder, éste contiene el paquete `mex` que desarrollamos [aquí](https://github.com/optimizacion-2-2021-1-gh-classroom/practica-2-segunda-parte-caroacostatovany.git): 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/optimizacion-2-2021-1-gh-classroom/practica-2-segunda-parte-caroacostatovany.git/main?urlpath=lab)
