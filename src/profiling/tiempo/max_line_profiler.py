@@ -1,5 +1,6 @@
 
 import numpy as np
+import scipy
 from scipy.optimize import linprog
 from pytest import approx
 
