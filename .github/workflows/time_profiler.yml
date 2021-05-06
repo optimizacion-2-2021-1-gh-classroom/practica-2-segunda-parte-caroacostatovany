@@ -37,6 +37,12 @@ jobs:
     - name: Install requirements
       run: pip install -r requirements.txt
 
+    - name: Install numpy
+      run: pip install numpy
+
+    - name: Install scipy
+      run: pip install scipy
+
     - name: Install kernprof
       run: sudo apt-install python3-line-profiler -y
 
