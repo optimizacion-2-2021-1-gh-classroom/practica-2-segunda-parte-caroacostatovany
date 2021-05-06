@@ -34,10 +34,10 @@ jobs:
     # ===============================
       run: |
         mkdir reports/profiling && chmod gou+wrx -R reports
-        docker run -v $(pwd):/datos --entrypoint /bin/bash --rm caroacostatovany/optimizacion-2-practica-2-parte-2:0.1 -c "export PATH=$PATH:/home/miuser/.local/bin/ && cd /datos/reports && pip install -e . && cd ../src/profiling/tiempo && kernprof -l -v " net_line_profiler.py >> net_profile.txt
-
-    - name: Time profiling
-      uses: peaceiris/actions-time-profiling@v3.7.3
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: reports/
+        docker run -v $(pwd):/datos --entrypoint /bin/bash --rm caroacostatovany/optimizacion-2-practica-2-parte-2:0.1 -c "export PATH=$PATH:/home/miuser/.local/bin/ && cd /datos/reports && pip install -e . && cd ..
+        git config user.name ${{ secrets.GH_USER }}
+        git config user.email "${{ secrets.GH_MAIL }}"
+        git remote add gh-token "https://${{ secrets.GITHUB_TOKEN}}@github.com/:user/:repo.git"
+        git fetch gh-token && git fetch gh-token main:main
+        kernprof -l -v src/profiling/tiempo/net_line_profiler.py >> reports/net_profiling.txt
+        git push gh-token main
