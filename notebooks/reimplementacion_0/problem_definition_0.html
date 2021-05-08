@@ -375,7 +375,7 @@ body.cython { font-family: courier; font-size: 12; }
   if (<span class='py_c_api'>PyDict_SetItem</span>(__pyx_d, __pyx_n_s_logging, __pyx_t_1) &lt; 0) <span class='error_goto'>__PYX_ERR(0, 2, __pyx_L1_error)</span>
   <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_1); __pyx_t_1 = 0;
 </pre><pre class="cython line score-0">&#xA0;<span class="">003</span>: </pre>
-<pre class="cython line score-39" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">004</span>: <span class="k">from</span> <span class="nn">mex.utils.general</span> <span class="k">import</span> <span class="n">gen_var</span><span class="p">,</span> <span class="n">convert_min</span><span class="p">,</span> <span class="n">convert</span></pre>
+<pre class="cython line score-39" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">004</span>: <span class="k">from</span> <span class="nn">general_0</span> <span class="k">import</span> <span class="n">gen_var</span><span class="p">,</span> <span class="n">convert_min</span><span class="p">,</span> <span class="n">convert</span></pre>
 <pre class='cython code score-39 '>  __pyx_t_1 = <span class='py_c_api'>PyList_New</span>(3);<span class='error_goto'> if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 4, __pyx_L1_error)</span>
   <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_1);
   <span class='pyx_macro_api'>__Pyx_INCREF</span>(__pyx_n_s_gen_var);
@@ -387,7 +387,7 @@ body.cython { font-family: courier; font-size: 12; }
   <span class='pyx_macro_api'>__Pyx_INCREF</span>(__pyx_n_s_convert);
   <span class='refnanny'>__Pyx_GIVEREF</span>(__pyx_n_s_convert);
   <span class='py_macro_api'>PyList_SET_ITEM</span>(__pyx_t_1, 2, __pyx_n_s_convert);
-  __pyx_t_2 = <span class='pyx_c_api'>__Pyx_Import</span>(__pyx_n_s_mex_utils_general, __pyx_t_1, 0);<span class='error_goto'> if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 4, __pyx_L1_error)</span>
+  __pyx_t_2 = <span class='pyx_c_api'>__Pyx_Import</span>(__pyx_n_s_general_0, __pyx_t_1, 0);<span class='error_goto'> if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 4, __pyx_L1_error)</span>
   <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_2);
   <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_t_1 = <span class='pyx_c_api'>__Pyx_ImportFrom</span>(__pyx_t_2, __pyx_n_s_gen_var);<span class='error_goto'> if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 4, __pyx_L1_error)</span>
@@ -403,7 +403,7 @@ body.cython { font-family: courier; font-size: 12; }
   if (<span class='py_c_api'>PyDict_SetItem</span>(__pyx_d, __pyx_n_s_convert, __pyx_t_1) &lt; 0) <span class='error_goto'>__PYX_ERR(0, 4, __pyx_L1_error)</span>
   <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_1); __pyx_t_1 = 0;
   <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_2); __pyx_t_2 = 0;
-</pre><pre class="cython line score-59" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">005</span>: <span class="k">from</span> <span class="nn">mex.simplex.simplex_networks</span> <span class="k">import</span> <span class="n">pivots_col</span><span class="p">,</span> <span class="n">find_pivot_col</span><span class="p">,</span> <span class="n">pivots_row</span><span class="p">,</span> <span class="n">pivot</span><span class="p">,</span> <span class="n">find_pivot_row</span></pre>
+</pre><pre class="cython line score-59" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">005</span>: <span class="k">from</span> <span class="nn">simplex_networks_0</span> <span class="k">import</span> <span class="n">pivots_col</span><span class="p">,</span> <span class="n">find_pivot_col</span><span class="p">,</span> <span class="n">pivots_row</span><span class="p">,</span> <span class="n">pivot</span><span class="p">,</span> <span class="n">find_pivot_row</span></pre>
 <pre class='cython code score-59 '>  __pyx_t_2 = <span class='py_c_api'>PyList_New</span>(5);<span class='error_goto'> if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 5, __pyx_L1_error)</span>
   <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_2);
   <span class='pyx_macro_api'>__Pyx_INCREF</span>(__pyx_n_s_pivots_col);
@@ -421,7 +421,7 @@ body.cython { font-family: courier; font-size: 12; }
   <span class='pyx_macro_api'>__Pyx_INCREF</span>(__pyx_n_s_find_pivot_row);
   <span class='refnanny'>__Pyx_GIVEREF</span>(__pyx_n_s_find_pivot_row);
   <span class='py_macro_api'>PyList_SET_ITEM</span>(__pyx_t_2, 4, __pyx_n_s_find_pivot_row);
-  __pyx_t_1 = <span class='pyx_c_api'>__Pyx_Import</span>(__pyx_n_s_mex_simplex_simplex_networks, __pyx_t_2, 0);<span class='error_goto'> if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 5, __pyx_L1_error)</span>
+  __pyx_t_1 = <span class='pyx_c_api'>__Pyx_Import</span>(__pyx_n_s_simplex_networks_0, __pyx_t_2, 0);<span class='error_goto'> if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 5, __pyx_L1_error)</span>
   <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_1);
   <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_t_2 = <span class='pyx_c_api'>__Pyx_ImportFrom</span>(__pyx_t_1, __pyx_n_s_pivots_col);<span class='error_goto'> if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 5, __pyx_L1_error)</span>
@@ -497,7 +497,7 @@ static PyObject *__pyx_pf_20problem_definition_0_add_cons(CYTHON_UNUSED PyObject
   <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_1);
   if (<span class='py_c_api'>PyDict_SetItem</span>(__pyx_d, __pyx_n_s_add_cons, __pyx_t_1) &lt; 0) <span class='error_goto'>__PYX_ERR(0, 8, __pyx_L1_error)</span>
   <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_codeobj__7 = (PyObject*)<span class='pyx_c_api'>__Pyx_PyCode_New</span>(1, 0, 6, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__6, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_notebooks_reimplementacion_0_pro, __pyx_n_s_add_cons, 8, __pyx_empty_bytes);<span class='error_goto'> if (unlikely(!__pyx_codeobj__7)) __PYX_ERR(0, 8, __pyx_L1_error)</span>
+  __pyx_codeobj__7 = (PyObject*)<span class='pyx_c_api'>__Pyx_PyCode_New</span>(1, 0, 6, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__6, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_reimplementacion_0_problem_defin, __pyx_n_s_add_cons, 8, __pyx_empty_bytes);<span class='error_goto'> if (unlikely(!__pyx_codeobj__7)) __PYX_ERR(0, 8, __pyx_L1_error)</span>
 </pre><pre class="cython line score-0">&#xA0;<span class="">009</span>:     <span class="sd">&quot;&quot;&quot;</span></pre>
 <pre class="cython line score-0">&#xA0;<span class="">010</span>: <span class="sd">    Checks if 1 extra constraint can be added to the matrix, this means that there are at least two rows of all</span></pre>
 <pre class="cython line score-0">&#xA0;<span class="">011</span>: <span class="sd">    0 elements. If this condition is not satisfied, our program will not allow the user to add additional constraints.</span></pre>
@@ -751,7 +751,7 @@ static PyObject *__pyx_pf_20problem_definition_0_2constrain(CYTHON_UNUSED PyObje
   <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_1);
   if (<span class='py_c_api'>PyDict_SetItem</span>(__pyx_d, __pyx_n_s_constrain, __pyx_t_1) &lt; 0) <span class='error_goto'>__PYX_ERR(0, 38, __pyx_L1_error)</span>
   <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_codeobj__9 = (PyObject*)<span class='pyx_c_api'>__Pyx_PyCode_New</span>(2, 0, 10, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__8, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_notebooks_reimplementacion_0_pro, __pyx_n_s_constrain, 38, __pyx_empty_bytes);<span class='error_goto'> if (unlikely(!__pyx_codeobj__9)) __PYX_ERR(0, 38, __pyx_L1_error)</span>
+  __pyx_codeobj__9 = (PyObject*)<span class='pyx_c_api'>__Pyx_PyCode_New</span>(2, 0, 10, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__8, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_reimplementacion_0_problem_defin, __pyx_n_s_constrain, 38, __pyx_empty_bytes);<span class='error_goto'> if (unlikely(!__pyx_codeobj__9)) __PYX_ERR(0, 38, __pyx_L1_error)</span>
 </pre><pre class="cython line score-0">&#xA0;<span class="">039</span>:     <span class="sd">&quot;&quot;&quot;</span></pre>
 <pre class="cython line score-0">&#xA0;<span class="">040</span>: <span class="sd">    Adds constraints to the problem.</span></pre>
 <pre class="cython line score-0">&#xA0;<span class="">041</span>: <span class="sd">    </span></pre>
@@ -1310,7 +1310,7 @@ static PyObject *__pyx_pf_20problem_definition_0_4add_obj(CYTHON_UNUSED PyObject
   <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_1);
   if (<span class='py_c_api'>PyDict_SetItem</span>(__pyx_d, __pyx_n_s_add_obj, __pyx_t_1) &lt; 0) <span class='error_goto'>__PYX_ERR(0, 115, __pyx_L1_error)</span>
   <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_codeobj__11 = (PyObject*)<span class='pyx_c_api'>__Pyx_PyCode_New</span>(1, 0, 6, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__10, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_notebooks_reimplementacion_0_pro, __pyx_n_s_add_obj, 115, __pyx_empty_bytes);<span class='error_goto'> if (unlikely(!__pyx_codeobj__11)) __PYX_ERR(0, 115, __pyx_L1_error)</span>
+  __pyx_codeobj__11 = (PyObject*)<span class='pyx_c_api'>__Pyx_PyCode_New</span>(1, 0, 6, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__10, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_reimplementacion_0_problem_defin, __pyx_n_s_add_obj, 115, __pyx_empty_bytes);<span class='error_goto'> if (unlikely(!__pyx_codeobj__11)) __PYX_ERR(0, 115, __pyx_L1_error)</span>
 </pre><pre class="cython line score-0">&#xA0;<span class="">116</span>:     <span class="sd">&quot;&quot;&quot;</span></pre>
 <pre class="cython line score-0">&#xA0;<span class="">117</span>: <span class="sd">    Verifies if the objective function can be added.</span></pre>
 <pre class="cython line score-0">&#xA0;<span class="">118</span>: <span class="sd">    </span></pre>
@@ -1549,7 +1549,7 @@ static PyObject *__pyx_pf_20problem_definition_0_6obj(CYTHON_UNUSED PyObject *__
   <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_1);
   if (<span class='py_c_api'>PyDict_SetItem</span>(__pyx_d, __pyx_n_s_obj, __pyx_t_1) &lt; 0) <span class='error_goto'>__PYX_ERR(0, 144, __pyx_L1_error)</span>
   <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_codeobj__13 = (PyObject*)<span class='pyx_c_api'>__Pyx_PyCode_New</span>(2, 0, 6, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__12, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_notebooks_reimplementacion_0_pro, __pyx_n_s_obj, 144, __pyx_empty_bytes);<span class='error_goto'> if (unlikely(!__pyx_codeobj__13)) __PYX_ERR(0, 144, __pyx_L1_error)</span>
+  __pyx_codeobj__13 = (PyObject*)<span class='pyx_c_api'>__Pyx_PyCode_New</span>(2, 0, 6, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__12, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_reimplementacion_0_problem_defin, __pyx_n_s_obj, 144, __pyx_empty_bytes);<span class='error_goto'> if (unlikely(!__pyx_codeobj__13)) __PYX_ERR(0, 144, __pyx_L1_error)</span>
 </pre><pre class="cython line score-0">&#xA0;<span class="">145</span>:     <span class="sd">&quot;&quot;&quot;</span></pre>
 <pre class="cython line score-0">&#xA0;<span class="">146</span>: <span class="sd">    Adds the objective function to the problem matrix.</span></pre>
 <pre class="cython line score-0">&#xA0;<span class="">147</span>: <span class="sd">    </span></pre>
@@ -1823,7 +1823,7 @@ static PyObject *__pyx_pf_20problem_definition_0_8maxz(CYTHON_UNUSED PyObject *_
   <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_1);
   if (<span class='py_c_api'>PyDict_SetItem</span>(__pyx_d, __pyx_n_s_maxz, __pyx_t_1) &lt; 0) <span class='error_goto'>__PYX_ERR(0, 178, __pyx_L1_error)</span>
   <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_codeobj__15 = (PyObject*)<span class='pyx_c_api'>__Pyx_PyCode_New</span>(1, 0, 10, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__14, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_notebooks_reimplementacion_0_pro, __pyx_n_s_maxz, 178, __pyx_empty_bytes);<span class='error_goto'> if (unlikely(!__pyx_codeobj__15)) __PYX_ERR(0, 178, __pyx_L1_error)</span>
+  __pyx_codeobj__15 = (PyObject*)<span class='pyx_c_api'>__Pyx_PyCode_New</span>(1, 0, 10, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__14, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_reimplementacion_0_problem_defin, __pyx_n_s_maxz, 178, __pyx_empty_bytes);<span class='error_goto'> if (unlikely(!__pyx_codeobj__15)) __PYX_ERR(0, 178, __pyx_L1_error)</span>
 </pre><pre class="cython line score-0">&#xA0;<span class="">179</span>:     <span class="sd">&quot;&quot;&quot;</span></pre>
 <pre class="cython line score-0">&#xA0;<span class="">180</span>: <span class="sd">    Creates maximization function. Determines if 1 extra pivot is required, locates the pivot element,</span></pre>
 <pre class="cython line score-0">&#xA0;<span class="">181</span>: <span class="sd">    pivots about it and continues the process until all negative elements have been removed from</span></pre>

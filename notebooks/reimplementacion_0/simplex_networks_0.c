@@ -815,7 +815,7 @@ static const char *__pyx_filename;
 
 
 static const char *__pyx_f[] = {
-  "notebooks/reimplementacion_0/simplex_networks_0.pyx",
+  "reimplementacion_0/simplex_networks_0.pyx",
 };
 
 /*--- Type declarations ---*/
@@ -1248,7 +1248,7 @@ static const char __pyx_k_find_negative_row[] = "find_negative_row";
 static const char __pyx_k_cline_in_traceback[] = "cline_in_traceback";
 static const char __pyx_k_simplex_networks_0[] = "simplex_networks_0";
 static const char __pyx_k_Cannot_pivot_on_this_element[] = "Cannot pivot on this element";
-static const char __pyx_k_notebooks_reimplementacion_0_sim[] = "notebooks/reimplementacion_0/simplex_networks_0.pyx";
+static const char __pyx_k_reimplementacion_0_simplex_netwo[] = "reimplementacion_0/simplex_networks_0.pyx";
 static PyObject *__pyx_kp_u_Cannot_pivot_on_this_element;
 static PyObject *__pyx_n_s_c;
 static PyObject *__pyx_n_s_cline_in_traceback;
@@ -1277,7 +1277,6 @@ static PyObject *__pyx_n_s_min;
 static PyObject *__pyx_n_s_n;
 static PyObject *__pyx_n_s_name;
 static PyObject *__pyx_n_s_neg;
-static PyObject *__pyx_kp_s_notebooks_reimplementacion_0_sim;
 static PyObject *__pyx_n_s_np;
 static PyObject *__pyx_n_s_numpy;
 static PyObject *__pyx_n_s_pivot;
@@ -1286,6 +1285,7 @@ static PyObject *__pyx_n_s_pivots_row;
 static PyObject *__pyx_n_s_pr;
 static PyObject *__pyx_n_s_r;
 static PyObject *__pyx_n_s_range;
+static PyObject *__pyx_kp_s_reimplementacion_0_simplex_netwo;
 static PyObject *__pyx_n_s_row;
 static PyObject *__pyx_n_s_simplex_networks_0;
 static PyObject *__pyx_n_s_t;
@@ -3569,7 +3569,6 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_n, __pyx_k_n, sizeof(__pyx_k_n), 0, 0, 1, 1},
   {&__pyx_n_s_name, __pyx_k_name, sizeof(__pyx_k_name), 0, 0, 1, 1},
   {&__pyx_n_s_neg, __pyx_k_neg, sizeof(__pyx_k_neg), 0, 0, 1, 1},
-  {&__pyx_kp_s_notebooks_reimplementacion_0_sim, __pyx_k_notebooks_reimplementacion_0_sim, sizeof(__pyx_k_notebooks_reimplementacion_0_sim), 0, 0, 1, 0},
   {&__pyx_n_s_np, __pyx_k_np, sizeof(__pyx_k_np), 0, 0, 1, 1},
   {&__pyx_n_s_numpy, __pyx_k_numpy, sizeof(__pyx_k_numpy), 0, 0, 1, 1},
   {&__pyx_n_s_pivot, __pyx_k_pivot, sizeof(__pyx_k_pivot), 0, 0, 1, 1},
@@ -3578,6 +3577,7 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_pr, __pyx_k_pr, sizeof(__pyx_k_pr), 0, 0, 1, 1},
   {&__pyx_n_s_r, __pyx_k_r, sizeof(__pyx_k_r), 0, 0, 1, 1},
   {&__pyx_n_s_range, __pyx_k_range, sizeof(__pyx_k_range), 0, 0, 1, 1},
+  {&__pyx_kp_s_reimplementacion_0_simplex_netwo, __pyx_k_reimplementacion_0_simplex_netwo, sizeof(__pyx_k_reimplementacion_0_simplex_netwo), 0, 0, 1, 0},
   {&__pyx_n_s_row, __pyx_k_row, sizeof(__pyx_k_row), 0, 0, 1, 1},
   {&__pyx_n_s_simplex_networks_0, __pyx_k_simplex_networks_0, sizeof(__pyx_k_simplex_networks_0), 0, 0, 1, 1},
   {&__pyx_n_s_t, __pyx_k_t, sizeof(__pyx_k_t), 0, 0, 1, 1},
@@ -3651,7 +3651,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __pyx_tuple__6 = PyTuple_Pack(3, __pyx_n_s_variables, __pyx_n_s_constraints, __pyx_n_s_matrix); if (unlikely(!__pyx_tuple__6)) __PYX_ERR(0, 5, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__6);
   __Pyx_GIVEREF(__pyx_tuple__6);
-  __pyx_codeobj__7 = (PyObject*)__Pyx_PyCode_New(2, 0, 3, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__6, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_notebooks_reimplementacion_0_sim, __pyx_n_s_create_matrix, 5, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__7)) __PYX_ERR(0, 5, __pyx_L1_error)
+  __pyx_codeobj__7 = (PyObject*)__Pyx_PyCode_New(2, 0, 3, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__6, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_reimplementacion_0_simplex_netwo, __pyx_n_s_create_matrix, 5, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__7)) __PYX_ERR(0, 5, __pyx_L1_error)
 
   /* "simplex_networks_0.pyx":26
  * 
@@ -3663,7 +3663,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __pyx_tuple__8 = PyTuple_Pack(2, __pyx_n_s_matrix, __pyx_n_s_m); if (unlikely(!__pyx_tuple__8)) __PYX_ERR(0, 26, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__8);
   __Pyx_GIVEREF(__pyx_tuple__8);
-  __pyx_codeobj__9 = (PyObject*)__Pyx_PyCode_New(1, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__8, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_notebooks_reimplementacion_0_sim, __pyx_n_s_pivots_col, 26, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__9)) __PYX_ERR(0, 26, __pyx_L1_error)
+  __pyx_codeobj__9 = (PyObject*)__Pyx_PyCode_New(1, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__8, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_reimplementacion_0_simplex_netwo, __pyx_n_s_pivots_col, 26, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__9)) __PYX_ERR(0, 26, __pyx_L1_error)
 
   /* "simplex_networks_0.pyx":47
  * 
@@ -3675,7 +3675,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __pyx_tuple__10 = PyTuple_Pack(3, __pyx_n_s_matrix, __pyx_n_s_l, __pyx_n_s_m); if (unlikely(!__pyx_tuple__10)) __PYX_ERR(0, 47, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__10);
   __Pyx_GIVEREF(__pyx_tuple__10);
-  __pyx_codeobj__11 = (PyObject*)__Pyx_PyCode_New(1, 0, 3, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__10, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_notebooks_reimplementacion_0_sim, __pyx_n_s_pivots_row, 47, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__11)) __PYX_ERR(0, 47, __pyx_L1_error)
+  __pyx_codeobj__11 = (PyObject*)__Pyx_PyCode_New(1, 0, 3, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__10, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_reimplementacion_0_simplex_netwo, __pyx_n_s_pivots_row, 47, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__11)) __PYX_ERR(0, 47, __pyx_L1_error)
 
   /* "simplex_networks_0.pyx":69
  * 
@@ -3687,7 +3687,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __pyx_tuple__12 = PyTuple_Pack(4, __pyx_n_s_matrix, __pyx_n_s_l, __pyx_n_s_m, __pyx_n_s_n); if (unlikely(!__pyx_tuple__12)) __PYX_ERR(0, 69, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__12);
   __Pyx_GIVEREF(__pyx_tuple__12);
-  __pyx_codeobj__13 = (PyObject*)__Pyx_PyCode_New(1, 0, 4, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__12, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_notebooks_reimplementacion_0_sim, __pyx_n_s_find_negative_col, 69, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__13)) __PYX_ERR(0, 69, __pyx_L1_error)
+  __pyx_codeobj__13 = (PyObject*)__Pyx_PyCode_New(1, 0, 4, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__12, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_reimplementacion_0_simplex_netwo, __pyx_n_s_find_negative_col, 69, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__13)) __PYX_ERR(0, 69, __pyx_L1_error)
 
   /* "simplex_networks_0.pyx":92
  * 
@@ -3699,7 +3699,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __pyx_tuple__14 = PyTuple_Pack(4, __pyx_n_s_matrix, __pyx_n_s_l, __pyx_n_s_m, __pyx_n_s_n); if (unlikely(!__pyx_tuple__14)) __PYX_ERR(0, 92, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__14);
   __Pyx_GIVEREF(__pyx_tuple__14);
-  __pyx_codeobj__15 = (PyObject*)__Pyx_PyCode_New(1, 0, 4, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__14, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_notebooks_reimplementacion_0_sim, __pyx_n_s_find_negative_row, 92, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__15)) __PYX_ERR(0, 92, __pyx_L1_error)
+  __pyx_codeobj__15 = (PyObject*)__Pyx_PyCode_New(1, 0, 4, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__14, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_reimplementacion_0_simplex_netwo, __pyx_n_s_find_negative_row, 92, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__15)) __PYX_ERR(0, 92, __pyx_L1_error)
 
   /* "simplex_networks_0.pyx":115
  * 
@@ -3711,7 +3711,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __pyx_tuple__16 = PyTuple_Pack(10, __pyx_n_s_matrix, __pyx_n_s_total, __pyx_n_s_neg, __pyx_n_s_row, __pyx_n_s_m, __pyx_n_s_c, __pyx_n_s_col, __pyx_n_s_i, __pyx_n_s_j, __pyx_n_s_index); if (unlikely(!__pyx_tuple__16)) __PYX_ERR(0, 115, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__16);
   __Pyx_GIVEREF(__pyx_tuple__16);
-  __pyx_codeobj__17 = (PyObject*)__Pyx_PyCode_New(1, 0, 10, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__16, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_notebooks_reimplementacion_0_sim, __pyx_n_s_find_pivot_col, 115, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__17)) __PYX_ERR(0, 115, __pyx_L1_error)
+  __pyx_codeobj__17 = (PyObject*)__Pyx_PyCode_New(1, 0, 10, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__16, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_reimplementacion_0_simplex_netwo, __pyx_n_s_find_pivot_col, 115, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__17)) __PYX_ERR(0, 115, __pyx_L1_error)
 
   /* "simplex_networks_0.pyx":146
  * 
@@ -3723,7 +3723,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __pyx_tuple__18 = PyTuple_Pack(6, __pyx_n_s_matrix, __pyx_n_s_total, __pyx_n_s_neg, __pyx_n_s_i, __pyx_n_s_j, __pyx_n_s_index); if (unlikely(!__pyx_tuple__18)) __PYX_ERR(0, 146, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__18);
   __Pyx_GIVEREF(__pyx_tuple__18);
-  __pyx_codeobj__19 = (PyObject*)__Pyx_PyCode_New(1, 0, 6, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__18, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_notebooks_reimplementacion_0_sim, __pyx_n_s_find_pivot_row, 146, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__19)) __PYX_ERR(0, 146, __pyx_L1_error)
+  __pyx_codeobj__19 = (PyObject*)__Pyx_PyCode_New(1, 0, 6, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__18, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_reimplementacion_0_simplex_netwo, __pyx_n_s_find_pivot_row, 146, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__19)) __PYX_ERR(0, 146, __pyx_L1_error)
 
   /* "simplex_networks_0.pyx":174
  * 
@@ -3735,7 +3735,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __pyx_tuple__20 = PyTuple_Pack(12, __pyx_n_s_row, __pyx_n_s_col, __pyx_n_s_matrix, __pyx_n_s_lr, __pyx_n_s_lc, __pyx_n_s_t, __pyx_n_s_pr, __pyx_n_s_e, __pyx_n_s_r, __pyx_n_s_i, __pyx_n_s_k, __pyx_n_s_c); if (unlikely(!__pyx_tuple__20)) __PYX_ERR(0, 174, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__20);
   __Pyx_GIVEREF(__pyx_tuple__20);
-  __pyx_codeobj__21 = (PyObject*)__Pyx_PyCode_New(3, 0, 12, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__20, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_notebooks_reimplementacion_0_sim, __pyx_n_s_pivot, 174, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__21)) __PYX_ERR(0, 174, __pyx_L1_error)
+  __pyx_codeobj__21 = (PyObject*)__Pyx_PyCode_New(3, 0, 12, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__20, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_reimplementacion_0_simplex_netwo, __pyx_n_s_pivot, 174, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__21)) __PYX_ERR(0, 174, __pyx_L1_error)
   __Pyx_RefNannyFinishContext();
   return 0;
   __pyx_L1_error:;

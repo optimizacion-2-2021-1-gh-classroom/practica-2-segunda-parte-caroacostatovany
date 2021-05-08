@@ -1,8 +1,8 @@
 import numpy as np
 import logging
 
-from mex.utils.general import gen_var, convert_min, convert
-from mex.simplex.simplex_networks import pivots_col, find_pivot_col, pivots_row, pivot, find_pivot_row
+from general_0 import gen_var, convert_min, convert
+from simplex_networks_0 import pivots_col, find_pivot_col, pivots_row, pivot, find_pivot_row
 
 
 def add_cons(matrix):
@@ -34,7 +34,7 @@ def add_cons(matrix):
     else:
         return False
 
-    
+
 def constrain(matrix, eq):
     """
     Adds constraints to the problem.
