@@ -1,4 +1,5 @@
-from line_profiler import profile
+import line_profiler
+profile = line_profiler.LineProfiler()
 
 
 @profile
