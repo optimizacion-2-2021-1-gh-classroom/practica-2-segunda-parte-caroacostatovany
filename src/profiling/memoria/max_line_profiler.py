@@ -1,7 +1,6 @@
 
 from scipy.optimize import linprog
 from pytest import approx
-from memory_profiler import memory_usage
 
 from mex.simplex.maximizer_class import Maximizer
 
