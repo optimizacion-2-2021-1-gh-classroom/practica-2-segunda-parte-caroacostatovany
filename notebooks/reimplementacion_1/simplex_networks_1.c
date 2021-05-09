@@ -1510,12 +1510,12 @@ static PyObject *__pyx_pw_18simplex_networks_1_3pivots_col(PyObject *__pyx_self,
 }
 
 static PyObject *__pyx_pf_18simplex_networks_1_2pivots_col(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_matrix) {
-  int __pyx_v_m;
+  double __pyx_v_m;
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   PyObject *__pyx_t_2 = NULL;
-  int __pyx_t_3;
+  double __pyx_t_3;
   int __pyx_t_4;
   int __pyx_lineno = 0;
   const char *__pyx_filename = NULL;
@@ -1523,7 +1523,7 @@ static PyObject *__pyx_pf_18simplex_networks_1_2pivots_col(CYTHON_UNUSED PyObjec
   __Pyx_RefNannySetupContext("pivots_col", 0);
 
   /* "simplex_networks_1.pyx":42
- *     cdef int m
+ *     cdef double m
  * 
  *     m = min(matrix[:-1, -1])             # <<<<<<<<<<<<<<
  *     if m >= 0:
@@ -1534,7 +1534,7 @@ static PyObject *__pyx_pf_18simplex_networks_1_2pivots_col(CYTHON_UNUSED PyObjec
   __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_builtin_min, __pyx_t_1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 42, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_3 = __Pyx_PyInt_As_int(__pyx_t_2); if (unlikely((__pyx_t_3 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 42, __pyx_L1_error)
+  __pyx_t_3 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_3 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 42, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_v_m = __pyx_t_3;
 
@@ -1545,7 +1545,7 @@ static PyObject *__pyx_pf_18simplex_networks_1_2pivots_col(CYTHON_UNUSED PyObjec
  *         return False
  *     else:
  */
-  __pyx_t_4 = ((__pyx_v_m >= 0) != 0);
+  __pyx_t_4 = ((__pyx_v_m >= 0.0) != 0);
   if (__pyx_t_4) {
 
     /* "simplex_networks_1.pyx":44
@@ -1628,42 +1628,42 @@ static PyObject *__pyx_pw_18simplex_networks_1_5pivots_row(PyObject *__pyx_self,
 
 static PyObject *__pyx_pf_18simplex_networks_1_4pivots_row(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_matrix) {
   int __pyx_v_l;
-  int __pyx_v_m;
+  double __pyx_v_m;
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   Py_ssize_t __pyx_t_2;
   PyObject *__pyx_t_3 = NULL;
-  int __pyx_t_4;
+  double __pyx_t_4;
   int __pyx_t_5;
   int __pyx_lineno = 0;
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("pivots_row", 0);
 
-  /* "simplex_networks_1.pyx":65
- *     cdef int l, m
+  /* "simplex_networks_1.pyx":66
+ *     cdef double m
  * 
  *     l = len(matrix[:, 0])             # <<<<<<<<<<<<<<
  *     m = min(matrix[l-1, :-1])
  *     if m >= 0:
  */
-  __pyx_t_1 = __Pyx_PyObject_GetItem(__pyx_v_matrix, __pyx_tuple__4); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 65, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetItem(__pyx_v_matrix, __pyx_tuple__4); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 66, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = PyObject_Length(__pyx_t_1); if (unlikely(__pyx_t_2 == ((Py_ssize_t)-1))) __PYX_ERR(0, 65, __pyx_L1_error)
+  __pyx_t_2 = PyObject_Length(__pyx_t_1); if (unlikely(__pyx_t_2 == ((Py_ssize_t)-1))) __PYX_ERR(0, 66, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_v_l = __pyx_t_2;
 
-  /* "simplex_networks_1.pyx":66
+  /* "simplex_networks_1.pyx":67
  * 
  *     l = len(matrix[:, 0])
  *     m = min(matrix[l-1, :-1])             # <<<<<<<<<<<<<<
  *     if m >= 0:
  *         return False
  */
-  __pyx_t_1 = __Pyx_PyInt_From_long((__pyx_v_l - 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 66, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyInt_From_long((__pyx_v_l - 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 67, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_3 = PyTuple_New(2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 66, __pyx_L1_error)
+  __pyx_t_3 = PyTuple_New(2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 67, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_GIVEREF(__pyx_t_1);
   PyTuple_SET_ITEM(__pyx_t_3, 0, __pyx_t_1);
@@ -1671,27 +1671,27 @@ static PyObject *__pyx_pf_18simplex_networks_1_4pivots_row(CYTHON_UNUSED PyObjec
   __Pyx_GIVEREF(__pyx_slice_);
   PyTuple_SET_ITEM(__pyx_t_3, 1, __pyx_slice_);
   __pyx_t_1 = 0;
-  __pyx_t_1 = __Pyx_PyObject_GetItem(__pyx_v_matrix, __pyx_t_3); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 66, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetItem(__pyx_v_matrix, __pyx_t_3); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 67, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_3 = __Pyx_PyObject_CallOneArg(__pyx_builtin_min, __pyx_t_1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 66, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_CallOneArg(__pyx_builtin_min, __pyx_t_1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 67, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_4 = __Pyx_PyInt_As_int(__pyx_t_3); if (unlikely((__pyx_t_4 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 66, __pyx_L1_error)
+  __pyx_t_4 = __pyx_PyFloat_AsDouble(__pyx_t_3); if (unlikely((__pyx_t_4 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 67, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __pyx_v_m = __pyx_t_4;
 
-  /* "simplex_networks_1.pyx":67
+  /* "simplex_networks_1.pyx":68
  *     l = len(matrix[:, 0])
  *     m = min(matrix[l-1, :-1])
  *     if m >= 0:             # <<<<<<<<<<<<<<
  *         return False
  *     else:
  */
-  __pyx_t_5 = ((__pyx_v_m >= 0) != 0);
+  __pyx_t_5 = ((__pyx_v_m >= 0.0) != 0);
   if (__pyx_t_5) {
 
-    /* "simplex_networks_1.pyx":68
+    /* "simplex_networks_1.pyx":69
  *     m = min(matrix[l-1, :-1])
  *     if m >= 0:
  *         return False             # <<<<<<<<<<<<<<
@@ -1703,7 +1703,7 @@ static PyObject *__pyx_pf_18simplex_networks_1_4pivots_row(CYTHON_UNUSED PyObjec
     __pyx_r = Py_False;
     goto __pyx_L0;
 
-    /* "simplex_networks_1.pyx":67
+    /* "simplex_networks_1.pyx":68
  *     l = len(matrix[:, 0])
  *     m = min(matrix[l-1, :-1])
  *     if m >= 0:             # <<<<<<<<<<<<<<
@@ -1712,7 +1712,7 @@ static PyObject *__pyx_pf_18simplex_networks_1_4pivots_row(CYTHON_UNUSED PyObjec
  */
   }
 
-  /* "simplex_networks_1.pyx":70
+  /* "simplex_networks_1.pyx":71
  *         return False
  *     else:
  *         return True             # <<<<<<<<<<<<<<
@@ -1746,7 +1746,7 @@ static PyObject *__pyx_pf_18simplex_networks_1_4pivots_row(CYTHON_UNUSED PyObjec
   return __pyx_r;
 }
 
-/* "simplex_networks_1.pyx":73
+/* "simplex_networks_1.pyx":74
  * 
  * 
  * def find_negative_col(matrix):             # <<<<<<<<<<<<<<
@@ -1771,14 +1771,14 @@ static PyObject *__pyx_pw_18simplex_networks_1_7find_negative_col(PyObject *__py
 
 static PyObject *__pyx_pf_18simplex_networks_1_6find_negative_col(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_matrix) {
   int __pyx_v_l;
-  int __pyx_v_m;
+  double __pyx_v_m;
   PyObject *__pyx_v_n = NULL;
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   Py_ssize_t __pyx_t_2;
   PyObject *__pyx_t_3 = NULL;
-  int __pyx_t_4;
+  double __pyx_t_4;
   int __pyx_t_5;
   PyObject *__pyx_t_6 = NULL;
   PyObject *__pyx_t_7 = NULL;
@@ -1788,29 +1788,29 @@ static PyObject *__pyx_pf_18simplex_networks_1_6find_negative_col(CYTHON_UNUSED 
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("find_negative_col", 0);
 
-  /* "simplex_networks_1.pyx":88
- *     cdef int l, m
+  /* "simplex_networks_1.pyx":90
+ *     cdef double m
  * 
  *     l = len(matrix[0, :])             # <<<<<<<<<<<<<<
  *     m = min(matrix[:-1, l-1])
  *     if m <= 0:
  */
-  __pyx_t_1 = __Pyx_PyObject_GetItem(__pyx_v_matrix, __pyx_tuple__5); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 88, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetItem(__pyx_v_matrix, __pyx_tuple__5); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 90, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = PyObject_Length(__pyx_t_1); if (unlikely(__pyx_t_2 == ((Py_ssize_t)-1))) __PYX_ERR(0, 88, __pyx_L1_error)
+  __pyx_t_2 = PyObject_Length(__pyx_t_1); if (unlikely(__pyx_t_2 == ((Py_ssize_t)-1))) __PYX_ERR(0, 90, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_v_l = __pyx_t_2;
 
-  /* "simplex_networks_1.pyx":89
+  /* "simplex_networks_1.pyx":91
  * 
  *     l = len(matrix[0, :])
  *     m = min(matrix[:-1, l-1])             # <<<<<<<<<<<<<<
  *     if m <= 0:
  *         n = np.where(matrix[:-1, l-1] == m)[0][0]
  */
-  __pyx_t_1 = __Pyx_PyInt_From_long((__pyx_v_l - 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 89, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyInt_From_long((__pyx_v_l - 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 91, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_3 = PyTuple_New(2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 89, __pyx_L1_error)
+  __pyx_t_3 = PyTuple_New(2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 91, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_INCREF(__pyx_slice_);
   __Pyx_GIVEREF(__pyx_slice_);
@@ -1818,41 +1818,41 @@ static PyObject *__pyx_pf_18simplex_networks_1_6find_negative_col(CYTHON_UNUSED 
   __Pyx_GIVEREF(__pyx_t_1);
   PyTuple_SET_ITEM(__pyx_t_3, 1, __pyx_t_1);
   __pyx_t_1 = 0;
-  __pyx_t_1 = __Pyx_PyObject_GetItem(__pyx_v_matrix, __pyx_t_3); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 89, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetItem(__pyx_v_matrix, __pyx_t_3); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 91, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_3 = __Pyx_PyObject_CallOneArg(__pyx_builtin_min, __pyx_t_1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 89, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_CallOneArg(__pyx_builtin_min, __pyx_t_1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 91, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_4 = __Pyx_PyInt_As_int(__pyx_t_3); if (unlikely((__pyx_t_4 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 89, __pyx_L1_error)
+  __pyx_t_4 = __pyx_PyFloat_AsDouble(__pyx_t_3); if (unlikely((__pyx_t_4 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 91, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __pyx_v_m = __pyx_t_4;
 
-  /* "simplex_networks_1.pyx":90
+  /* "simplex_networks_1.pyx":92
  *     l = len(matrix[0, :])
  *     m = min(matrix[:-1, l-1])
  *     if m <= 0:             # <<<<<<<<<<<<<<
  *         n = np.where(matrix[:-1, l-1] == m)[0][0]
  *     else:
  */
-  __pyx_t_5 = ((__pyx_v_m <= 0) != 0);
+  __pyx_t_5 = ((__pyx_v_m <= 0.0) != 0);
   if (__pyx_t_5) {
 
-    /* "simplex_networks_1.pyx":91
+    /* "simplex_networks_1.pyx":93
  *     m = min(matrix[:-1, l-1])
  *     if m <= 0:
  *         n = np.where(matrix[:-1, l-1] == m)[0][0]             # <<<<<<<<<<<<<<
  *     else:
  *         n = None
  */
-    __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_np); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 91, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_np); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 93, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_where); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 91, __pyx_L1_error)
+    __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_where); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 93, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-    __pyx_t_1 = __Pyx_PyInt_From_long((__pyx_v_l - 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 91, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyInt_From_long((__pyx_v_l - 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 93, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_7 = PyTuple_New(2); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 91, __pyx_L1_error)
+    __pyx_t_7 = PyTuple_New(2); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 93, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_7);
     __Pyx_INCREF(__pyx_slice_);
     __Pyx_GIVEREF(__pyx_slice_);
@@ -1860,12 +1860,12 @@ static PyObject *__pyx_pf_18simplex_networks_1_6find_negative_col(CYTHON_UNUSED 
     __Pyx_GIVEREF(__pyx_t_1);
     PyTuple_SET_ITEM(__pyx_t_7, 1, __pyx_t_1);
     __pyx_t_1 = 0;
-    __pyx_t_1 = __Pyx_PyObject_GetItem(__pyx_v_matrix, __pyx_t_7); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 91, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_GetItem(__pyx_v_matrix, __pyx_t_7); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 93, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-    __pyx_t_7 = __Pyx_PyInt_From_int(__pyx_v_m); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 91, __pyx_L1_error)
+    __pyx_t_7 = PyFloat_FromDouble(__pyx_v_m); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 93, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_7);
-    __pyx_t_8 = PyObject_RichCompare(__pyx_t_1, __pyx_t_7, Py_EQ); __Pyx_XGOTREF(__pyx_t_8); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 91, __pyx_L1_error)
+    __pyx_t_8 = PyObject_RichCompare(__pyx_t_1, __pyx_t_7, Py_EQ); __Pyx_XGOTREF(__pyx_t_8); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 93, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
     __pyx_t_7 = NULL;
@@ -1881,19 +1881,19 @@ static PyObject *__pyx_pf_18simplex_networks_1_6find_negative_col(CYTHON_UNUSED 
     __pyx_t_3 = (__pyx_t_7) ? __Pyx_PyObject_Call2Args(__pyx_t_6, __pyx_t_7, __pyx_t_8) : __Pyx_PyObject_CallOneArg(__pyx_t_6, __pyx_t_8);
     __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
     __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
-    if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 91, __pyx_L1_error)
+    if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 93, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-    __pyx_t_6 = __Pyx_GetItemInt(__pyx_t_3, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 91, __pyx_L1_error)
+    __pyx_t_6 = __Pyx_GetItemInt(__pyx_t_3, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 93, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    __pyx_t_3 = __Pyx_GetItemInt(__pyx_t_6, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 91, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_GetItemInt(__pyx_t_6, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 93, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
     __pyx_v_n = __pyx_t_3;
     __pyx_t_3 = 0;
 
-    /* "simplex_networks_1.pyx":90
+    /* "simplex_networks_1.pyx":92
  *     l = len(matrix[0, :])
  *     m = min(matrix[:-1, l-1])
  *     if m <= 0:             # <<<<<<<<<<<<<<
@@ -1903,7 +1903,7 @@ static PyObject *__pyx_pf_18simplex_networks_1_6find_negative_col(CYTHON_UNUSED 
     goto __pyx_L3;
   }
 
-  /* "simplex_networks_1.pyx":93
+  /* "simplex_networks_1.pyx":95
  *         n = np.where(matrix[:-1, l-1] == m)[0][0]
  *     else:
  *         n = None             # <<<<<<<<<<<<<<
@@ -1916,7 +1916,7 @@ static PyObject *__pyx_pf_18simplex_networks_1_6find_negative_col(CYTHON_UNUSED 
   }
   __pyx_L3:;
 
-  /* "simplex_networks_1.pyx":95
+  /* "simplex_networks_1.pyx":97
  *         n = None
  * 
  *     return n             # <<<<<<<<<<<<<<
@@ -1928,7 +1928,7 @@ static PyObject *__pyx_pf_18simplex_networks_1_6find_negative_col(CYTHON_UNUSED 
   __pyx_r = __pyx_v_n;
   goto __pyx_L0;
 
-  /* "simplex_networks_1.pyx":73
+  /* "simplex_networks_1.pyx":74
  * 
  * 
  * def find_negative_col(matrix):             # <<<<<<<<<<<<<<
@@ -1952,7 +1952,7 @@ static PyObject *__pyx_pf_18simplex_networks_1_6find_negative_col(CYTHON_UNUSED 
   return __pyx_r;
 }
 
-/* "simplex_networks_1.pyx":98
+/* "simplex_networks_1.pyx":100
  * 
  * 
  * def find_negative_row(matrix):             # <<<<<<<<<<<<<<
@@ -1977,14 +1977,14 @@ static PyObject *__pyx_pw_18simplex_networks_1_9find_negative_row(PyObject *__py
 
 static PyObject *__pyx_pf_18simplex_networks_1_8find_negative_row(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_matrix) {
   int __pyx_v_l;
-  int __pyx_v_m;
+  double __pyx_v_m;
   PyObject *__pyx_v_n = NULL;
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   Py_ssize_t __pyx_t_2;
   PyObject *__pyx_t_3 = NULL;
-  int __pyx_t_4;
+  double __pyx_t_4;
   int __pyx_t_5;
   PyObject *__pyx_t_6 = NULL;
   PyObject *__pyx_t_7 = NULL;
@@ -1994,29 +1994,29 @@ static PyObject *__pyx_pf_18simplex_networks_1_8find_negative_row(CYTHON_UNUSED 
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("find_negative_row", 0);
 
-  /* "simplex_networks_1.pyx":112
+  /* "simplex_networks_1.pyx":116
+ *     cdef double m
  * 
- *     cdef int l, m
  *     l = len(matrix[:,0])             # <<<<<<<<<<<<<<
  *     m = min(matrix[l-1,:-1])
  *     if m <= 0:
  */
-  __pyx_t_1 = __Pyx_PyObject_GetItem(__pyx_v_matrix, __pyx_tuple__4); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 112, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetItem(__pyx_v_matrix, __pyx_tuple__4); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 116, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = PyObject_Length(__pyx_t_1); if (unlikely(__pyx_t_2 == ((Py_ssize_t)-1))) __PYX_ERR(0, 112, __pyx_L1_error)
+  __pyx_t_2 = PyObject_Length(__pyx_t_1); if (unlikely(__pyx_t_2 == ((Py_ssize_t)-1))) __PYX_ERR(0, 116, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_v_l = __pyx_t_2;
 
-  /* "simplex_networks_1.pyx":113
- *     cdef int l, m
+  /* "simplex_networks_1.pyx":117
+ * 
  *     l = len(matrix[:,0])
  *     m = min(matrix[l-1,:-1])             # <<<<<<<<<<<<<<
  *     if m <= 0:
  *         n = np.where(matrix[l-1, :-1] == m)[0][0]
  */
-  __pyx_t_1 = __Pyx_PyInt_From_long((__pyx_v_l - 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 113, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyInt_From_long((__pyx_v_l - 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 117, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_3 = PyTuple_New(2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 113, __pyx_L1_error)
+  __pyx_t_3 = PyTuple_New(2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 117, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_GIVEREF(__pyx_t_1);
   PyTuple_SET_ITEM(__pyx_t_3, 0, __pyx_t_1);
@@ -2024,41 +2024,41 @@ static PyObject *__pyx_pf_18simplex_networks_1_8find_negative_row(CYTHON_UNUSED 
   __Pyx_GIVEREF(__pyx_slice_);
   PyTuple_SET_ITEM(__pyx_t_3, 1, __pyx_slice_);
   __pyx_t_1 = 0;
-  __pyx_t_1 = __Pyx_PyObject_GetItem(__pyx_v_matrix, __pyx_t_3); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 113, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetItem(__pyx_v_matrix, __pyx_t_3); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 117, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_3 = __Pyx_PyObject_CallOneArg(__pyx_builtin_min, __pyx_t_1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 113, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_CallOneArg(__pyx_builtin_min, __pyx_t_1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 117, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_4 = __Pyx_PyInt_As_int(__pyx_t_3); if (unlikely((__pyx_t_4 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 113, __pyx_L1_error)
+  __pyx_t_4 = __pyx_PyFloat_AsDouble(__pyx_t_3); if (unlikely((__pyx_t_4 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 117, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __pyx_v_m = __pyx_t_4;
 
-  /* "simplex_networks_1.pyx":114
+  /* "simplex_networks_1.pyx":118
  *     l = len(matrix[:,0])
  *     m = min(matrix[l-1,:-1])
  *     if m <= 0:             # <<<<<<<<<<<<<<
  *         n = np.where(matrix[l-1, :-1] == m)[0][0]
  *     else:
  */
-  __pyx_t_5 = ((__pyx_v_m <= 0) != 0);
+  __pyx_t_5 = ((__pyx_v_m <= 0.0) != 0);
   if (__pyx_t_5) {
 
-    /* "simplex_networks_1.pyx":115
+    /* "simplex_networks_1.pyx":119
  *     m = min(matrix[l-1,:-1])
  *     if m <= 0:
  *         n = np.where(matrix[l-1, :-1] == m)[0][0]             # <<<<<<<<<<<<<<
  *     else:
  *         n = None
  */
-    __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_np); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 115, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_np); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 119, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_where); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 115, __pyx_L1_error)
+    __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_where); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 119, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-    __pyx_t_1 = __Pyx_PyInt_From_long((__pyx_v_l - 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 115, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyInt_From_long((__pyx_v_l - 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 119, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_7 = PyTuple_New(2); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 115, __pyx_L1_error)
+    __pyx_t_7 = PyTuple_New(2); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 119, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_7);
     __Pyx_GIVEREF(__pyx_t_1);
     PyTuple_SET_ITEM(__pyx_t_7, 0, __pyx_t_1);
@@ -2066,12 +2066,12 @@ static PyObject *__pyx_pf_18simplex_networks_1_8find_negative_row(CYTHON_UNUSED 
     __Pyx_GIVEREF(__pyx_slice_);
     PyTuple_SET_ITEM(__pyx_t_7, 1, __pyx_slice_);
     __pyx_t_1 = 0;
-    __pyx_t_1 = __Pyx_PyObject_GetItem(__pyx_v_matrix, __pyx_t_7); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 115, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_GetItem(__pyx_v_matrix, __pyx_t_7); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 119, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-    __pyx_t_7 = __Pyx_PyInt_From_int(__pyx_v_m); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 115, __pyx_L1_error)
+    __pyx_t_7 = PyFloat_FromDouble(__pyx_v_m); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 119, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_7);
-    __pyx_t_8 = PyObject_RichCompare(__pyx_t_1, __pyx_t_7, Py_EQ); __Pyx_XGOTREF(__pyx_t_8); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 115, __pyx_L1_error)
+    __pyx_t_8 = PyObject_RichCompare(__pyx_t_1, __pyx_t_7, Py_EQ); __Pyx_XGOTREF(__pyx_t_8); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 119, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
     __pyx_t_7 = NULL;
@@ -2087,19 +2087,19 @@ static PyObject *__pyx_pf_18simplex_networks_1_8find_negative_row(CYTHON_UNUSED 
     __pyx_t_3 = (__pyx_t_7) ? __Pyx_PyObject_Call2Args(__pyx_t_6, __pyx_t_7, __pyx_t_8) : __Pyx_PyObject_CallOneArg(__pyx_t_6, __pyx_t_8);
     __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
     __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
-    if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 115, __pyx_L1_error)
+    if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 119, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-    __pyx_t_6 = __Pyx_GetItemInt(__pyx_t_3, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 115, __pyx_L1_error)
+    __pyx_t_6 = __Pyx_GetItemInt(__pyx_t_3, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 119, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    __pyx_t_3 = __Pyx_GetItemInt(__pyx_t_6, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 115, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_GetItemInt(__pyx_t_6, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 119, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
     __pyx_v_n = __pyx_t_3;
     __pyx_t_3 = 0;
 
-    /* "simplex_networks_1.pyx":114
+    /* "simplex_networks_1.pyx":118
  *     l = len(matrix[:,0])
  *     m = min(matrix[l-1,:-1])
  *     if m <= 0:             # <<<<<<<<<<<<<<
@@ -2109,7 +2109,7 @@ static PyObject *__pyx_pf_18simplex_networks_1_8find_negative_row(CYTHON_UNUSED 
     goto __pyx_L3;
   }
 
-  /* "simplex_networks_1.pyx":117
+  /* "simplex_networks_1.pyx":121
  *         n = np.where(matrix[l-1, :-1] == m)[0][0]
  *     else:
  *         n = None             # <<<<<<<<<<<<<<
@@ -2122,7 +2122,7 @@ static PyObject *__pyx_pf_18simplex_networks_1_8find_negative_row(CYTHON_UNUSED 
   }
   __pyx_L3:;
 
-  /* "simplex_networks_1.pyx":119
+  /* "simplex_networks_1.pyx":123
  *         n = None
  * 
  *     return n             # <<<<<<<<<<<<<<
@@ -2134,7 +2134,7 @@ static PyObject *__pyx_pf_18simplex_networks_1_8find_negative_row(CYTHON_UNUSED 
   __pyx_r = __pyx_v_n;
   goto __pyx_L0;
 
-  /* "simplex_networks_1.pyx":98
+  /* "simplex_networks_1.pyx":100
  * 
  * 
  * def find_negative_row(matrix):             # <<<<<<<<<<<<<<
@@ -2158,7 +2158,7 @@ static PyObject *__pyx_pf_18simplex_networks_1_8find_negative_row(CYTHON_UNUSED 
   return __pyx_r;
 }
 
-/* "simplex_networks_1.pyx":122
+/* "simplex_networks_1.pyx":126
  * 
  * 
  * def find_pivot_col(matrix):             # <<<<<<<<<<<<<<
@@ -2182,13 +2182,13 @@ static PyObject *__pyx_pw_18simplex_networks_1_11find_pivot_col(PyObject *__pyx_
 }
 
 static PyObject *__pyx_pf_18simplex_networks_1_10find_pivot_col(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_matrix) {
-  int __pyx_v_i;
-  int __pyx_v_j;
   int __pyx_v_c;
-  int __pyx_v_m;
-  int __pyx_v_neg;
   int __pyx_v_index;
+  double __pyx_v_m;
+  double __pyx_v_i;
+  double __pyx_v_j;
   PyObject *__pyx_v_total = NULL;
+  PyObject *__pyx_v_neg = NULL;
   PyObject *__pyx_v_row = NULL;
   PyObject *__pyx_v_col = NULL;
   PyObject *__pyx_r = NULL;
@@ -2196,41 +2196,42 @@ static PyObject *__pyx_pf_18simplex_networks_1_10find_pivot_col(CYTHON_UNUSED Py
   PyObject *__pyx_t_1 = NULL;
   PyObject *__pyx_t_2 = NULL;
   PyObject *__pyx_t_3 = NULL;
-  int __pyx_t_4;
+  double __pyx_t_4;
   PyObject *__pyx_t_5 = NULL;
-  Py_ssize_t __pyx_t_6;
-  PyObject *(*__pyx_t_7)(PyObject *);
-  PyObject *__pyx_t_8 = NULL;
-  PyObject *(*__pyx_t_9)(PyObject *);
-  int __pyx_t_10;
-  int __pyx_t_11;
+  int __pyx_t_6;
+  Py_ssize_t __pyx_t_7;
+  PyObject *(*__pyx_t_8)(PyObject *);
+  PyObject *__pyx_t_9 = NULL;
+  PyObject *(*__pyx_t_10)(PyObject *);
+  double __pyx_t_11;
   int __pyx_t_12;
   int __pyx_t_13;
+  int __pyx_t_14;
   int __pyx_lineno = 0;
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("find_pivot_col", 0);
 
-  /* "simplex_networks_1.pyx":139
- *     cdef int i, j, c, m, neg, index
+  /* "simplex_networks_1.pyx":144
+ *     cdef double m, i, j
  * 
  *     total = []             # <<<<<<<<<<<<<<
  *     neg = find_negative_col(matrix)
  *     row = matrix[neg, :-1]
  */
-  __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 139, __pyx_L1_error)
+  __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 144, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_v_total = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "simplex_networks_1.pyx":140
+  /* "simplex_networks_1.pyx":145
  * 
  *     total = []
  *     neg = find_negative_col(matrix)             # <<<<<<<<<<<<<<
  *     row = matrix[neg, :-1]
  *     m = min(row)
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_find_negative_col); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 140, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_find_negative_col); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 145, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_t_3 = NULL;
   if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_2))) {
@@ -2244,250 +2245,247 @@ static PyObject *__pyx_pf_18simplex_networks_1_10find_pivot_col(CYTHON_UNUSED Py
   }
   __pyx_t_1 = (__pyx_t_3) ? __Pyx_PyObject_Call2Args(__pyx_t_2, __pyx_t_3, __pyx_v_matrix) : __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_v_matrix);
   __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 140, __pyx_L1_error)
+  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 145, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_4 = __Pyx_PyInt_As_int(__pyx_t_1); if (unlikely((__pyx_t_4 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 140, __pyx_L1_error)
-  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_v_neg = __pyx_t_4;
+  __pyx_v_neg = __pyx_t_1;
+  __pyx_t_1 = 0;
 
-  /* "simplex_networks_1.pyx":141
+  /* "simplex_networks_1.pyx":146
  *     total = []
  *     neg = find_negative_col(matrix)
  *     row = matrix[neg, :-1]             # <<<<<<<<<<<<<<
  *     m = min(row)
  *     c = np.where(row == m)[0][0]
  */
-  __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_v_neg); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 141, __pyx_L1_error)
+  __pyx_t_1 = PyTuple_New(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 146, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = PyTuple_New(2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 141, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_2);
-  __Pyx_GIVEREF(__pyx_t_1);
-  PyTuple_SET_ITEM(__pyx_t_2, 0, __pyx_t_1);
+  __Pyx_INCREF(__pyx_v_neg);
+  __Pyx_GIVEREF(__pyx_v_neg);
+  PyTuple_SET_ITEM(__pyx_t_1, 0, __pyx_v_neg);
   __Pyx_INCREF(__pyx_slice_);
   __Pyx_GIVEREF(__pyx_slice_);
-  PyTuple_SET_ITEM(__pyx_t_2, 1, __pyx_slice_);
-  __pyx_t_1 = 0;
-  __pyx_t_1 = __Pyx_PyObject_GetItem(__pyx_v_matrix, __pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 141, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_1);
-  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_v_row = __pyx_t_1;
-  __pyx_t_1 = 0;
+  PyTuple_SET_ITEM(__pyx_t_1, 1, __pyx_slice_);
+  __pyx_t_2 = __Pyx_PyObject_GetItem(__pyx_v_matrix, __pyx_t_1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 146, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  __pyx_v_row = __pyx_t_2;
+  __pyx_t_2 = 0;
 
-  /* "simplex_networks_1.pyx":142
+  /* "simplex_networks_1.pyx":147
  *     neg = find_negative_col(matrix)
  *     row = matrix[neg, :-1]
  *     m = min(row)             # <<<<<<<<<<<<<<
  *     c = np.where(row == m)[0][0]
  *     col = matrix[:-1, c]
  */
-  __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_builtin_min, __pyx_v_row); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 142, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_4 = __Pyx_PyInt_As_int(__pyx_t_1); if (unlikely((__pyx_t_4 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 142, __pyx_L1_error)
-  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_builtin_min, __pyx_v_row); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 147, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  __pyx_t_4 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_4 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 147, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_v_m = __pyx_t_4;
 
-  /* "simplex_networks_1.pyx":143
+  /* "simplex_networks_1.pyx":148
  *     row = matrix[neg, :-1]
  *     m = min(row)
  *     c = np.where(row == m)[0][0]             # <<<<<<<<<<<<<<
  *     col = matrix[:-1, c]
  *     for i,j in zip(col, matrix[:-1,-1]):  #i for col with neg, j for right col
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_np); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 143, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_where); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 143, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_np); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 148, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_where); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 148, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = __Pyx_PyInt_From_int(__pyx_v_m); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 143, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_5 = PyObject_RichCompare(__pyx_v_row, __pyx_t_2, Py_EQ); __Pyx_XGOTREF(__pyx_t_5); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 143, __pyx_L1_error)
-  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = NULL;
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_v_m); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 148, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_t_5 = PyObject_RichCompare(__pyx_v_row, __pyx_t_1, Py_EQ); __Pyx_XGOTREF(__pyx_t_5); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 148, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  __pyx_t_1 = NULL;
   if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_3))) {
-    __pyx_t_2 = PyMethod_GET_SELF(__pyx_t_3);
-    if (likely(__pyx_t_2)) {
+    __pyx_t_1 = PyMethod_GET_SELF(__pyx_t_3);
+    if (likely(__pyx_t_1)) {
       PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_3);
-      __Pyx_INCREF(__pyx_t_2);
+      __Pyx_INCREF(__pyx_t_1);
       __Pyx_INCREF(function);
       __Pyx_DECREF_SET(__pyx_t_3, function);
     }
   }
-  __pyx_t_1 = (__pyx_t_2) ? __Pyx_PyObject_Call2Args(__pyx_t_3, __pyx_t_2, __pyx_t_5) : __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_t_5);
-  __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
+  __pyx_t_2 = (__pyx_t_1) ? __Pyx_PyObject_Call2Args(__pyx_t_3, __pyx_t_1, __pyx_t_5) : __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_t_5);
+  __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 143, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_1);
+  if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 148, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_3 = __Pyx_GetItemInt(__pyx_t_1, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 143, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_GetItemInt(__pyx_t_2, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 148, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_1 = __Pyx_GetItemInt(__pyx_t_3, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 143, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_1);
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+  __pyx_t_2 = __Pyx_GetItemInt(__pyx_t_3, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 148, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_4 = __Pyx_PyInt_As_int(__pyx_t_1); if (unlikely((__pyx_t_4 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 143, __pyx_L1_error)
-  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_v_c = __pyx_t_4;
+  __pyx_t_6 = __Pyx_PyInt_As_int(__pyx_t_2); if (unlikely((__pyx_t_6 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 148, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+  __pyx_v_c = __pyx_t_6;
 
-  /* "simplex_networks_1.pyx":144
+  /* "simplex_networks_1.pyx":149
  *     m = min(row)
  *     c = np.where(row == m)[0][0]
  *     col = matrix[:-1, c]             # <<<<<<<<<<<<<<
  *     for i,j in zip(col, matrix[:-1,-1]):  #i for col with neg, j for right col
  *         if i != 0 and j/i > 0:
  */
-  __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_v_c); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 144, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_3 = PyTuple_New(2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 144, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyInt_From_int(__pyx_v_c); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 149, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  __pyx_t_3 = PyTuple_New(2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 149, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_INCREF(__pyx_slice_);
   __Pyx_GIVEREF(__pyx_slice_);
   PyTuple_SET_ITEM(__pyx_t_3, 0, __pyx_slice_);
-  __Pyx_GIVEREF(__pyx_t_1);
-  PyTuple_SET_ITEM(__pyx_t_3, 1, __pyx_t_1);
-  __pyx_t_1 = 0;
-  __pyx_t_1 = __Pyx_PyObject_GetItem(__pyx_v_matrix, __pyx_t_3); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 144, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_1);
+  __Pyx_GIVEREF(__pyx_t_2);
+  PyTuple_SET_ITEM(__pyx_t_3, 1, __pyx_t_2);
+  __pyx_t_2 = 0;
+  __pyx_t_2 = __Pyx_PyObject_GetItem(__pyx_v_matrix, __pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 149, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_v_col = __pyx_t_1;
-  __pyx_t_1 = 0;
+  __pyx_v_col = __pyx_t_2;
+  __pyx_t_2 = 0;
 
-  /* "simplex_networks_1.pyx":145
+  /* "simplex_networks_1.pyx":150
  *     c = np.where(row == m)[0][0]
  *     col = matrix[:-1, c]
  *     for i,j in zip(col, matrix[:-1,-1]):  #i for col with neg, j for right col             # <<<<<<<<<<<<<<
  *         if i != 0 and j/i > 0:
  *             total.append(j/i)
  */
-  __pyx_t_1 = __Pyx_PyObject_GetItem(__pyx_v_matrix, __pyx_tuple__2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 145, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_3 = PyTuple_New(2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 145, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetItem(__pyx_v_matrix, __pyx_tuple__2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 150, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  __pyx_t_3 = PyTuple_New(2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 150, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_INCREF(__pyx_v_col);
   __Pyx_GIVEREF(__pyx_v_col);
   PyTuple_SET_ITEM(__pyx_t_3, 0, __pyx_v_col);
-  __Pyx_GIVEREF(__pyx_t_1);
-  PyTuple_SET_ITEM(__pyx_t_3, 1, __pyx_t_1);
-  __pyx_t_1 = 0;
-  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_zip, __pyx_t_3, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 145, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_1);
+  __Pyx_GIVEREF(__pyx_t_2);
+  PyTuple_SET_ITEM(__pyx_t_3, 1, __pyx_t_2);
+  __pyx_t_2 = 0;
+  __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_zip, __pyx_t_3, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 150, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  if (likely(PyList_CheckExact(__pyx_t_1)) || PyTuple_CheckExact(__pyx_t_1)) {
-    __pyx_t_3 = __pyx_t_1; __Pyx_INCREF(__pyx_t_3); __pyx_t_6 = 0;
-    __pyx_t_7 = NULL;
+  if (likely(PyList_CheckExact(__pyx_t_2)) || PyTuple_CheckExact(__pyx_t_2)) {
+    __pyx_t_3 = __pyx_t_2; __Pyx_INCREF(__pyx_t_3); __pyx_t_7 = 0;
+    __pyx_t_8 = NULL;
   } else {
-    __pyx_t_6 = -1; __pyx_t_3 = PyObject_GetIter(__pyx_t_1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 145, __pyx_L1_error)
+    __pyx_t_7 = -1; __pyx_t_3 = PyObject_GetIter(__pyx_t_2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 150, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
-    __pyx_t_7 = Py_TYPE(__pyx_t_3)->tp_iternext; if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 145, __pyx_L1_error)
+    __pyx_t_8 = Py_TYPE(__pyx_t_3)->tp_iternext; if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 150, __pyx_L1_error)
   }
-  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   for (;;) {
-    if (likely(!__pyx_t_7)) {
+    if (likely(!__pyx_t_8)) {
       if (likely(PyList_CheckExact(__pyx_t_3))) {
-        if (__pyx_t_6 >= PyList_GET_SIZE(__pyx_t_3)) break;
+        if (__pyx_t_7 >= PyList_GET_SIZE(__pyx_t_3)) break;
         #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-        __pyx_t_1 = PyList_GET_ITEM(__pyx_t_3, __pyx_t_6); __Pyx_INCREF(__pyx_t_1); __pyx_t_6++; if (unlikely(0 < 0)) __PYX_ERR(0, 145, __pyx_L1_error)
+        __pyx_t_2 = PyList_GET_ITEM(__pyx_t_3, __pyx_t_7); __Pyx_INCREF(__pyx_t_2); __pyx_t_7++; if (unlikely(0 < 0)) __PYX_ERR(0, 150, __pyx_L1_error)
         #else
-        __pyx_t_1 = PySequence_ITEM(__pyx_t_3, __pyx_t_6); __pyx_t_6++; if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 145, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_1);
+        __pyx_t_2 = PySequence_ITEM(__pyx_t_3, __pyx_t_7); __pyx_t_7++; if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 150, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_2);
         #endif
       } else {
-        if (__pyx_t_6 >= PyTuple_GET_SIZE(__pyx_t_3)) break;
+        if (__pyx_t_7 >= PyTuple_GET_SIZE(__pyx_t_3)) break;
         #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-        __pyx_t_1 = PyTuple_GET_ITEM(__pyx_t_3, __pyx_t_6); __Pyx_INCREF(__pyx_t_1); __pyx_t_6++; if (unlikely(0 < 0)) __PYX_ERR(0, 145, __pyx_L1_error)
+        __pyx_t_2 = PyTuple_GET_ITEM(__pyx_t_3, __pyx_t_7); __Pyx_INCREF(__pyx_t_2); __pyx_t_7++; if (unlikely(0 < 0)) __PYX_ERR(0, 150, __pyx_L1_error)
         #else
-        __pyx_t_1 = PySequence_ITEM(__pyx_t_3, __pyx_t_6); __pyx_t_6++; if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 145, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_1);
+        __pyx_t_2 = PySequence_ITEM(__pyx_t_3, __pyx_t_7); __pyx_t_7++; if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 150, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_2);
         #endif
       }
     } else {
-      __pyx_t_1 = __pyx_t_7(__pyx_t_3);
-      if (unlikely(!__pyx_t_1)) {
+      __pyx_t_2 = __pyx_t_8(__pyx_t_3);
+      if (unlikely(!__pyx_t_2)) {
         PyObject* exc_type = PyErr_Occurred();
         if (exc_type) {
           if (likely(__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) PyErr_Clear();
-          else __PYX_ERR(0, 145, __pyx_L1_error)
+          else __PYX_ERR(0, 150, __pyx_L1_error)
         }
         break;
       }
-      __Pyx_GOTREF(__pyx_t_1);
+      __Pyx_GOTREF(__pyx_t_2);
     }
-    if ((likely(PyTuple_CheckExact(__pyx_t_1))) || (PyList_CheckExact(__pyx_t_1))) {
-      PyObject* sequence = __pyx_t_1;
+    if ((likely(PyTuple_CheckExact(__pyx_t_2))) || (PyList_CheckExact(__pyx_t_2))) {
+      PyObject* sequence = __pyx_t_2;
       Py_ssize_t size = __Pyx_PySequence_SIZE(sequence);
       if (unlikely(size != 2)) {
         if (size > 2) __Pyx_RaiseTooManyValuesError(2);
         else if (size >= 0) __Pyx_RaiseNeedMoreValuesError(size);
-        __PYX_ERR(0, 145, __pyx_L1_error)
+        __PYX_ERR(0, 150, __pyx_L1_error)
       }
       #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
       if (likely(PyTuple_CheckExact(sequence))) {
         __pyx_t_5 = PyTuple_GET_ITEM(sequence, 0); 
-        __pyx_t_2 = PyTuple_GET_ITEM(sequence, 1); 
+        __pyx_t_1 = PyTuple_GET_ITEM(sequence, 1); 
       } else {
         __pyx_t_5 = PyList_GET_ITEM(sequence, 0); 
-        __pyx_t_2 = PyList_GET_ITEM(sequence, 1); 
+        __pyx_t_1 = PyList_GET_ITEM(sequence, 1); 
       }
       __Pyx_INCREF(__pyx_t_5);
-      __Pyx_INCREF(__pyx_t_2);
+      __Pyx_INCREF(__pyx_t_1);
       #else
-      __pyx_t_5 = PySequence_ITEM(sequence, 0); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 145, __pyx_L1_error)
+      __pyx_t_5 = PySequence_ITEM(sequence, 0); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 150, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_5);
-      __pyx_t_2 = PySequence_ITEM(sequence, 1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 145, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_2);
+      __pyx_t_1 = PySequence_ITEM(sequence, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 150, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_1);
       #endif
-      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+      __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
     } else {
       Py_ssize_t index = -1;
-      __pyx_t_8 = PyObject_GetIter(__pyx_t_1); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 145, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_8);
-      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-      __pyx_t_9 = Py_TYPE(__pyx_t_8)->tp_iternext;
-      index = 0; __pyx_t_5 = __pyx_t_9(__pyx_t_8); if (unlikely(!__pyx_t_5)) goto __pyx_L5_unpacking_failed;
+      __pyx_t_9 = PyObject_GetIter(__pyx_t_2); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 150, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_9);
+      __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+      __pyx_t_10 = Py_TYPE(__pyx_t_9)->tp_iternext;
+      index = 0; __pyx_t_5 = __pyx_t_10(__pyx_t_9); if (unlikely(!__pyx_t_5)) goto __pyx_L5_unpacking_failed;
       __Pyx_GOTREF(__pyx_t_5);
-      index = 1; __pyx_t_2 = __pyx_t_9(__pyx_t_8); if (unlikely(!__pyx_t_2)) goto __pyx_L5_unpacking_failed;
-      __Pyx_GOTREF(__pyx_t_2);
-      if (__Pyx_IternextUnpackEndCheck(__pyx_t_9(__pyx_t_8), 2) < 0) __PYX_ERR(0, 145, __pyx_L1_error)
-      __pyx_t_9 = NULL;
-      __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
+      index = 1; __pyx_t_1 = __pyx_t_10(__pyx_t_9); if (unlikely(!__pyx_t_1)) goto __pyx_L5_unpacking_failed;
+      __Pyx_GOTREF(__pyx_t_1);
+      if (__Pyx_IternextUnpackEndCheck(__pyx_t_10(__pyx_t_9), 2) < 0) __PYX_ERR(0, 150, __pyx_L1_error)
+      __pyx_t_10 = NULL;
+      __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
       goto __pyx_L6_unpacking_done;
       __pyx_L5_unpacking_failed:;
-      __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
-      __pyx_t_9 = NULL;
+      __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
+      __pyx_t_10 = NULL;
       if (__Pyx_IterFinish() == 0) __Pyx_RaiseNeedMoreValuesError(index);
-      __PYX_ERR(0, 145, __pyx_L1_error)
+      __PYX_ERR(0, 150, __pyx_L1_error)
       __pyx_L6_unpacking_done:;
     }
-    __pyx_t_4 = __Pyx_PyInt_As_int(__pyx_t_5); if (unlikely((__pyx_t_4 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 145, __pyx_L1_error)
+    __pyx_t_4 = __pyx_PyFloat_AsDouble(__pyx_t_5); if (unlikely((__pyx_t_4 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 150, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-    __pyx_t_10 = __Pyx_PyInt_As_int(__pyx_t_2); if (unlikely((__pyx_t_10 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 145, __pyx_L1_error)
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+    __pyx_t_11 = __pyx_PyFloat_AsDouble(__pyx_t_1); if (unlikely((__pyx_t_11 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 150, __pyx_L1_error)
+    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     __pyx_v_i = __pyx_t_4;
-    __pyx_v_j = __pyx_t_10;
+    __pyx_v_j = __pyx_t_11;
 
-    /* "simplex_networks_1.pyx":146
+    /* "simplex_networks_1.pyx":151
  *     col = matrix[:-1, c]
  *     for i,j in zip(col, matrix[:-1,-1]):  #i for col with neg, j for right col
  *         if i != 0 and j/i > 0:             # <<<<<<<<<<<<<<
  *             total.append(j/i)
  *         else:
  */
-    __pyx_t_12 = ((__pyx_v_i != 0) != 0);
-    if (__pyx_t_12) {
+    __pyx_t_13 = ((__pyx_v_i != 0.0) != 0);
+    if (__pyx_t_13) {
     } else {
-      __pyx_t_11 = __pyx_t_12;
+      __pyx_t_12 = __pyx_t_13;
       goto __pyx_L8_bool_binop_done;
     }
     if (unlikely(__pyx_v_i == 0)) {
       PyErr_SetString(PyExc_ZeroDivisionError, "float division");
-      __PYX_ERR(0, 146, __pyx_L1_error)
+      __PYX_ERR(0, 151, __pyx_L1_error)
     }
-    __pyx_t_12 = (((((double)__pyx_v_j) / ((double)__pyx_v_i)) > 0.0) != 0);
-    __pyx_t_11 = __pyx_t_12;
+    __pyx_t_13 = (((__pyx_v_j / __pyx_v_i) > 0.0) != 0);
+    __pyx_t_12 = __pyx_t_13;
     __pyx_L8_bool_binop_done:;
-    if (__pyx_t_11) {
+    if (__pyx_t_12) {
 
-      /* "simplex_networks_1.pyx":147
+      /* "simplex_networks_1.pyx":152
  *     for i,j in zip(col, matrix[:-1,-1]):  #i for col with neg, j for right col
  *         if i != 0 and j/i > 0:
  *             total.append(j/i)             # <<<<<<<<<<<<<<
@@ -2496,14 +2494,14 @@ static PyObject *__pyx_pf_18simplex_networks_1_10find_pivot_col(CYTHON_UNUSED Py
  */
       if (unlikely(__pyx_v_i == 0)) {
         PyErr_SetString(PyExc_ZeroDivisionError, "float division");
-        __PYX_ERR(0, 147, __pyx_L1_error)
+        __PYX_ERR(0, 152, __pyx_L1_error)
       }
-      __pyx_t_1 = PyFloat_FromDouble((((double)__pyx_v_j) / ((double)__pyx_v_i))); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 147, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_1);
-      __pyx_t_13 = __Pyx_PyList_Append(__pyx_v_total, __pyx_t_1); if (unlikely(__pyx_t_13 == ((int)-1))) __PYX_ERR(0, 147, __pyx_L1_error)
-      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+      __pyx_t_2 = PyFloat_FromDouble((__pyx_v_j / __pyx_v_i)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 152, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_2);
+      __pyx_t_14 = __Pyx_PyList_Append(__pyx_v_total, __pyx_t_2); if (unlikely(__pyx_t_14 == ((int)-1))) __PYX_ERR(0, 152, __pyx_L1_error)
+      __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-      /* "simplex_networks_1.pyx":146
+      /* "simplex_networks_1.pyx":151
  *     col = matrix[:-1, c]
  *     for i,j in zip(col, matrix[:-1,-1]):  #i for col with neg, j for right col
  *         if i != 0 and j/i > 0:             # <<<<<<<<<<<<<<
@@ -2513,7 +2511,7 @@ static PyObject *__pyx_pf_18simplex_networks_1_10find_pivot_col(CYTHON_UNUSED Py
       goto __pyx_L7;
     }
 
-    /* "simplex_networks_1.pyx":149
+    /* "simplex_networks_1.pyx":154
  *             total.append(j/i)
  *         else:
  *             total.append(10000) #placeholder, might need to update for large scale             # <<<<<<<<<<<<<<
@@ -2521,11 +2519,11 @@ static PyObject *__pyx_pf_18simplex_networks_1_10find_pivot_col(CYTHON_UNUSED Py
  * 
  */
     /*else*/ {
-      __pyx_t_13 = __Pyx_PyList_Append(__pyx_v_total, __pyx_int_10000); if (unlikely(__pyx_t_13 == ((int)-1))) __PYX_ERR(0, 149, __pyx_L1_error)
+      __pyx_t_14 = __Pyx_PyList_Append(__pyx_v_total, __pyx_int_10000); if (unlikely(__pyx_t_14 == ((int)-1))) __PYX_ERR(0, 154, __pyx_L1_error)
     }
     __pyx_L7:;
 
-    /* "simplex_networks_1.pyx":145
+    /* "simplex_networks_1.pyx":150
  *     c = np.where(row == m)[0][0]
  *     col = matrix[:-1, c]
  *     for i,j in zip(col, matrix[:-1,-1]):  #i for col with neg, j for right col             # <<<<<<<<<<<<<<
@@ -2535,23 +2533,23 @@ static PyObject *__pyx_pf_18simplex_networks_1_10find_pivot_col(CYTHON_UNUSED Py
   }
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-  /* "simplex_networks_1.pyx":150
+  /* "simplex_networks_1.pyx":155
  *         else:
  *             total.append(10000) #placeholder, might need to update for large scale
  *     index = total.index(min(total))             # <<<<<<<<<<<<<<
  * 
  *     return [index,c]
  */
-  __pyx_t_3 = __Pyx_PyObject_CallOneArg(__pyx_builtin_min, __pyx_v_total); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 150, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_CallOneArg(__pyx_builtin_min, __pyx_v_total); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 155, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_1 = __Pyx_CallUnboundCMethod1(&__pyx_umethod_PyList_Type_index, __pyx_v_total, __pyx_t_3); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 150, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_t_2 = __Pyx_CallUnboundCMethod1(&__pyx_umethod_PyList_Type_index, __pyx_v_total, __pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 155, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_10 = __Pyx_PyInt_As_int(__pyx_t_1); if (unlikely((__pyx_t_10 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 150, __pyx_L1_error)
-  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_v_index = __pyx_t_10;
+  __pyx_t_6 = __Pyx_PyInt_As_int(__pyx_t_2); if (unlikely((__pyx_t_6 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 155, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+  __pyx_v_index = __pyx_t_6;
 
-  /* "simplex_networks_1.pyx":152
+  /* "simplex_networks_1.pyx":157
  *     index = total.index(min(total))
  * 
  *     return [index,c]             # <<<<<<<<<<<<<<
@@ -2559,23 +2557,23 @@ static PyObject *__pyx_pf_18simplex_networks_1_10find_pivot_col(CYTHON_UNUSED Py
  * 
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_v_index); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 152, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_3 = __Pyx_PyInt_From_int(__pyx_v_c); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 152, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_2 = PyList_New(2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 152, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyInt_From_int(__pyx_v_index); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 157, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __Pyx_GIVEREF(__pyx_t_1);
-  PyList_SET_ITEM(__pyx_t_2, 0, __pyx_t_1);
+  __pyx_t_3 = __Pyx_PyInt_From_int(__pyx_v_c); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 157, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_3);
+  __pyx_t_1 = PyList_New(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 157, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __Pyx_GIVEREF(__pyx_t_2);
+  PyList_SET_ITEM(__pyx_t_1, 0, __pyx_t_2);
   __Pyx_GIVEREF(__pyx_t_3);
-  PyList_SET_ITEM(__pyx_t_2, 1, __pyx_t_3);
-  __pyx_t_1 = 0;
-  __pyx_t_3 = 0;
-  __pyx_r = __pyx_t_2;
+  PyList_SET_ITEM(__pyx_t_1, 1, __pyx_t_3);
   __pyx_t_2 = 0;
+  __pyx_t_3 = 0;
+  __pyx_r = __pyx_t_1;
+  __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "simplex_networks_1.pyx":122
+  /* "simplex_networks_1.pyx":126
  * 
  * 
  * def find_pivot_col(matrix):             # <<<<<<<<<<<<<<
@@ -2589,11 +2587,12 @@ static PyObject *__pyx_pf_18simplex_networks_1_10find_pivot_col(CYTHON_UNUSED Py
   __Pyx_XDECREF(__pyx_t_2);
   __Pyx_XDECREF(__pyx_t_3);
   __Pyx_XDECREF(__pyx_t_5);
-  __Pyx_XDECREF(__pyx_t_8);
+  __Pyx_XDECREF(__pyx_t_9);
   __Pyx_AddTraceback("simplex_networks_1.find_pivot_col", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XDECREF(__pyx_v_total);
+  __Pyx_XDECREF(__pyx_v_neg);
   __Pyx_XDECREF(__pyx_v_row);
   __Pyx_XDECREF(__pyx_v_col);
   __Pyx_XGIVEREF(__pyx_r);
@@ -2601,7 +2600,7 @@ static PyObject *__pyx_pf_18simplex_networks_1_10find_pivot_col(CYTHON_UNUSED Py
   return __pyx_r;
 }
 
-/* "simplex_networks_1.pyx":155
+/* "simplex_networks_1.pyx":160
  * 
  * 
  * def find_pivot_row(matrix):             # <<<<<<<<<<<<<<
@@ -2625,39 +2624,40 @@ static PyObject *__pyx_pw_18simplex_networks_1_13find_pivot_row(PyObject *__pyx_
 }
 
 static PyObject *__pyx_pf_18simplex_networks_1_12find_pivot_row(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_matrix) {
-  int __pyx_v_i;
-  int __pyx_v_j;
-  int __pyx_v_neg;
+  double __pyx_v_i;
+  double __pyx_v_j;
   int __pyx_v_index;
   PyObject *__pyx_v_total = NULL;
+  PyObject *__pyx_v_neg = NULL;
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   PyObject *__pyx_t_2 = NULL;
   PyObject *__pyx_t_3 = NULL;
   int __pyx_t_4;
-  int __pyx_t_5;
-  Py_ssize_t __pyx_t_6;
-  PyObject *(*__pyx_t_7)(PyObject *);
+  Py_ssize_t __pyx_t_5;
+  PyObject *(*__pyx_t_6)(PyObject *);
+  PyObject *__pyx_t_7 = NULL;
   PyObject *__pyx_t_8 = NULL;
-  PyObject *__pyx_t_9 = NULL;
-  PyObject *(*__pyx_t_10)(PyObject *);
-  int __pyx_t_11;
+  PyObject *(*__pyx_t_9)(PyObject *);
+  double __pyx_t_10;
+  double __pyx_t_11;
   int __pyx_t_12;
   int __pyx_t_13;
+  int __pyx_t_14;
   int __pyx_lineno = 0;
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("find_pivot_row", 0);
 
-  /* "simplex_networks_1.pyx":172
- *     cdef int i, j, neg, index
+  /* "simplex_networks_1.pyx":178
+ *     cdef int index
  * 
  *     if pivots_row(matrix):             # <<<<<<<<<<<<<<
  *         total = []
  *         neg = find_negative_row(matrix)
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_pivots_row); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 172, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_pivots_row); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 178, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_t_3 = NULL;
   if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_2))) {
@@ -2671,33 +2671,33 @@ static PyObject *__pyx_pf_18simplex_networks_1_12find_pivot_row(CYTHON_UNUSED Py
   }
   __pyx_t_1 = (__pyx_t_3) ? __Pyx_PyObject_Call2Args(__pyx_t_2, __pyx_t_3, __pyx_v_matrix) : __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_v_matrix);
   __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 172, __pyx_L1_error)
+  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 178, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 172, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 178, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   if (__pyx_t_4) {
 
-    /* "simplex_networks_1.pyx":173
+    /* "simplex_networks_1.pyx":179
  * 
  *     if pivots_row(matrix):
  *         total = []             # <<<<<<<<<<<<<<
  *         neg = find_negative_row(matrix)
  *         for i, j in zip(matrix[:-1, neg], matrix[:-1, -1]):
  */
-    __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 173, __pyx_L1_error)
+    __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 179, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __pyx_v_total = ((PyObject*)__pyx_t_1);
     __pyx_t_1 = 0;
 
-    /* "simplex_networks_1.pyx":174
+    /* "simplex_networks_1.pyx":180
  *     if pivots_row(matrix):
  *         total = []
  *         neg = find_negative_row(matrix)             # <<<<<<<<<<<<<<
  *         for i, j in zip(matrix[:-1, neg], matrix[:-1, -1]):
  *             if i != 0 and j/i > 0:
  */
-    __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_find_negative_row); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 174, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_find_negative_row); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 180, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __pyx_t_3 = NULL;
     if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_2))) {
@@ -2711,147 +2711,144 @@ static PyObject *__pyx_pf_18simplex_networks_1_12find_pivot_row(CYTHON_UNUSED Py
     }
     __pyx_t_1 = (__pyx_t_3) ? __Pyx_PyObject_Call2Args(__pyx_t_2, __pyx_t_3, __pyx_v_matrix) : __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_v_matrix);
     __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 174, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 180, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    __pyx_t_5 = __Pyx_PyInt_As_int(__pyx_t_1); if (unlikely((__pyx_t_5 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 174, __pyx_L1_error)
-    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-    __pyx_v_neg = __pyx_t_5;
+    __pyx_v_neg = __pyx_t_1;
+    __pyx_t_1 = 0;
 
-    /* "simplex_networks_1.pyx":175
+    /* "simplex_networks_1.pyx":181
  *         total = []
  *         neg = find_negative_row(matrix)
  *         for i, j in zip(matrix[:-1, neg], matrix[:-1, -1]):             # <<<<<<<<<<<<<<
  *             if i != 0 and j/i > 0:
  *                 total.append(j/i)
  */
-    __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_v_neg); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 175, __pyx_L1_error)
+    __pyx_t_1 = PyTuple_New(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 181, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_2 = PyTuple_New(2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 175, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_2);
     __Pyx_INCREF(__pyx_slice_);
     __Pyx_GIVEREF(__pyx_slice_);
-    PyTuple_SET_ITEM(__pyx_t_2, 0, __pyx_slice_);
-    __Pyx_GIVEREF(__pyx_t_1);
-    PyTuple_SET_ITEM(__pyx_t_2, 1, __pyx_t_1);
-    __pyx_t_1 = 0;
-    __pyx_t_1 = __Pyx_PyObject_GetItem(__pyx_v_matrix, __pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 175, __pyx_L1_error)
+    PyTuple_SET_ITEM(__pyx_t_1, 0, __pyx_slice_);
+    __Pyx_INCREF(__pyx_v_neg);
+    __Pyx_GIVEREF(__pyx_v_neg);
+    PyTuple_SET_ITEM(__pyx_t_1, 1, __pyx_v_neg);
+    __pyx_t_2 = __Pyx_PyObject_GetItem(__pyx_v_matrix, __pyx_t_1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 181, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_2);
+    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+    __pyx_t_1 = __Pyx_PyObject_GetItem(__pyx_v_matrix, __pyx_tuple__2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 181, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    __pyx_t_2 = __Pyx_PyObject_GetItem(__pyx_v_matrix, __pyx_tuple__2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 175, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_2);
-    __pyx_t_3 = PyTuple_New(2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 175, __pyx_L1_error)
+    __pyx_t_3 = PyTuple_New(2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 181, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
-    __Pyx_GIVEREF(__pyx_t_1);
-    PyTuple_SET_ITEM(__pyx_t_3, 0, __pyx_t_1);
     __Pyx_GIVEREF(__pyx_t_2);
-    PyTuple_SET_ITEM(__pyx_t_3, 1, __pyx_t_2);
-    __pyx_t_1 = 0;
+    PyTuple_SET_ITEM(__pyx_t_3, 0, __pyx_t_2);
+    __Pyx_GIVEREF(__pyx_t_1);
+    PyTuple_SET_ITEM(__pyx_t_3, 1, __pyx_t_1);
     __pyx_t_2 = 0;
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_zip, __pyx_t_3, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 175, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_2);
+    __pyx_t_1 = 0;
+    __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_zip, __pyx_t_3, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 181, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    if (likely(PyList_CheckExact(__pyx_t_2)) || PyTuple_CheckExact(__pyx_t_2)) {
-      __pyx_t_3 = __pyx_t_2; __Pyx_INCREF(__pyx_t_3); __pyx_t_6 = 0;
-      __pyx_t_7 = NULL;
+    if (likely(PyList_CheckExact(__pyx_t_1)) || PyTuple_CheckExact(__pyx_t_1)) {
+      __pyx_t_3 = __pyx_t_1; __Pyx_INCREF(__pyx_t_3); __pyx_t_5 = 0;
+      __pyx_t_6 = NULL;
     } else {
-      __pyx_t_6 = -1; __pyx_t_3 = PyObject_GetIter(__pyx_t_2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 175, __pyx_L1_error)
+      __pyx_t_5 = -1; __pyx_t_3 = PyObject_GetIter(__pyx_t_1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 181, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
-      __pyx_t_7 = Py_TYPE(__pyx_t_3)->tp_iternext; if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 175, __pyx_L1_error)
+      __pyx_t_6 = Py_TYPE(__pyx_t_3)->tp_iternext; if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 181, __pyx_L1_error)
     }
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     for (;;) {
-      if (likely(!__pyx_t_7)) {
+      if (likely(!__pyx_t_6)) {
         if (likely(PyList_CheckExact(__pyx_t_3))) {
-          if (__pyx_t_6 >= PyList_GET_SIZE(__pyx_t_3)) break;
+          if (__pyx_t_5 >= PyList_GET_SIZE(__pyx_t_3)) break;
           #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-          __pyx_t_2 = PyList_GET_ITEM(__pyx_t_3, __pyx_t_6); __Pyx_INCREF(__pyx_t_2); __pyx_t_6++; if (unlikely(0 < 0)) __PYX_ERR(0, 175, __pyx_L1_error)
+          __pyx_t_1 = PyList_GET_ITEM(__pyx_t_3, __pyx_t_5); __Pyx_INCREF(__pyx_t_1); __pyx_t_5++; if (unlikely(0 < 0)) __PYX_ERR(0, 181, __pyx_L1_error)
           #else
-          __pyx_t_2 = PySequence_ITEM(__pyx_t_3, __pyx_t_6); __pyx_t_6++; if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 175, __pyx_L1_error)
-          __Pyx_GOTREF(__pyx_t_2);
+          __pyx_t_1 = PySequence_ITEM(__pyx_t_3, __pyx_t_5); __pyx_t_5++; if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 181, __pyx_L1_error)
+          __Pyx_GOTREF(__pyx_t_1);
           #endif
         } else {
-          if (__pyx_t_6 >= PyTuple_GET_SIZE(__pyx_t_3)) break;
+          if (__pyx_t_5 >= PyTuple_GET_SIZE(__pyx_t_3)) break;
           #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-          __pyx_t_2 = PyTuple_GET_ITEM(__pyx_t_3, __pyx_t_6); __Pyx_INCREF(__pyx_t_2); __pyx_t_6++; if (unlikely(0 < 0)) __PYX_ERR(0, 175, __pyx_L1_error)
+          __pyx_t_1 = PyTuple_GET_ITEM(__pyx_t_3, __pyx_t_5); __Pyx_INCREF(__pyx_t_1); __pyx_t_5++; if (unlikely(0 < 0)) __PYX_ERR(0, 181, __pyx_L1_error)
           #else
-          __pyx_t_2 = PySequence_ITEM(__pyx_t_3, __pyx_t_6); __pyx_t_6++; if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 175, __pyx_L1_error)
-          __Pyx_GOTREF(__pyx_t_2);
+          __pyx_t_1 = PySequence_ITEM(__pyx_t_3, __pyx_t_5); __pyx_t_5++; if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 181, __pyx_L1_error)
+          __Pyx_GOTREF(__pyx_t_1);
           #endif
         }
       } else {
-        __pyx_t_2 = __pyx_t_7(__pyx_t_3);
-        if (unlikely(!__pyx_t_2)) {
+        __pyx_t_1 = __pyx_t_6(__pyx_t_3);
+        if (unlikely(!__pyx_t_1)) {
           PyObject* exc_type = PyErr_Occurred();
           if (exc_type) {
             if (likely(__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) PyErr_Clear();
-            else __PYX_ERR(0, 175, __pyx_L1_error)
+            else __PYX_ERR(0, 181, __pyx_L1_error)
           }
           break;
         }
-        __Pyx_GOTREF(__pyx_t_2);
+        __Pyx_GOTREF(__pyx_t_1);
       }
-      if ((likely(PyTuple_CheckExact(__pyx_t_2))) || (PyList_CheckExact(__pyx_t_2))) {
-        PyObject* sequence = __pyx_t_2;
+      if ((likely(PyTuple_CheckExact(__pyx_t_1))) || (PyList_CheckExact(__pyx_t_1))) {
+        PyObject* sequence = __pyx_t_1;
         Py_ssize_t size = __Pyx_PySequence_SIZE(sequence);
         if (unlikely(size != 2)) {
           if (size > 2) __Pyx_RaiseTooManyValuesError(2);
           else if (size >= 0) __Pyx_RaiseNeedMoreValuesError(size);
-          __PYX_ERR(0, 175, __pyx_L1_error)
+          __PYX_ERR(0, 181, __pyx_L1_error)
         }
         #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
         if (likely(PyTuple_CheckExact(sequence))) {
-          __pyx_t_1 = PyTuple_GET_ITEM(sequence, 0); 
-          __pyx_t_8 = PyTuple_GET_ITEM(sequence, 1); 
+          __pyx_t_2 = PyTuple_GET_ITEM(sequence, 0); 
+          __pyx_t_7 = PyTuple_GET_ITEM(sequence, 1); 
         } else {
-          __pyx_t_1 = PyList_GET_ITEM(sequence, 0); 
-          __pyx_t_8 = PyList_GET_ITEM(sequence, 1); 
+          __pyx_t_2 = PyList_GET_ITEM(sequence, 0); 
+          __pyx_t_7 = PyList_GET_ITEM(sequence, 1); 
         }
-        __Pyx_INCREF(__pyx_t_1);
-        __Pyx_INCREF(__pyx_t_8);
+        __Pyx_INCREF(__pyx_t_2);
+        __Pyx_INCREF(__pyx_t_7);
         #else
-        __pyx_t_1 = PySequence_ITEM(sequence, 0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 175, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_1);
-        __pyx_t_8 = PySequence_ITEM(sequence, 1); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 175, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_8);
+        __pyx_t_2 = PySequence_ITEM(sequence, 0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 181, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_2);
+        __pyx_t_7 = PySequence_ITEM(sequence, 1); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 181, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_7);
         #endif
-        __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+        __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
       } else {
         Py_ssize_t index = -1;
-        __pyx_t_9 = PyObject_GetIter(__pyx_t_2); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 175, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_9);
-        __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-        __pyx_t_10 = Py_TYPE(__pyx_t_9)->tp_iternext;
-        index = 0; __pyx_t_1 = __pyx_t_10(__pyx_t_9); if (unlikely(!__pyx_t_1)) goto __pyx_L6_unpacking_failed;
-        __Pyx_GOTREF(__pyx_t_1);
-        index = 1; __pyx_t_8 = __pyx_t_10(__pyx_t_9); if (unlikely(!__pyx_t_8)) goto __pyx_L6_unpacking_failed;
+        __pyx_t_8 = PyObject_GetIter(__pyx_t_1); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 181, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_8);
-        if (__Pyx_IternextUnpackEndCheck(__pyx_t_10(__pyx_t_9), 2) < 0) __PYX_ERR(0, 175, __pyx_L1_error)
-        __pyx_t_10 = NULL;
-        __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
+        __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+        __pyx_t_9 = Py_TYPE(__pyx_t_8)->tp_iternext;
+        index = 0; __pyx_t_2 = __pyx_t_9(__pyx_t_8); if (unlikely(!__pyx_t_2)) goto __pyx_L6_unpacking_failed;
+        __Pyx_GOTREF(__pyx_t_2);
+        index = 1; __pyx_t_7 = __pyx_t_9(__pyx_t_8); if (unlikely(!__pyx_t_7)) goto __pyx_L6_unpacking_failed;
+        __Pyx_GOTREF(__pyx_t_7);
+        if (__Pyx_IternextUnpackEndCheck(__pyx_t_9(__pyx_t_8), 2) < 0) __PYX_ERR(0, 181, __pyx_L1_error)
+        __pyx_t_9 = NULL;
+        __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
         goto __pyx_L7_unpacking_done;
         __pyx_L6_unpacking_failed:;
-        __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
-        __pyx_t_10 = NULL;
+        __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
+        __pyx_t_9 = NULL;
         if (__Pyx_IterFinish() == 0) __Pyx_RaiseNeedMoreValuesError(index);
-        __PYX_ERR(0, 175, __pyx_L1_error)
+        __PYX_ERR(0, 181, __pyx_L1_error)
         __pyx_L7_unpacking_done:;
       }
-      __pyx_t_5 = __Pyx_PyInt_As_int(__pyx_t_1); if (unlikely((__pyx_t_5 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 175, __pyx_L1_error)
-      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-      __pyx_t_11 = __Pyx_PyInt_As_int(__pyx_t_8); if (unlikely((__pyx_t_11 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 175, __pyx_L1_error)
-      __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
-      __pyx_v_i = __pyx_t_5;
+      __pyx_t_10 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_10 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 181, __pyx_L1_error)
+      __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+      __pyx_t_11 = __pyx_PyFloat_AsDouble(__pyx_t_7); if (unlikely((__pyx_t_11 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 181, __pyx_L1_error)
+      __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
+      __pyx_v_i = __pyx_t_10;
       __pyx_v_j = __pyx_t_11;
 
-      /* "simplex_networks_1.pyx":176
+      /* "simplex_networks_1.pyx":182
  *         neg = find_negative_row(matrix)
  *         for i, j in zip(matrix[:-1, neg], matrix[:-1, -1]):
  *             if i != 0 and j/i > 0:             # <<<<<<<<<<<<<<
  *                 total.append(j/i)
  *             else:
  */
-      __pyx_t_12 = ((__pyx_v_i != 0) != 0);
+      __pyx_t_12 = ((__pyx_v_i != 0.0) != 0);
       if (__pyx_t_12) {
       } else {
         __pyx_t_4 = __pyx_t_12;
@@ -2859,14 +2856,14 @@ static PyObject *__pyx_pf_18simplex_networks_1_12find_pivot_row(CYTHON_UNUSED Py
       }
       if (unlikely(__pyx_v_i == 0)) {
         PyErr_SetString(PyExc_ZeroDivisionError, "float division");
-        __PYX_ERR(0, 176, __pyx_L1_error)
+        __PYX_ERR(0, 182, __pyx_L1_error)
       }
-      __pyx_t_12 = (((((double)__pyx_v_j) / ((double)__pyx_v_i)) > 0.0) != 0);
+      __pyx_t_12 = (((__pyx_v_j / __pyx_v_i) > 0.0) != 0);
       __pyx_t_4 = __pyx_t_12;
       __pyx_L9_bool_binop_done:;
       if (__pyx_t_4) {
 
-        /* "simplex_networks_1.pyx":177
+        /* "simplex_networks_1.pyx":183
  *         for i, j in zip(matrix[:-1, neg], matrix[:-1, -1]):
  *             if i != 0 and j/i > 0:
  *                 total.append(j/i)             # <<<<<<<<<<<<<<
@@ -2875,14 +2872,14 @@ static PyObject *__pyx_pf_18simplex_networks_1_12find_pivot_row(CYTHON_UNUSED Py
  */
         if (unlikely(__pyx_v_i == 0)) {
           PyErr_SetString(PyExc_ZeroDivisionError, "float division");
-          __PYX_ERR(0, 177, __pyx_L1_error)
+          __PYX_ERR(0, 183, __pyx_L1_error)
         }
-        __pyx_t_2 = PyFloat_FromDouble((((double)__pyx_v_j) / ((double)__pyx_v_i))); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 177, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_2);
-        __pyx_t_13 = __Pyx_PyList_Append(__pyx_v_total, __pyx_t_2); if (unlikely(__pyx_t_13 == ((int)-1))) __PYX_ERR(0, 177, __pyx_L1_error)
-        __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+        __pyx_t_1 = PyFloat_FromDouble((__pyx_v_j / __pyx_v_i)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 183, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_1);
+        __pyx_t_13 = __Pyx_PyList_Append(__pyx_v_total, __pyx_t_1); if (unlikely(__pyx_t_13 == ((int)-1))) __PYX_ERR(0, 183, __pyx_L1_error)
+        __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-        /* "simplex_networks_1.pyx":176
+        /* "simplex_networks_1.pyx":182
  *         neg = find_negative_row(matrix)
  *         for i, j in zip(matrix[:-1, neg], matrix[:-1, -1]):
  *             if i != 0 and j/i > 0:             # <<<<<<<<<<<<<<
@@ -2892,7 +2889,7 @@ static PyObject *__pyx_pf_18simplex_networks_1_12find_pivot_row(CYTHON_UNUSED Py
         goto __pyx_L8;
       }
 
-      /* "simplex_networks_1.pyx":179
+      /* "simplex_networks_1.pyx":185
  *                 total.append(j/i)
  *             else:
  *                 total.append(10000) #placeholder, might need to update for large scale             # <<<<<<<<<<<<<<
@@ -2900,11 +2897,11 @@ static PyObject *__pyx_pf_18simplex_networks_1_12find_pivot_row(CYTHON_UNUSED Py
  * 
  */
       /*else*/ {
-        __pyx_t_13 = __Pyx_PyList_Append(__pyx_v_total, __pyx_int_10000); if (unlikely(__pyx_t_13 == ((int)-1))) __PYX_ERR(0, 179, __pyx_L1_error)
+        __pyx_t_13 = __Pyx_PyList_Append(__pyx_v_total, __pyx_int_10000); if (unlikely(__pyx_t_13 == ((int)-1))) __PYX_ERR(0, 185, __pyx_L1_error)
       }
       __pyx_L8:;
 
-      /* "simplex_networks_1.pyx":175
+      /* "simplex_networks_1.pyx":181
  *         total = []
  *         neg = find_negative_row(matrix)
  *         for i, j in zip(matrix[:-1, neg], matrix[:-1, -1]):             # <<<<<<<<<<<<<<
@@ -2914,23 +2911,23 @@ static PyObject *__pyx_pf_18simplex_networks_1_12find_pivot_row(CYTHON_UNUSED Py
     }
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-    /* "simplex_networks_1.pyx":180
+    /* "simplex_networks_1.pyx":186
  *             else:
  *                 total.append(10000) #placeholder, might need to update for large scale
  *         index = total.index(min(total))             # <<<<<<<<<<<<<<
  * 
  *         return [index,neg]
  */
-    __pyx_t_3 = __Pyx_PyObject_CallOneArg(__pyx_builtin_min, __pyx_v_total); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 180, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyObject_CallOneArg(__pyx_builtin_min, __pyx_v_total); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 186, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
-    __pyx_t_2 = __Pyx_CallUnboundCMethod1(&__pyx_umethod_PyList_Type_index, __pyx_v_total, __pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 180, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_2);
+    __pyx_t_1 = __Pyx_CallUnboundCMethod1(&__pyx_umethod_PyList_Type_index, __pyx_v_total, __pyx_t_3); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 186, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    __pyx_t_11 = __Pyx_PyInt_As_int(__pyx_t_2); if (unlikely((__pyx_t_11 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 180, __pyx_L1_error)
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    __pyx_v_index = __pyx_t_11;
+    __pyx_t_14 = __Pyx_PyInt_As_int(__pyx_t_1); if (unlikely((__pyx_t_14 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 186, __pyx_L1_error)
+    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+    __pyx_v_index = __pyx_t_14;
 
-    /* "simplex_networks_1.pyx":182
+    /* "simplex_networks_1.pyx":188
  *         index = total.index(min(total))
  * 
  *         return [index,neg]             # <<<<<<<<<<<<<<
@@ -2938,24 +2935,22 @@ static PyObject *__pyx_pf_18simplex_networks_1_12find_pivot_row(CYTHON_UNUSED Py
  * 
  */
     __Pyx_XDECREF(__pyx_r);
-    __pyx_t_2 = __Pyx_PyInt_From_int(__pyx_v_index); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 182, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_2);
-    __pyx_t_3 = __Pyx_PyInt_From_int(__pyx_v_neg); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 182, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_v_index); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 188, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_1);
+    __pyx_t_3 = PyList_New(2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 188, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
-    __pyx_t_8 = PyList_New(2); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 182, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_8);
-    __Pyx_GIVEREF(__pyx_t_2);
-    PyList_SET_ITEM(__pyx_t_8, 0, __pyx_t_2);
-    __Pyx_GIVEREF(__pyx_t_3);
-    PyList_SET_ITEM(__pyx_t_8, 1, __pyx_t_3);
-    __pyx_t_2 = 0;
+    __Pyx_GIVEREF(__pyx_t_1);
+    PyList_SET_ITEM(__pyx_t_3, 0, __pyx_t_1);
+    __Pyx_INCREF(__pyx_v_neg);
+    __Pyx_GIVEREF(__pyx_v_neg);
+    PyList_SET_ITEM(__pyx_t_3, 1, __pyx_v_neg);
+    __pyx_t_1 = 0;
+    __pyx_r = __pyx_t_3;
     __pyx_t_3 = 0;
-    __pyx_r = __pyx_t_8;
-    __pyx_t_8 = 0;
     goto __pyx_L0;
 
-    /* "simplex_networks_1.pyx":172
- *     cdef int i, j, neg, index
+    /* "simplex_networks_1.pyx":178
+ *     cdef int index
  * 
  *     if pivots_row(matrix):             # <<<<<<<<<<<<<<
  *         total = []
@@ -2963,7 +2958,7 @@ static PyObject *__pyx_pf_18simplex_networks_1_12find_pivot_row(CYTHON_UNUSED Py
  */
   }
 
-  /* "simplex_networks_1.pyx":155
+  /* "simplex_networks_1.pyx":160
  * 
  * 
  * def find_pivot_row(matrix):             # <<<<<<<<<<<<<<
@@ -2978,18 +2973,19 @@ static PyObject *__pyx_pf_18simplex_networks_1_12find_pivot_row(CYTHON_UNUSED Py
   __Pyx_XDECREF(__pyx_t_1);
   __Pyx_XDECREF(__pyx_t_2);
   __Pyx_XDECREF(__pyx_t_3);
+  __Pyx_XDECREF(__pyx_t_7);
   __Pyx_XDECREF(__pyx_t_8);
-  __Pyx_XDECREF(__pyx_t_9);
   __Pyx_AddTraceback("simplex_networks_1.find_pivot_row", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XDECREF(__pyx_v_total);
+  __Pyx_XDECREF(__pyx_v_neg);
   __Pyx_XGIVEREF(__pyx_r);
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-/* "simplex_networks_1.pyx":185
+/* "simplex_networks_1.pyx":191
  * 
  * 
  * def pivot(row,col,matrix):             # <<<<<<<<<<<<<<
@@ -3036,17 +3032,17 @@ static PyObject *__pyx_pw_18simplex_networks_1_15pivot(PyObject *__pyx_self, PyO
         case  1:
         if (likely((values[1] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_col)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("pivot", 1, 3, 3, 1); __PYX_ERR(0, 185, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("pivot", 1, 3, 3, 1); __PYX_ERR(0, 191, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  2:
         if (likely((values[2] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_matrix)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("pivot", 1, 3, 3, 2); __PYX_ERR(0, 185, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("pivot", 1, 3, 3, 2); __PYX_ERR(0, 191, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "pivot") < 0)) __PYX_ERR(0, 185, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "pivot") < 0)) __PYX_ERR(0, 191, __pyx_L3_error)
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 3) {
       goto __pyx_L5_argtuple_error;
@@ -3061,7 +3057,7 @@ static PyObject *__pyx_pw_18simplex_networks_1_15pivot(PyObject *__pyx_self, PyO
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("pivot", 1, 3, 3, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 185, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("pivot", 1, 3, 3, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 191, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("simplex_networks_1.pivot", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
@@ -3100,49 +3096,49 @@ static PyObject *__pyx_pf_18simplex_networks_1_14pivot(CYTHON_UNUSED PyObject *_
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("pivot", 0);
 
-  /* "simplex_networks_1.pyx":204
+  /* "simplex_networks_1.pyx":210
  *     cdef int i, lr, lc
  * 
  *     lr = len(matrix[:, 0])             # <<<<<<<<<<<<<<
  *     lc = len(matrix[0, :])
  *     t = np.zeros((lr, lc))
  */
-  __pyx_t_1 = __Pyx_PyObject_GetItem(__pyx_v_matrix, __pyx_tuple__4); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 204, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetItem(__pyx_v_matrix, __pyx_tuple__4); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 210, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = PyObject_Length(__pyx_t_1); if (unlikely(__pyx_t_2 == ((Py_ssize_t)-1))) __PYX_ERR(0, 204, __pyx_L1_error)
+  __pyx_t_2 = PyObject_Length(__pyx_t_1); if (unlikely(__pyx_t_2 == ((Py_ssize_t)-1))) __PYX_ERR(0, 210, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_v_lr = __pyx_t_2;
 
-  /* "simplex_networks_1.pyx":205
+  /* "simplex_networks_1.pyx":211
  * 
  *     lr = len(matrix[:, 0])
  *     lc = len(matrix[0, :])             # <<<<<<<<<<<<<<
  *     t = np.zeros((lr, lc))
  *     pr = matrix[row, :]
  */
-  __pyx_t_1 = __Pyx_PyObject_GetItem(__pyx_v_matrix, __pyx_tuple__5); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 205, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetItem(__pyx_v_matrix, __pyx_tuple__5); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 211, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = PyObject_Length(__pyx_t_1); if (unlikely(__pyx_t_2 == ((Py_ssize_t)-1))) __PYX_ERR(0, 205, __pyx_L1_error)
+  __pyx_t_2 = PyObject_Length(__pyx_t_1); if (unlikely(__pyx_t_2 == ((Py_ssize_t)-1))) __PYX_ERR(0, 211, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_v_lc = __pyx_t_2;
 
-  /* "simplex_networks_1.pyx":206
+  /* "simplex_networks_1.pyx":212
  *     lr = len(matrix[:, 0])
  *     lc = len(matrix[0, :])
  *     t = np.zeros((lr, lc))             # <<<<<<<<<<<<<<
  *     pr = matrix[row, :]
  *     if matrix[row, col]**2 > 0:
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_np); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 206, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_np); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 212, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_zeros); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 206, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_zeros); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 212, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_3 = __Pyx_PyInt_From_int(__pyx_v_lr); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 206, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyInt_From_int(__pyx_v_lr); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 212, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_5 = __Pyx_PyInt_From_int(__pyx_v_lc); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 206, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyInt_From_int(__pyx_v_lc); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 212, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  __pyx_t_6 = PyTuple_New(2); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 206, __pyx_L1_error)
+  __pyx_t_6 = PyTuple_New(2); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 212, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __Pyx_GIVEREF(__pyx_t_3);
   PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_t_3);
@@ -3163,20 +3159,20 @@ static PyObject *__pyx_pf_18simplex_networks_1_14pivot(CYTHON_UNUSED PyObject *_
   __pyx_t_1 = (__pyx_t_5) ? __Pyx_PyObject_Call2Args(__pyx_t_4, __pyx_t_5, __pyx_t_6) : __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_t_6);
   __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 206, __pyx_L1_error)
+  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 212, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   __pyx_v_t = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "simplex_networks_1.pyx":207
+  /* "simplex_networks_1.pyx":213
  *     lc = len(matrix[0, :])
  *     t = np.zeros((lr, lc))
  *     pr = matrix[row, :]             # <<<<<<<<<<<<<<
  *     if matrix[row, col]**2 > 0:
  *         e = 1/matrix[row, col]
  */
-  __pyx_t_1 = PyTuple_New(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 207, __pyx_L1_error)
+  __pyx_t_1 = PyTuple_New(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 213, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_INCREF(__pyx_v_row);
   __Pyx_GIVEREF(__pyx_v_row);
@@ -3184,20 +3180,20 @@ static PyObject *__pyx_pf_18simplex_networks_1_14pivot(CYTHON_UNUSED PyObject *_
   __Pyx_INCREF(__pyx_slice__3);
   __Pyx_GIVEREF(__pyx_slice__3);
   PyTuple_SET_ITEM(__pyx_t_1, 1, __pyx_slice__3);
-  __pyx_t_4 = __Pyx_PyObject_GetItem(__pyx_v_matrix, __pyx_t_1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 207, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_GetItem(__pyx_v_matrix, __pyx_t_1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 213, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_v_pr = __pyx_t_4;
   __pyx_t_4 = 0;
 
-  /* "simplex_networks_1.pyx":208
+  /* "simplex_networks_1.pyx":214
  *     t = np.zeros((lr, lc))
  *     pr = matrix[row, :]
  *     if matrix[row, col]**2 > 0:             # <<<<<<<<<<<<<<
  *         e = 1/matrix[row, col]
  *         r = pr*e
  */
-  __pyx_t_4 = PyTuple_New(2); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 208, __pyx_L1_error)
+  __pyx_t_4 = PyTuple_New(2); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 214, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_INCREF(__pyx_v_row);
   __Pyx_GIVEREF(__pyx_v_row);
@@ -3205,26 +3201,26 @@ static PyObject *__pyx_pf_18simplex_networks_1_14pivot(CYTHON_UNUSED PyObject *_
   __Pyx_INCREF(__pyx_v_col);
   __Pyx_GIVEREF(__pyx_v_col);
   PyTuple_SET_ITEM(__pyx_t_4, 1, __pyx_v_col);
-  __pyx_t_1 = __Pyx_PyObject_GetItem(__pyx_v_matrix, __pyx_t_4); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 208, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetItem(__pyx_v_matrix, __pyx_t_4); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 214, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-  __pyx_t_4 = PyNumber_Power(__pyx_t_1, __pyx_int_2, Py_None); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 208, __pyx_L1_error)
+  __pyx_t_4 = PyNumber_Power(__pyx_t_1, __pyx_int_2, Py_None); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 214, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_1 = PyObject_RichCompare(__pyx_t_4, __pyx_int_0, Py_GT); __Pyx_XGOTREF(__pyx_t_1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 208, __pyx_L1_error)
+  __pyx_t_1 = PyObject_RichCompare(__pyx_t_4, __pyx_int_0, Py_GT); __Pyx_XGOTREF(__pyx_t_1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 214, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-  __pyx_t_7 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely(__pyx_t_7 < 0)) __PYX_ERR(0, 208, __pyx_L1_error)
+  __pyx_t_7 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely(__pyx_t_7 < 0)) __PYX_ERR(0, 214, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   if (__pyx_t_7) {
 
-    /* "simplex_networks_1.pyx":209
+    /* "simplex_networks_1.pyx":215
  *     pr = matrix[row, :]
  *     if matrix[row, col]**2 > 0:
  *         e = 1/matrix[row, col]             # <<<<<<<<<<<<<<
  *         r = pr*e
  *         for i in range(len(matrix[:, col])):
  */
-    __pyx_t_1 = PyTuple_New(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 209, __pyx_L1_error)
+    __pyx_t_1 = PyTuple_New(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 215, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_INCREF(__pyx_v_row);
     __Pyx_GIVEREF(__pyx_v_row);
@@ -3232,35 +3228,35 @@ static PyObject *__pyx_pf_18simplex_networks_1_14pivot(CYTHON_UNUSED PyObject *_
     __Pyx_INCREF(__pyx_v_col);
     __Pyx_GIVEREF(__pyx_v_col);
     PyTuple_SET_ITEM(__pyx_t_1, 1, __pyx_v_col);
-    __pyx_t_4 = __Pyx_PyObject_GetItem(__pyx_v_matrix, __pyx_t_1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 209, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyObject_GetItem(__pyx_v_matrix, __pyx_t_1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 215, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-    __pyx_t_1 = __Pyx_PyNumber_Divide(__pyx_int_1, __pyx_t_4); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 209, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyNumber_Divide(__pyx_int_1, __pyx_t_4); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 215, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
     __pyx_v_e = __pyx_t_1;
     __pyx_t_1 = 0;
 
-    /* "simplex_networks_1.pyx":210
+    /* "simplex_networks_1.pyx":216
  *     if matrix[row, col]**2 > 0:
  *         e = 1/matrix[row, col]
  *         r = pr*e             # <<<<<<<<<<<<<<
  *         for i in range(len(matrix[:, col])):
  *             k = matrix[i, :]
  */
-    __pyx_t_1 = PyNumber_Multiply(__pyx_v_pr, __pyx_v_e); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 210, __pyx_L1_error)
+    __pyx_t_1 = PyNumber_Multiply(__pyx_v_pr, __pyx_v_e); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 216, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __pyx_v_r = __pyx_t_1;
     __pyx_t_1 = 0;
 
-    /* "simplex_networks_1.pyx":211
+    /* "simplex_networks_1.pyx":217
  *         e = 1/matrix[row, col]
  *         r = pr*e
  *         for i in range(len(matrix[:, col])):             # <<<<<<<<<<<<<<
  *             k = matrix[i, :]
  *             c = matrix[i, col]
  */
-    __pyx_t_1 = PyTuple_New(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 211, __pyx_L1_error)
+    __pyx_t_1 = PyTuple_New(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 217, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_INCREF(__pyx_slice__3);
     __Pyx_GIVEREF(__pyx_slice__3);
@@ -3268,25 +3264,25 @@ static PyObject *__pyx_pf_18simplex_networks_1_14pivot(CYTHON_UNUSED PyObject *_
     __Pyx_INCREF(__pyx_v_col);
     __Pyx_GIVEREF(__pyx_v_col);
     PyTuple_SET_ITEM(__pyx_t_1, 1, __pyx_v_col);
-    __pyx_t_4 = __Pyx_PyObject_GetItem(__pyx_v_matrix, __pyx_t_1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 211, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyObject_GetItem(__pyx_v_matrix, __pyx_t_1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 217, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-    __pyx_t_2 = PyObject_Length(__pyx_t_4); if (unlikely(__pyx_t_2 == ((Py_ssize_t)-1))) __PYX_ERR(0, 211, __pyx_L1_error)
+    __pyx_t_2 = PyObject_Length(__pyx_t_4); if (unlikely(__pyx_t_2 == ((Py_ssize_t)-1))) __PYX_ERR(0, 217, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
     __pyx_t_8 = __pyx_t_2;
     for (__pyx_t_9 = 0; __pyx_t_9 < __pyx_t_8; __pyx_t_9+=1) {
       __pyx_v_i = __pyx_t_9;
 
-      /* "simplex_networks_1.pyx":212
+      /* "simplex_networks_1.pyx":218
  *         r = pr*e
  *         for i in range(len(matrix[:, col])):
  *             k = matrix[i, :]             # <<<<<<<<<<<<<<
  *             c = matrix[i, col]
  *             if list(k) == list(pr):
  */
-      __pyx_t_4 = __Pyx_PyInt_From_int(__pyx_v_i); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 212, __pyx_L1_error)
+      __pyx_t_4 = __Pyx_PyInt_From_int(__pyx_v_i); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 218, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_4);
-      __pyx_t_1 = PyTuple_New(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 212, __pyx_L1_error)
+      __pyx_t_1 = PyTuple_New(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 218, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
       __Pyx_GIVEREF(__pyx_t_4);
       PyTuple_SET_ITEM(__pyx_t_1, 0, __pyx_t_4);
@@ -3294,22 +3290,22 @@ static PyObject *__pyx_pf_18simplex_networks_1_14pivot(CYTHON_UNUSED PyObject *_
       __Pyx_GIVEREF(__pyx_slice__3);
       PyTuple_SET_ITEM(__pyx_t_1, 1, __pyx_slice__3);
       __pyx_t_4 = 0;
-      __pyx_t_4 = __Pyx_PyObject_GetItem(__pyx_v_matrix, __pyx_t_1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 212, __pyx_L1_error)
+      __pyx_t_4 = __Pyx_PyObject_GetItem(__pyx_v_matrix, __pyx_t_1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 218, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_4);
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
       __Pyx_XDECREF_SET(__pyx_v_k, __pyx_t_4);
       __pyx_t_4 = 0;
 
-      /* "simplex_networks_1.pyx":213
+      /* "simplex_networks_1.pyx":219
  *         for i in range(len(matrix[:, col])):
  *             k = matrix[i, :]
  *             c = matrix[i, col]             # <<<<<<<<<<<<<<
  *             if list(k) == list(pr):
  *                 continue
  */
-      __pyx_t_4 = __Pyx_PyInt_From_int(__pyx_v_i); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 213, __pyx_L1_error)
+      __pyx_t_4 = __Pyx_PyInt_From_int(__pyx_v_i); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 219, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_4);
-      __pyx_t_1 = PyTuple_New(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 213, __pyx_L1_error)
+      __pyx_t_1 = PyTuple_New(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 219, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
       __Pyx_GIVEREF(__pyx_t_4);
       PyTuple_SET_ITEM(__pyx_t_1, 0, __pyx_t_4);
@@ -3317,31 +3313,31 @@ static PyObject *__pyx_pf_18simplex_networks_1_14pivot(CYTHON_UNUSED PyObject *_
       __Pyx_GIVEREF(__pyx_v_col);
       PyTuple_SET_ITEM(__pyx_t_1, 1, __pyx_v_col);
       __pyx_t_4 = 0;
-      __pyx_t_4 = __Pyx_PyObject_GetItem(__pyx_v_matrix, __pyx_t_1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 213, __pyx_L1_error)
+      __pyx_t_4 = __Pyx_PyObject_GetItem(__pyx_v_matrix, __pyx_t_1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 219, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_4);
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
       __Pyx_XDECREF_SET(__pyx_v_c, __pyx_t_4);
       __pyx_t_4 = 0;
 
-      /* "simplex_networks_1.pyx":214
+      /* "simplex_networks_1.pyx":220
  *             k = matrix[i, :]
  *             c = matrix[i, col]
  *             if list(k) == list(pr):             # <<<<<<<<<<<<<<
  *                 continue
  *             else:
  */
-      __pyx_t_4 = PySequence_List(__pyx_v_k); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 214, __pyx_L1_error)
+      __pyx_t_4 = PySequence_List(__pyx_v_k); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 220, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_4);
-      __pyx_t_1 = PySequence_List(__pyx_v_pr); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 214, __pyx_L1_error)
+      __pyx_t_1 = PySequence_List(__pyx_v_pr); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 220, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
-      __pyx_t_6 = PyObject_RichCompare(__pyx_t_4, __pyx_t_1, Py_EQ); __Pyx_XGOTREF(__pyx_t_6); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 214, __pyx_L1_error)
+      __pyx_t_6 = PyObject_RichCompare(__pyx_t_4, __pyx_t_1, Py_EQ); __Pyx_XGOTREF(__pyx_t_6); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 220, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-      __pyx_t_7 = __Pyx_PyObject_IsTrue(__pyx_t_6); if (unlikely(__pyx_t_7 < 0)) __PYX_ERR(0, 214, __pyx_L1_error)
+      __pyx_t_7 = __Pyx_PyObject_IsTrue(__pyx_t_6); if (unlikely(__pyx_t_7 < 0)) __PYX_ERR(0, 220, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
       if (__pyx_t_7) {
 
-        /* "simplex_networks_1.pyx":215
+        /* "simplex_networks_1.pyx":221
  *             c = matrix[i, col]
  *             if list(k) == list(pr):
  *                 continue             # <<<<<<<<<<<<<<
@@ -3350,7 +3346,7 @@ static PyObject *__pyx_pf_18simplex_networks_1_14pivot(CYTHON_UNUSED PyObject *_
  */
         goto __pyx_L4_continue;
 
-        /* "simplex_networks_1.pyx":214
+        /* "simplex_networks_1.pyx":220
  *             k = matrix[i, :]
  *             c = matrix[i, col]
  *             if list(k) == list(pr):             # <<<<<<<<<<<<<<
@@ -3359,7 +3355,7 @@ static PyObject *__pyx_pf_18simplex_networks_1_14pivot(CYTHON_UNUSED PyObject *_
  */
       }
 
-      /* "simplex_networks_1.pyx":217
+      /* "simplex_networks_1.pyx":223
  *                 continue
  *             else:
  *                 t[i, :] = list(k-r*c)             # <<<<<<<<<<<<<<
@@ -3367,17 +3363,17 @@ static PyObject *__pyx_pf_18simplex_networks_1_14pivot(CYTHON_UNUSED PyObject *_
  *         return t
  */
       /*else*/ {
-        __pyx_t_6 = PyNumber_Multiply(__pyx_v_r, __pyx_v_c); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 217, __pyx_L1_error)
+        __pyx_t_6 = PyNumber_Multiply(__pyx_v_r, __pyx_v_c); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 223, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_6);
-        __pyx_t_1 = PyNumber_Subtract(__pyx_v_k, __pyx_t_6); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 217, __pyx_L1_error)
+        __pyx_t_1 = PyNumber_Subtract(__pyx_v_k, __pyx_t_6); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 223, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_1);
         __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-        __pyx_t_6 = PySequence_List(__pyx_t_1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 217, __pyx_L1_error)
+        __pyx_t_6 = PySequence_List(__pyx_t_1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 223, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_6);
         __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-        __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_v_i); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 217, __pyx_L1_error)
+        __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_v_i); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 223, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_1);
-        __pyx_t_4 = PyTuple_New(2); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 217, __pyx_L1_error)
+        __pyx_t_4 = PyTuple_New(2); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 223, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_4);
         __Pyx_GIVEREF(__pyx_t_1);
         PyTuple_SET_ITEM(__pyx_t_4, 0, __pyx_t_1);
@@ -3385,23 +3381,23 @@ static PyObject *__pyx_pf_18simplex_networks_1_14pivot(CYTHON_UNUSED PyObject *_
         __Pyx_GIVEREF(__pyx_slice__3);
         PyTuple_SET_ITEM(__pyx_t_4, 1, __pyx_slice__3);
         __pyx_t_1 = 0;
-        if (unlikely(PyObject_SetItem(__pyx_v_t, __pyx_t_4, __pyx_t_6) < 0)) __PYX_ERR(0, 217, __pyx_L1_error)
+        if (unlikely(PyObject_SetItem(__pyx_v_t, __pyx_t_4, __pyx_t_6) < 0)) __PYX_ERR(0, 223, __pyx_L1_error)
         __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
         __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
       }
       __pyx_L4_continue:;
     }
 
-    /* "simplex_networks_1.pyx":218
+    /* "simplex_networks_1.pyx":224
  *             else:
  *                 t[i, :] = list(k-r*c)
  *         t[row,:] = list(r)             # <<<<<<<<<<<<<<
  *         return t
  *     else:
  */
-    __pyx_t_6 = PySequence_List(__pyx_v_r); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 218, __pyx_L1_error)
+    __pyx_t_6 = PySequence_List(__pyx_v_r); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 224, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
-    __pyx_t_4 = PyTuple_New(2); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 218, __pyx_L1_error)
+    __pyx_t_4 = PyTuple_New(2); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 224, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
     __Pyx_INCREF(__pyx_v_row);
     __Pyx_GIVEREF(__pyx_v_row);
@@ -3409,11 +3405,11 @@ static PyObject *__pyx_pf_18simplex_networks_1_14pivot(CYTHON_UNUSED PyObject *_
     __Pyx_INCREF(__pyx_slice__3);
     __Pyx_GIVEREF(__pyx_slice__3);
     PyTuple_SET_ITEM(__pyx_t_4, 1, __pyx_slice__3);
-    if (unlikely(PyObject_SetItem(__pyx_v_t, __pyx_t_4, __pyx_t_6) < 0)) __PYX_ERR(0, 218, __pyx_L1_error)
+    if (unlikely(PyObject_SetItem(__pyx_v_t, __pyx_t_4, __pyx_t_6) < 0)) __PYX_ERR(0, 224, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
-    /* "simplex_networks_1.pyx":219
+    /* "simplex_networks_1.pyx":225
  *                 t[i, :] = list(k-r*c)
  *         t[row,:] = list(r)
  *         return t             # <<<<<<<<<<<<<<
@@ -3425,7 +3421,7 @@ static PyObject *__pyx_pf_18simplex_networks_1_14pivot(CYTHON_UNUSED PyObject *_
     __pyx_r = __pyx_v_t;
     goto __pyx_L0;
 
-    /* "simplex_networks_1.pyx":208
+    /* "simplex_networks_1.pyx":214
  *     t = np.zeros((lr, lc))
  *     pr = matrix[row, :]
  *     if matrix[row, col]**2 > 0:             # <<<<<<<<<<<<<<
@@ -3434,15 +3430,15 @@ static PyObject *__pyx_pf_18simplex_networks_1_14pivot(CYTHON_UNUSED PyObject *_
  */
   }
 
-  /* "simplex_networks_1.pyx":221
+  /* "simplex_networks_1.pyx":227
  *         return t
  *     else:
  *         logging.info('Cannot pivot on this element')             # <<<<<<<<<<<<<<
  */
   /*else*/ {
-    __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_logging); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 221, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_logging); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 227, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
-    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_info); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 221, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_info); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 227, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
     __pyx_t_4 = NULL;
@@ -3457,13 +3453,13 @@ static PyObject *__pyx_pf_18simplex_networks_1_14pivot(CYTHON_UNUSED PyObject *_
     }
     __pyx_t_6 = (__pyx_t_4) ? __Pyx_PyObject_Call2Args(__pyx_t_1, __pyx_t_4, __pyx_kp_u_Cannot_pivot_on_this_element) : __Pyx_PyObject_CallOneArg(__pyx_t_1, __pyx_kp_u_Cannot_pivot_on_this_element);
     __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
-    if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 221, __pyx_L1_error)
+    if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 227, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
   }
 
-  /* "simplex_networks_1.pyx":185
+  /* "simplex_networks_1.pyx":191
  * 
  * 
  * def pivot(row,col,matrix):             # <<<<<<<<<<<<<<
@@ -3590,8 +3586,8 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
 };
 static CYTHON_SMALL_CODE int __Pyx_InitCachedBuiltins(void) {
   __pyx_builtin_min = __Pyx_GetBuiltinName(__pyx_n_s_min); if (!__pyx_builtin_min) __PYX_ERR(0, 42, __pyx_L1_error)
-  __pyx_builtin_zip = __Pyx_GetBuiltinName(__pyx_n_s_zip); if (!__pyx_builtin_zip) __PYX_ERR(0, 145, __pyx_L1_error)
-  __pyx_builtin_range = __Pyx_GetBuiltinName(__pyx_n_s_range); if (!__pyx_builtin_range) __PYX_ERR(0, 211, __pyx_L1_error)
+  __pyx_builtin_zip = __Pyx_GetBuiltinName(__pyx_n_s_zip); if (!__pyx_builtin_zip) __PYX_ERR(0, 150, __pyx_L1_error)
+  __pyx_builtin_range = __Pyx_GetBuiltinName(__pyx_n_s_range); if (!__pyx_builtin_range) __PYX_ERR(0, 217, __pyx_L1_error)
   return 0;
   __pyx_L1_error:;
   return -1;
@@ -3602,7 +3598,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __Pyx_RefNannySetupContext("__Pyx_InitCachedConstants", 0);
 
   /* "simplex_networks_1.pyx":42
- *     cdef int m
+ *     cdef double m
  * 
  *     m = min(matrix[:-1, -1])             # <<<<<<<<<<<<<<
  *     if m >= 0:
@@ -3615,28 +3611,28 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__2);
   __Pyx_GIVEREF(__pyx_tuple__2);
 
-  /* "simplex_networks_1.pyx":65
- *     cdef int l, m
+  /* "simplex_networks_1.pyx":66
+ *     cdef double m
  * 
  *     l = len(matrix[:, 0])             # <<<<<<<<<<<<<<
  *     m = min(matrix[l-1, :-1])
  *     if m >= 0:
  */
-  __pyx_slice__3 = PySlice_New(Py_None, Py_None, Py_None); if (unlikely(!__pyx_slice__3)) __PYX_ERR(0, 65, __pyx_L1_error)
+  __pyx_slice__3 = PySlice_New(Py_None, Py_None, Py_None); if (unlikely(!__pyx_slice__3)) __PYX_ERR(0, 66, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_slice__3);
   __Pyx_GIVEREF(__pyx_slice__3);
-  __pyx_tuple__4 = PyTuple_Pack(2, __pyx_slice__3, __pyx_int_0); if (unlikely(!__pyx_tuple__4)) __PYX_ERR(0, 65, __pyx_L1_error)
+  __pyx_tuple__4 = PyTuple_Pack(2, __pyx_slice__3, __pyx_int_0); if (unlikely(!__pyx_tuple__4)) __PYX_ERR(0, 66, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__4);
   __Pyx_GIVEREF(__pyx_tuple__4);
 
-  /* "simplex_networks_1.pyx":88
- *     cdef int l, m
+  /* "simplex_networks_1.pyx":90
+ *     cdef double m
  * 
  *     l = len(matrix[0, :])             # <<<<<<<<<<<<<<
  *     m = min(matrix[:-1, l-1])
  *     if m <= 0:
  */
-  __pyx_tuple__5 = PyTuple_Pack(2, __pyx_int_0, __pyx_slice__3); if (unlikely(!__pyx_tuple__5)) __PYX_ERR(0, 88, __pyx_L1_error)
+  __pyx_tuple__5 = PyTuple_Pack(2, __pyx_int_0, __pyx_slice__3); if (unlikely(!__pyx_tuple__5)) __PYX_ERR(0, 90, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__5);
   __Pyx_GIVEREF(__pyx_tuple__5);
 
@@ -3676,65 +3672,65 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __Pyx_GIVEREF(__pyx_tuple__10);
   __pyx_codeobj__11 = (PyObject*)__Pyx_PyCode_New(1, 0, 3, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__10, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_reimplementacion_1_simplex_netwo, __pyx_n_s_pivots_row, 49, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__11)) __PYX_ERR(0, 49, __pyx_L1_error)
 
-  /* "simplex_networks_1.pyx":73
+  /* "simplex_networks_1.pyx":74
  * 
  * 
  * def find_negative_col(matrix):             # <<<<<<<<<<<<<<
  *     """
  *     Finds location of negative values in right column.
  */
-  __pyx_tuple__12 = PyTuple_Pack(4, __pyx_n_s_matrix, __pyx_n_s_l, __pyx_n_s_m, __pyx_n_s_n); if (unlikely(!__pyx_tuple__12)) __PYX_ERR(0, 73, __pyx_L1_error)
+  __pyx_tuple__12 = PyTuple_Pack(4, __pyx_n_s_matrix, __pyx_n_s_l, __pyx_n_s_m, __pyx_n_s_n); if (unlikely(!__pyx_tuple__12)) __PYX_ERR(0, 74, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__12);
   __Pyx_GIVEREF(__pyx_tuple__12);
-  __pyx_codeobj__13 = (PyObject*)__Pyx_PyCode_New(1, 0, 4, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__12, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_reimplementacion_1_simplex_netwo, __pyx_n_s_find_negative_col, 73, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__13)) __PYX_ERR(0, 73, __pyx_L1_error)
+  __pyx_codeobj__13 = (PyObject*)__Pyx_PyCode_New(1, 0, 4, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__12, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_reimplementacion_1_simplex_netwo, __pyx_n_s_find_negative_col, 74, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__13)) __PYX_ERR(0, 74, __pyx_L1_error)
 
-  /* "simplex_networks_1.pyx":98
+  /* "simplex_networks_1.pyx":100
  * 
  * 
  * def find_negative_row(matrix):             # <<<<<<<<<<<<<<
  *     """
  *     Finds location of negative values in bottom row.
  */
-  __pyx_tuple__14 = PyTuple_Pack(4, __pyx_n_s_matrix, __pyx_n_s_l, __pyx_n_s_m, __pyx_n_s_n); if (unlikely(!__pyx_tuple__14)) __PYX_ERR(0, 98, __pyx_L1_error)
+  __pyx_tuple__14 = PyTuple_Pack(4, __pyx_n_s_matrix, __pyx_n_s_l, __pyx_n_s_m, __pyx_n_s_n); if (unlikely(!__pyx_tuple__14)) __PYX_ERR(0, 100, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__14);
   __Pyx_GIVEREF(__pyx_tuple__14);
-  __pyx_codeobj__15 = (PyObject*)__Pyx_PyCode_New(1, 0, 4, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__14, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_reimplementacion_1_simplex_netwo, __pyx_n_s_find_negative_row, 98, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__15)) __PYX_ERR(0, 98, __pyx_L1_error)
+  __pyx_codeobj__15 = (PyObject*)__Pyx_PyCode_New(1, 0, 4, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__14, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_reimplementacion_1_simplex_netwo, __pyx_n_s_find_negative_row, 100, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__15)) __PYX_ERR(0, 100, __pyx_L1_error)
 
-  /* "simplex_networks_1.pyx":122
+  /* "simplex_networks_1.pyx":126
  * 
  * 
  * def find_pivot_col(matrix):             # <<<<<<<<<<<<<<
  *     """
  *     Finds pivot element corresponding to a negative value in right column.
  */
-  __pyx_tuple__16 = PyTuple_Pack(10, __pyx_n_s_matrix, __pyx_n_s_i, __pyx_n_s_j, __pyx_n_s_c, __pyx_n_s_m, __pyx_n_s_neg, __pyx_n_s_index, __pyx_n_s_total, __pyx_n_s_row, __pyx_n_s_col); if (unlikely(!__pyx_tuple__16)) __PYX_ERR(0, 122, __pyx_L1_error)
+  __pyx_tuple__16 = PyTuple_Pack(10, __pyx_n_s_matrix, __pyx_n_s_c, __pyx_n_s_index, __pyx_n_s_m, __pyx_n_s_i, __pyx_n_s_j, __pyx_n_s_total, __pyx_n_s_neg, __pyx_n_s_row, __pyx_n_s_col); if (unlikely(!__pyx_tuple__16)) __PYX_ERR(0, 126, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__16);
   __Pyx_GIVEREF(__pyx_tuple__16);
-  __pyx_codeobj__17 = (PyObject*)__Pyx_PyCode_New(1, 0, 10, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__16, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_reimplementacion_1_simplex_netwo, __pyx_n_s_find_pivot_col, 122, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__17)) __PYX_ERR(0, 122, __pyx_L1_error)
+  __pyx_codeobj__17 = (PyObject*)__Pyx_PyCode_New(1, 0, 10, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__16, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_reimplementacion_1_simplex_netwo, __pyx_n_s_find_pivot_col, 126, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__17)) __PYX_ERR(0, 126, __pyx_L1_error)
 
-  /* "simplex_networks_1.pyx":155
+  /* "simplex_networks_1.pyx":160
  * 
  * 
  * def find_pivot_row(matrix):             # <<<<<<<<<<<<<<
  *     """
  *     Finds pivot element corresponding to a negative value in bottom row.
  */
-  __pyx_tuple__18 = PyTuple_Pack(6, __pyx_n_s_matrix, __pyx_n_s_i, __pyx_n_s_j, __pyx_n_s_neg, __pyx_n_s_index, __pyx_n_s_total); if (unlikely(!__pyx_tuple__18)) __PYX_ERR(0, 155, __pyx_L1_error)
+  __pyx_tuple__18 = PyTuple_Pack(6, __pyx_n_s_matrix, __pyx_n_s_i, __pyx_n_s_j, __pyx_n_s_index, __pyx_n_s_total, __pyx_n_s_neg); if (unlikely(!__pyx_tuple__18)) __PYX_ERR(0, 160, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__18);
   __Pyx_GIVEREF(__pyx_tuple__18);
-  __pyx_codeobj__19 = (PyObject*)__Pyx_PyCode_New(1, 0, 6, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__18, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_reimplementacion_1_simplex_netwo, __pyx_n_s_find_pivot_row, 155, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__19)) __PYX_ERR(0, 155, __pyx_L1_error)
+  __pyx_codeobj__19 = (PyObject*)__Pyx_PyCode_New(1, 0, 6, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__18, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_reimplementacion_1_simplex_netwo, __pyx_n_s_find_pivot_row, 160, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__19)) __PYX_ERR(0, 160, __pyx_L1_error)
 
-  /* "simplex_networks_1.pyx":185
+  /* "simplex_networks_1.pyx":191
  * 
  * 
  * def pivot(row,col,matrix):             # <<<<<<<<<<<<<<
  *     """
  *     Pivot about a value to remove negative in final column or row.
  */
-  __pyx_tuple__20 = PyTuple_Pack(12, __pyx_n_s_row, __pyx_n_s_col, __pyx_n_s_matrix, __pyx_n_s_i, __pyx_n_s_lr, __pyx_n_s_lc, __pyx_n_s_t, __pyx_n_s_pr, __pyx_n_s_e, __pyx_n_s_r, __pyx_n_s_k, __pyx_n_s_c); if (unlikely(!__pyx_tuple__20)) __PYX_ERR(0, 185, __pyx_L1_error)
+  __pyx_tuple__20 = PyTuple_Pack(12, __pyx_n_s_row, __pyx_n_s_col, __pyx_n_s_matrix, __pyx_n_s_i, __pyx_n_s_lr, __pyx_n_s_lc, __pyx_n_s_t, __pyx_n_s_pr, __pyx_n_s_e, __pyx_n_s_r, __pyx_n_s_k, __pyx_n_s_c); if (unlikely(!__pyx_tuple__20)) __PYX_ERR(0, 191, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__20);
   __Pyx_GIVEREF(__pyx_tuple__20);
-  __pyx_codeobj__21 = (PyObject*)__Pyx_PyCode_New(3, 0, 12, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__20, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_reimplementacion_1_simplex_netwo, __pyx_n_s_pivot, 185, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__21)) __PYX_ERR(0, 185, __pyx_L1_error)
+  __pyx_codeobj__21 = (PyObject*)__Pyx_PyCode_New(3, 0, 12, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__20, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_reimplementacion_1_simplex_netwo, __pyx_n_s_pivot, 191, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__21)) __PYX_ERR(0, 191, __pyx_L1_error)
   __Pyx_RefNannyFinishContext();
   return 0;
   __pyx_L1_error:;
@@ -4080,64 +4076,64 @@ if (!__Pyx_RefNanny) {
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_pivots_row, __pyx_t_1) < 0) __PYX_ERR(0, 49, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "simplex_networks_1.pyx":73
+  /* "simplex_networks_1.pyx":74
  * 
  * 
  * def find_negative_col(matrix):             # <<<<<<<<<<<<<<
  *     """
  *     Finds location of negative values in right column.
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_18simplex_networks_1_7find_negative_col, NULL, __pyx_n_s_simplex_networks_1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 73, __pyx_L1_error)
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_18simplex_networks_1_7find_negative_col, NULL, __pyx_n_s_simplex_networks_1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 74, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_find_negative_col, __pyx_t_1) < 0) __PYX_ERR(0, 73, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_find_negative_col, __pyx_t_1) < 0) __PYX_ERR(0, 74, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "simplex_networks_1.pyx":98
+  /* "simplex_networks_1.pyx":100
  * 
  * 
  * def find_negative_row(matrix):             # <<<<<<<<<<<<<<
  *     """
  *     Finds location of negative values in bottom row.
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_18simplex_networks_1_9find_negative_row, NULL, __pyx_n_s_simplex_networks_1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 98, __pyx_L1_error)
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_18simplex_networks_1_9find_negative_row, NULL, __pyx_n_s_simplex_networks_1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 100, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_find_negative_row, __pyx_t_1) < 0) __PYX_ERR(0, 98, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_find_negative_row, __pyx_t_1) < 0) __PYX_ERR(0, 100, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "simplex_networks_1.pyx":122
+  /* "simplex_networks_1.pyx":126
  * 
  * 
  * def find_pivot_col(matrix):             # <<<<<<<<<<<<<<
  *     """
  *     Finds pivot element corresponding to a negative value in right column.
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_18simplex_networks_1_11find_pivot_col, NULL, __pyx_n_s_simplex_networks_1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 122, __pyx_L1_error)
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_18simplex_networks_1_11find_pivot_col, NULL, __pyx_n_s_simplex_networks_1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 126, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_find_pivot_col, __pyx_t_1) < 0) __PYX_ERR(0, 122, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_find_pivot_col, __pyx_t_1) < 0) __PYX_ERR(0, 126, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "simplex_networks_1.pyx":155
+  /* "simplex_networks_1.pyx":160
  * 
  * 
  * def find_pivot_row(matrix):             # <<<<<<<<<<<<<<
  *     """
  *     Finds pivot element corresponding to a negative value in bottom row.
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_18simplex_networks_1_13find_pivot_row, NULL, __pyx_n_s_simplex_networks_1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 155, __pyx_L1_error)
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_18simplex_networks_1_13find_pivot_row, NULL, __pyx_n_s_simplex_networks_1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 160, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_find_pivot_row, __pyx_t_1) < 0) __PYX_ERR(0, 155, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_find_pivot_row, __pyx_t_1) < 0) __PYX_ERR(0, 160, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "simplex_networks_1.pyx":185
+  /* "simplex_networks_1.pyx":191
  * 
  * 
  * def pivot(row,col,matrix):             # <<<<<<<<<<<<<<
  *     """
  *     Pivot about a value to remove negative in final column or row.
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_18simplex_networks_1_15pivot, NULL, __pyx_n_s_simplex_networks_1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 185, __pyx_L1_error)
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_18simplex_networks_1_15pivot, NULL, __pyx_n_s_simplex_networks_1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 191, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_pivot, __pyx_t_1) < 0) __PYX_ERR(0, 185, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_pivot, __pyx_t_1) < 0) __PYX_ERR(0, 191, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
   /* "simplex_networks_1.pyx":2

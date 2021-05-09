@@ -37,7 +37,7 @@ def pivots_col(matrix):
         Flag (bool): True or False indicating whether a negative element was found.
     """
     
-    cdef int m
+    cdef double m
     
     m = min(matrix[:-1, -1])
     if m >= 0:
@@ -60,7 +60,8 @@ def pivots_row(matrix):
         Flag (bool): True or False indicating whether a negative element was found.
     """
     
-    cdef int l, m
+    cdef int l
+    cdef double m
     
     l = len(matrix[:, 0])
     m = min(matrix[l-1, :-1])
@@ -83,7 +84,8 @@ def find_negative_col(matrix):
         n (int): index of negative value in right column.
     """
     
-    cdef int l, m
+    cdef int l
+    cdef double m
     
     l = len(matrix[0, :])
     m = min(matrix[:-1, l-1])
@@ -108,7 +110,9 @@ def find_negative_row(matrix):
         n (int): index of negative value in bottom row.
     """
     
-    cdef int l, m
+    cdef int l
+    cdef double m
+    
     l = len(matrix[:,0])
     m = min(matrix[l-1,:-1])
     if m <= 0:
@@ -134,7 +138,8 @@ def find_pivot_col(matrix):
         c (int): index smallest value on row.
     """
     
-    cdef int i, j, c, m, neg, index
+    cdef int c, index
+    cdef double m, i, j
     
     total = []
     neg = find_negative_col(matrix)
@@ -167,7 +172,8 @@ def find_pivot_row(matrix):
         neg (int): index smallest value.
     """
     
-    cdef int i, j, neg, index
+    cdef double i, j
+    cdef int index
     
     if pivots_row(matrix):
         total = []
