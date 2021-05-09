@@ -28,6 +28,7 @@
    :recursive:
 
    mex.simplex.maximizer_class
+   mex.simplex.minimzer_class
    mex.simplex.problem_definition
    mex.simplex.simplex_networks
 
