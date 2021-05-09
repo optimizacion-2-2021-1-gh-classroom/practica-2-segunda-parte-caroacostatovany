@@ -53,6 +53,7 @@ jobs:
         kernprof -l -v src/profiling/tiempo/net_line_profiler.py > reports/net_time_profiling.txt
         kernprof -l -v src/profiling/tiempo/max_line_profiler.py > reports/max_time_profiling.txt
         kernprof -l -v src/profiling/tiempo/min_line_profiler.py > reports/min_time_profiling.txt
+        rm *.lprof
         git add reports/net_time_profiling.txt reports/max_time_profiling.txt reports/min_time_profiling.txt
         git commit -m "Agregar reporte del time profiling"
     - name: Push changes
