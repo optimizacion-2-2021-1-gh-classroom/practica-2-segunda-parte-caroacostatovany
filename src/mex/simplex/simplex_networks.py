@@ -1,5 +1,6 @@
 import numpy as np
 import logging
+from line_profiler import profile
 
 
 @profile
