@@ -3,7 +3,8 @@ from mex.simplex.simplex_networks import create_matrix
 from mex.simplex.problem_definition import constrain, obj, maxz
 
 
-class Maximizer:
+class Maximizer():
+    """Maximize the objective function"""
     def __init__(self, n_variables, n_constraints):
         self.n_variables = n_variables
         self.n_constraints = n_constraints
