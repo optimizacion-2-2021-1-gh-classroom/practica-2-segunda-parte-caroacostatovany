@@ -34,4 +34,8 @@ Domingo 09/may/2021 11:59pm
 
 ## Referencias
 
+- [Cython](https://cython.org/)
+- Clavius, Cristopher & Stefan Josef. LP random problem generator. [LP random problem generator](http://web.tecnico.ulisboa.pt/~mcasquilho/compute/or/Fx-LP-generator.php)
+- Palacios M., Erick. (2021). Libro de Optimización 2021. [5.2 Herramientas de lenguajes de programación y del sistema operativo para perfilamiento e implementaciones de BLAS](https://itam-ds.github.io/analisis-numerico-computo-cientifico/V.optimizacion_de_codigo/5.2/Herramientas_de_lenguajes_y_del_SO_para_perfilamiento_e_implementaciones_de_BLAS.html) 
+- Palacios M., Erick. (2021). Libro de Optimización 2021. [5.3 Compilación a C](https://itam-ds.github.io/analisis-numerico-computo-cientifico/V.optimizacion_de_codigo/5.3/Compilacion_a_C.html)
 - [Paquete Mex](https://github.com/optimizacion-2-2021-1-gh-classroom/practica-1-segunda-parte-caroacostatovany)
