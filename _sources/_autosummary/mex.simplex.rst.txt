@@ -27,7 +27,7 @@
    :toctree:
    :recursive:
 
-   mex.simplex.Maximizer
+   mex.simplex.maximizer
    mex.simplex.problem_definition
    mex.simplex.simplex_networks
 
