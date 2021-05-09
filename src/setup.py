@@ -2,7 +2,7 @@
 from setuptools import setup, find_packages
 
 setup(name="mex",
-      version="0.1",
+      version="0.2",
       description=u"Paquete que resuelve metodo simplex",
       url="",
       author="cecyar, lecepe00, eduardo-moreno, caroacostatovany",
