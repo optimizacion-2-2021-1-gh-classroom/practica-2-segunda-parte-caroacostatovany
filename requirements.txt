@@ -41,3 +41,4 @@ networkx==2.5
 notebook==6.2.0
 pytest==6.2.2
 memory_profiler
+guppy

@@ -4,11 +4,12 @@ from pytest import approx
 
 from mex.simplex.simplex_networks import create_matrix, pivots_col, pivots_row, find_negative_col, find_negative_row, find_pivot_col, find_pivot_row, pivot
 from mex.simplex.problem_definition import add_cons, constrain, add_obj, obj, maxz, minz
+from memory_profiler import profile
 
 @profile
 def profiling_memory_example(matrix, aux=True):
     """
-    Realizar todo el proceso del problema a resolver de optimización con el método Simplex
+    Problema a resolver de optimización con el método Simplex
     """
     constrain(matrix, '1,0,L,4')
     constrain(matrix, '0,2,L,12')

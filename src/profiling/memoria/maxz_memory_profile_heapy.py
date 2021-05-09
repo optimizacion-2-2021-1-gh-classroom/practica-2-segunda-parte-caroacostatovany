@@ -1,0 +1,21 @@
+import numpy as np
+from scipy.optimize import linprog
+from pytest import approx
+
+from mex.simplex.simplex_networks import create_matrix, pivots_col, pivots_row, find_negative_col, find_negative_row, find_pivot_col, find_pivot_row, pivot
+from mex.simplex.problem_definition import add_cons, constrain, add_obj, obj, maxz, minz
+from memory_profiler import profile
+
+from guppy import hpy
+
+hp = hpy()
+hp.setrelheap()
+matrix_max_approx_1 = create_matrix(2, 3)
+constrain(matrix_max_approx_1, '1,0,L,4')
+constrain(matrix_max_approx_1, '0,2,L,12')
+constrain(matrix_max_approx_1, '3,2,L,18')
+obj(matrix_max_approx_1, '3,5,0')
+problem_approx_1 = maxz(matrix_max_approx_1)
+
+h = hp.heap()
+print(h)
