@@ -20,7 +20,7 @@ class Maximizer:
     def solve(self):
         solve = maxz(self.matrix)
         self.max = solve['max']
-        self.coeff =  np.array(list(solve.values()))[:-1]
+        self.coeff = np.array(list(solve.values()))[:-1]
 
     def get_max(self):
         return self.max
