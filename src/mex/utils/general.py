@@ -1,3 +1,6 @@
+from line_profiler import profile
+
+
 @profile
 def convert_min(matrix):
     """
@@ -17,6 +20,7 @@ def convert_min(matrix):
     matrix[-1, -1] = -1*matrix[-1, -1]
     
     return matrix
+
 
 @profile
 def gen_var(matrix):
@@ -42,6 +46,7 @@ def gen_var(matrix):
         v.append('x' + str(i+1))
     
     return v
+
 
 @profile
 def convert(eq):
