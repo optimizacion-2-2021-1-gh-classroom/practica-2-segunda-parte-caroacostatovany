@@ -62,8 +62,6 @@ def convert(eq):
         eq (list): list with equation coefficients.
     """
     
-    #cdef float i
-    
     eq = eq.split(',')
     
     if 'G' in eq:

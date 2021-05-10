@@ -18,12 +18,7 @@ def create_matrix(unsigned int variables, unsigned int constraints):
         matrix (numpy array): zero matrix.
     """
     
-    #matrix = np.zeros((constraints + 1, variables + constraints + 2))
-    cdef int i, j
-    i = constraints + 1
-    j = variables + constraints + 2
-    cdef int matrix[i][j]
-    matrix = {{0}}
+    matrix = np.zeros((constraints + 1, variables + constraints + 2))
     
     return matrix
 
@@ -214,9 +209,7 @@ def pivot(row,col,matrix):
     
     lr = len(matrix[:, 0])
     lc = len(matrix[0, :])
-    #t = np.zeros((lr, lc))
-    cdef int t[lr][lc] 
-    t = {{0}}
+    t = np.zeros((lr, lc))
     pr = matrix[row, :]
     if matrix[row, col]**2 > 0:
         e = 1/matrix[row, col]
