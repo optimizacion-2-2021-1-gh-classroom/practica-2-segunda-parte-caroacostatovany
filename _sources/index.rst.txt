@@ -20,6 +20,7 @@ This package will help you to minimize or maximize a problem using the simplex m
    installation
    simplex/modules_autosummary
    utils/modules_autosummary
+   mex_c/modules_autosummary
       
 Index and tables
 ==================
