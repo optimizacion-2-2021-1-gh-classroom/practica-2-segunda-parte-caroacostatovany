@@ -21,5 +21,9 @@ setup(name="mex",
                           "guppy3"
                           ],
       #cmdclass={'build_ext': build_ext},
-      ext_modules=cythonize( "mex/mex_c/general_c.pyx" , compiler_directives={'language_level':3})
+      ext_modules=cythonize( ["mex/mex_c/general_c.pyx",
+                              "mex/mex_c/maximizer_class.pyx",
+                              "mex/mex_c/minimizer_clas.pyx",
+                              "mex/mex_c/problem_definition.pyx",
+                              "mex/mex_c/simplex_networks_c.pyx"] , compiler_directives={'language_level':3})
       )
