@@ -1,5 +1,7 @@
 #see: https://setuptools.readthedocs.io/en/latest/userguide/package_discovery.html
 from setuptools import setup, find_packages
+from distutils.extension import Extension
+from Cython.Distutils import build_ext
 
 setup(name="mex",
       version="0.2",
@@ -18,4 +20,6 @@ setup(name="mex",
                           "memory_profiler",
                           "guppy3"
                           ],
+      cmdclass={'build_ext': build_ext},
+      ext_modules=[Extension("mex_c", sources=["general_c.pyx"], cython_directives={"embedsignature": True} )]
       )
