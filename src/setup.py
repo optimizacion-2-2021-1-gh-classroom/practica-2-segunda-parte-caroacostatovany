@@ -14,6 +14,8 @@ setup(name="mex",
                           "pandas",
                           "sphinx",
                           "scipy",
-                          "line_profiler"
+                          "line_profiler",
+                          "memory_profiler",
+                          "guppy"
                           ],
       )
