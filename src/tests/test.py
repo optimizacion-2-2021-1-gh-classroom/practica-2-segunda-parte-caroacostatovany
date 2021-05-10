@@ -6,7 +6,8 @@ from scipy.optimize import linprog
 #os.chdir("..")
 from mex.simplex.simplex_networks import create_matrix
 from mex.simplex.problem_definition import constrain, obj, minz, maxz
-
+from mex.simplex.minimzer_class import Minimzer
+from mex.simplex.maximizer_class import Maximizer
 
 def test_min_problem():
     """
@@ -21,17 +22,14 @@ def test_min_problem():
     coeff_obj = linprog(c_min_obj, A_ub = A_min_obj, b_ub = b_min_obj).x
     
     # Definimos y resolvemos problema con nuestro paquete
-    n_var_approx = 2
-    n_cons_approx = 2
-    matrix_min_approx = create_matrix(n_var_approx,n_cons_approx)
-    constrain(matrix_min_approx,'1,1,L,6')
-    constrain(matrix_min_approx,'-1,2,L,8')
-    obj(matrix_min_approx,'-1,-3,0')
-    problem_approx = minz(matrix_min_approx)
-    min_approx = problem_approx['min']
-    problem_approx.pop('min')
-    coeff_approx = np.array(list(problem_approx.values()))
-    
+    minim = Minimzer(2, 2)
+    minim.add_constraint('1,1,L,6')
+    minim.add_constraint('-1,2,L,8')
+    minim.add_objective('-1,-3,0')
+    minim.solve()
+    min_approx = minim.get_min()
+    coeff_approx = minim.get_coeff()
+
     assert min_approx == approx(min_obj)
     assert coeff_obj == approx(coeff_approx)
     
@@ -50,20 +48,18 @@ def test_max_problem():
     coeff_obj = linprog(c_max_obj, A_ub=A_max_obj, b_ub=b_max_obj).x
     
     # Definimos y resolvemos problema con nuestro paquete
-    n_var_approx = 2
-    n_cons_approx = 3
-    matrix_max_approx = create_matrix(n_var_approx, n_cons_approx)
-    constrain(matrix_max_approx,'1,0,L,4')
-    constrain(matrix_max_approx,'0,2,L,12')
-    constrain(matrix_max_approx,'3,2,L,18')
-    obj(matrix_max_approx,'3,5,0')
-    problem_approx = maxz(matrix_max_approx)
-    max_approx = problem_approx['max']
-    problem_approx.pop('max')
-    coeff_approx = np.array(list(problem_approx.values()))
-    
+    maxim = Maximizer(2, 3)
+    maxim.add_constraint('1,0,L,4')
+    maxim.add_constraint('0,2,L,12')
+    maxim.add_constraint('3,2,L,18')
+    maxim.add_objective('3,5,0')
+    maxim.solve()
+    max_approx = maxim.get_max()
+    coeff_approx = maxim.get_coeff()
+
     assert max_approx == approx(max_obj)
     assert coeff_obj == approx(coeff_approx)
+
 
     
 def test_net_problem():
@@ -87,21 +83,18 @@ def test_net_problem():
     
     
     # Definimos y resolvemos problema con nuestro paquete
-    n_var_approx = 7
-    n_cons_approx = 7
-    matrix_net_approx = create_matrix(n_var_approx, n_cons_approx)
-    constrain(matrix_net_approx,'1,1,1,0,0,0,0,E,50')
-    constrain(matrix_net_approx,'-1,0,0,1,0,0,0,E,40')
-    constrain(matrix_net_approx,'0,-1,0,-1,1,0,0,E,0')
-    constrain(matrix_net_approx,'0,0,-1,0,0,1,-1,E,-30')
-    constrain(matrix_net_approx,'0,0,0,0,-1,-1,1,E,-60')
-    constrain(matrix_net_approx,'1,0,0,0,0,0,0,L,10')
-    constrain(matrix_net_approx,'0,0,0,0,1,0,0,L,80')
-    obj(matrix_net_approx,'2,4,9,3,1,3,2,0')
-    problem_approx = minz(matrix_net_approx)
-    net_approx = problem_approx['min']
-    problem_approx.pop('min')
-    net_coeff_approx = np.array(list(problem_approx.values()))
-    
+    minim = Minimzer(7, 7)
+    minim.add_constraint('1,1,1,0,0,0,0,E,50')
+    minim.add_constraint('-1,0,0,1,0,0,0,E,40')
+    minim.add_constraint('0,-1,0,-1,1,0,0,E,0')
+    minim.add_constraint('0,0,-1,0,0,1,-1,E,-30')
+    minim.add_constraint('0,0,0,0,-1,-1,1,E,-60')
+    minim.add_constraint('1,0,0,0,0,0,0,L,10')
+    minim.add_constraint('0,0,0,0,1,0,0,L,80')
+    minim.add_objective('2,4,9,3,1,3,2,0')
+    minim.solve()
+    net_approx = minim.get_min()
+    net_coeff_approx = minim.get_coeff()
+
     assert net_obj == approx(net_approx)
-    assert np.round(net_coeff_obj,0) == approx(net_coeff_approx)
+    assert np.round(net_coeff_obj, 0) == approx(net_coeff_approx)
