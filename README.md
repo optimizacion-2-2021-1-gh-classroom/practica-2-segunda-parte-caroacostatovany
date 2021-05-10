@@ -6,10 +6,10 @@
 
 | Nombre | User Github | Tarea a realizar |
 |:---:|:---:|:---|
+| Carolina Acosta | caroacostatovany| Perfilamiento de código / Imagen Docker |
 | Eduardo Moreno | Eduardo-Moreno| Perfilamiento de código |
-| Cecilia Avilés | cecyar| Reimplementación de código |
-| Carolina Acosta | caroacostatovany| Perfilamiento de código |
-| Leonardo Ceja | lecepe00| Project-Manager, reimplementación de código |
+| Cecilia Avilés | cecyar| Reimplementación de código / Documentación |
+| Leonardo Ceja | lecepe00| Reimplementación de código / Arquitectura AWS / *Project-Manager*  |
 
 [![Build Status](https://github.com/optimizacion-2-2021-1-gh-classroom/practica-2-segunda-parte-caroacostatovany/workflows/docker-image-build-and-push/badge.svg)](https://github.com/optimizacion-2-2021-1-gh-classroom/practica-2-segunda-parte-caroacostatovany/actions?query=workflow%3Adocker-image-build-and-push+branch%3Amain)
 
@@ -19,7 +19,7 @@
 
 - La documentación de nuestro paquete ***`mex`*** la puedes encontrar [aquí](https://optimizacion-2-2021-1-gh-classroom.github.io/practica-2-segunda-parte-caroacostatovany/).
 
-- Para probar nuestro pipeline puedes hacer uso del siguiente botón de binder, éste contiene el paquete `mex` que desarrollamos [aquí](https://github.com/optimizacion-2-2021-1-gh-classroom/practica-2-segunda-parte-caroacostatovany.git): 
+- Para probar nuestro puedes hacer uso del siguiente botón de binder, éste contiene el paquete `mex` que desarrollamos [aquí](https://github.com/optimizacion-2-2021-1-gh-classroom/practica-2-segunda-parte-caroacostatovany.git): 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/optimizacion-2-2021-1-gh-classroom/practica-2-segunda-parte-caroacostatovany.git/main?urlpath=lab)
 
 - La imagen de Docker creada en esta práctica es **`caroacostatovany/optimizacion-2-practica-2-parte-2:0.1`**.
