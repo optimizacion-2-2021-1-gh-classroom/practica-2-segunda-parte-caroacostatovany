@@ -1,14 +1,5 @@
+.. autosummary::
+   :toctree: _autosummary
+   :recursive:
 
-**********************
-Simplex method with C reimplementation
-**********************
-
-.. automodule:: mex.mex_c
-   :members:
-
-   
-   
-
-
-
-
+   mex.mex_c
