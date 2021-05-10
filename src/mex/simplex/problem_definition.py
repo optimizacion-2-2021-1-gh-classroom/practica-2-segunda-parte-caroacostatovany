@@ -5,7 +5,6 @@ from mex.utils.general import gen_var, convert_min, convert
 from mex.simplex.simplex_networks import pivots_col, find_pivot_col, pivots_row, pivot, find_pivot_row
 
 
-@profile
 def add_cons(matrix):
     """
     Checks if 1 extra constraint can be added to the matrix, this means that there are at least two rows of all
@@ -36,7 +35,6 @@ def add_cons(matrix):
         return False
 
 
-@profile
 def constrain(matrix, eq, memory_prof=False):
     """
     Adds constraints to the problem.
@@ -118,8 +116,6 @@ def constrain(matrix, eq, memory_prof=False):
         return matrix
 
 
-
-@profile
 def add_obj(matrix):
     """
     Verifies if the objective function can be added.
@@ -149,7 +145,6 @@ def add_obj(matrix):
         return False
 
 
-@profile
 def obj(matrix,eq,memory_prof=False):
     """
     Adds the objective function to the problem matrix.
@@ -187,7 +182,6 @@ def obj(matrix,eq,memory_prof=False):
         return matrix
 
 
-@profile
 def maxz(matrix, aux=True):
     """
     Creates maximization function. Determines if 1 extra pivot is required, locates the pivot element,
@@ -236,7 +230,6 @@ def maxz(matrix, aux=True):
     return val
 
 
-@profile
 def minz(matrix, aux=True):
     """
     Creates minimization function. Determines if 1 extra pivot is required, locates the pivot element,
@@ -286,4 +279,3 @@ def minz(matrix, aux=True):
 
     if aux:
         return val
-
