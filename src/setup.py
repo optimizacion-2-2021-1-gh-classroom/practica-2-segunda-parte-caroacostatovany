@@ -25,6 +25,6 @@ setup(name="mex",
       ext_modules=cythonize( ["mex/mex_c/general_c.pyx",
                               "mex/mex_c/maximizer_class_c.pyx",
                               "mex/mex_c/minimizer_class_c.pyx",
-                              "mex/mex_c/problem_definition.pyx",
+                              "mex/mex_c/problem_definition_c.pyx",
                               "mex/mex_c/simplex_networks_c.pyx"] , compiler_directives={'language_level':3})
       )
