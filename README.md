@@ -9,7 +9,7 @@
 | Carolina Acosta | caroacostatovany| Perfilamiento de código / Imagen Docker |
 | Eduardo Moreno | Eduardo-Moreno| Perfilamiento de código |
 | Cecilia Avilés | cecyar| Reimplementación de código / Documentación |
-| Leonardo Ceja | lecepe00| Reimplementación de código / Arquitectura AWS / *Project-Manager*  |
+| Leonardo Ceja | lecepe00| Reimplementación de código / Arquitectura AWS / *Project-Manager* |
 
 [![Build Status](https://github.com/optimizacion-2-2021-1-gh-classroom/practica-2-segunda-parte-caroacostatovany/workflows/docker-image-build-and-push/badge.svg)](https://github.com/optimizacion-2-2021-1-gh-classroom/practica-2-segunda-parte-caroacostatovany/actions?query=workflow%3Adocker-image-build-and-push+branch%3Amain)
 
