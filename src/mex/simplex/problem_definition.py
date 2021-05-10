@@ -44,10 +44,9 @@ def constrain(matrix, eq, memory_prof=False):
     Adds constraints to the problem.
     
     Args:
-    
         matrix (numpy array): matrix defined with :mod:`create_matrix`.
-        
-        eq (string): coefficients of constraints expressions. Use **L** for *less than*, **G** for *greater than*, **E** for *equal to*.
+        eq (string): coefficients of constraints expressions. Use **L** for *less than*, **G** for *greater than*,
+        **E** for *equal to*.
     
     >>> problem_matrix = create_matrix(2,3)   # 2 variables and 3 constraints
     >>> constrain(problem_matrix,'1,L,4')     # x_1 <= 4
@@ -114,6 +113,8 @@ def constrain(matrix, eq, memory_prof=False):
             
         else:
             logging.info('Cannot add another constraint.')
+    if memory_prof:
+        return matrix
 
     if memory_prof:
         return matrix
