@@ -79,15 +79,14 @@
 
 
 <div class="viewcode-block" id="constrain"><a class="viewcode-back" href="../../../_autosummary/mex.simplex.problem_definition.constrain.html#mex.simplex.problem_definition.constrain">[docs]</a><span class="nd">@profile</span>
-<span class="k">def</span> <span class="nf">constrain</span><span class="p">(</span><span class="n">matrix</span><span class="p">,</span> <span class="n">eq</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">constrain</span><span class="p">(</span><span class="n">matrix</span><span class="p">,</span> <span class="n">eq</span><span class="p">,</span> <span class="n">memory_prof</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Adds constraints to the problem.</span>
 <span class="sd">    </span>
 <span class="sd">    Args:</span>
-<span class="sd">    </span>
 <span class="sd">        matrix (numpy array): matrix defined with :mod:`create_matrix`.</span>
-<span class="sd">        </span>
-<span class="sd">        eq (string): coefficients of constraints expressions. Use **L** for *less than*, **G** for *greater than*, **E** for *equal to*.</span>
+<span class="sd">        eq (string): coefficients of constraints expressions. Use **L** for *less than*, **G** for *greater than*,</span>
+<span class="sd">        **E** for *equal to*.</span>
 <span class="sd">    </span>
 <span class="sd">    &gt;&gt;&gt; problem_matrix = create_matrix(2,3)   # 2 variables and 3 constraints</span>
 <span class="sd">    &gt;&gt;&gt; constrain(problem_matrix,&#39;1,L,4&#39;)     # x_1 &lt;= 4</span>
@@ -153,7 +152,13 @@
             <span class="n">row</span><span class="p">[</span><span class="n">var</span><span class="o">+</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
             
         <span class="k">else</span><span class="p">:</span>
-            <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;Cannot add another constraint.&#39;</span><span class="p">)</span></div>
+            <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;Cannot add another constraint.&#39;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">memory_prof</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">matrix</span>
+
+    <span class="k">if</span> <span class="n">memory_prof</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">matrix</span></div>
+
 
 
 <div class="viewcode-block" id="add_obj"><a class="viewcode-back" href="../../../_autosummary/mex.simplex.problem_definition.add_obj.html#mex.simplex.problem_definition.add_obj">[docs]</a><span class="nd">@profile</span>
@@ -187,7 +192,7 @@
 
 
 <div class="viewcode-block" id="obj"><a class="viewcode-back" href="../../../_autosummary/mex.simplex.problem_definition.obj.html#mex.simplex.problem_definition.obj">[docs]</a><span class="nd">@profile</span>
-<span class="k">def</span> <span class="nf">obj</span><span class="p">(</span><span class="n">matrix</span><span class="p">,</span><span class="n">eq</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">obj</span><span class="p">(</span><span class="n">matrix</span><span class="p">,</span><span class="n">eq</span><span class="p">,</span><span class="n">memory_prof</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Adds the objective function to the problem matrix.</span>
 <span class="sd">    </span>
@@ -218,11 +223,14 @@
         <span class="n">row</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
         <span class="n">row</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">eq</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
     <span class="k">else</span><span class="p">:</span>
-        <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;You must finish adding constraints before the objective function can be added.&#39;</span><span class="p">)</span></div>
+        <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;You must finish adding constraints before the objective function can be added.&#39;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">memory_prof</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">matrix</span></div>
 
 
 <div class="viewcode-block" id="maxz"><a class="viewcode-back" href="../../../_autosummary/mex.simplex.problem_definition.maxz.html#mex.simplex.problem_definition.maxz">[docs]</a><span class="nd">@profile</span>
-<span class="k">def</span> <span class="nf">maxz</span><span class="p">(</span><span class="n">matrix</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">maxz</span><span class="p">(</span><span class="n">matrix</span><span class="p">,</span> <span class="n">aux</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Creates maximization function. Determines if 1 extra pivot is required, locates the pivot element,</span>
 <span class="sd">    pivots about it and continues the process until all negative elements have been removed from</span>
@@ -271,7 +279,7 @@
 
 
 <div class="viewcode-block" id="minz"><a class="viewcode-back" href="../../../_autosummary/mex.simplex.problem_definition.minz.html#mex.simplex.problem_definition.minz">[docs]</a><span class="nd">@profile</span>
-<span class="k">def</span> <span class="nf">minz</span><span class="p">(</span><span class="n">matrix</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">minz</span><span class="p">(</span><span class="n">matrix</span><span class="p">,</span> <span class="n">aux</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Creates minimization function. Determines if 1 extra pivot is required, locates the pivot element,</span>
 <span class="sd">    pivots about it and continues the process until all negative elements have been removed from </span>
@@ -317,8 +325,10 @@
         <span class="k">else</span><span class="p">:</span>
             <span class="n">val</span><span class="p">[</span><span class="n">gen_var</span><span class="p">(</span><span class="n">matrix</span><span class="p">)[</span><span class="n">i</span><span class="p">]]</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="n">val</span><span class="p">[</span><span class="s1">&#39;min&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">matrix</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">*-</span><span class="mi">1</span>
-    
-    <span class="k">return</span> <span class="n">val</span></div>
+
+    <span class="k">if</span> <span class="n">aux</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">val</span></div>
+
 </pre></div>
 
             <div class="clearer"></div>
