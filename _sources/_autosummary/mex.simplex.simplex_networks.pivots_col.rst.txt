@@ -1,6 +1,0 @@
-﻿mex.simplex.simplex\_networks.pivots\_col
-=========================================
-
-.. currentmodule:: mex.simplex.simplex_networks
-
-.. autofunction:: pivots_col

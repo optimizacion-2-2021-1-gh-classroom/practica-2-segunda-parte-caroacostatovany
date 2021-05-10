@@ -1,6 +1,0 @@
-﻿mex.utils.general.convert
-=========================
-
-.. currentmodule:: mex.utils.general
-
-.. autofunction:: convert

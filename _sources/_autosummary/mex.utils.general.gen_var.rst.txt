@@ -1,6 +1,0 @@
-﻿mex.utils.general.gen\_var
-==========================
-
-.. currentmodule:: mex.utils.general
-
-.. autofunction:: gen_var
