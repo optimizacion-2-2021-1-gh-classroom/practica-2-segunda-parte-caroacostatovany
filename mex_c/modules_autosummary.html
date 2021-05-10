@@ -50,6 +50,54 @@
 <col style="width: 90%" />
 </colgroup>
 <tbody>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">simplex_networks_c.create_matrix</span></code></p></td>
+<td><p>Creates a matrix with enough rows for each constraint plus the objective function and enough columns for all the variables.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">simplex_networks_c.pivots_col</span></code></p></td>
+<td><p>Checks to see if pivots are required due to negative values in right column, excluding the bottom value.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">simplex_networks_c.pivots_row</span></code></p></td>
+<td><p>Checks to see if pivots are required due to negative values in bottom row, excluding the final value.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">simplex_networks_c.find_negative_col</span></code></p></td>
+<td><p>Finds location of negative values in right column.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">simplex_networks_c.find_negative_row</span></code></p></td>
+<td><p>Finds location of negative values in bottom row.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">simplex_networks_c.find_pivot_col</span></code></p></td>
+<td><p>Finds pivot element corresponding to a negative value in right column.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">simplex_networks_c.find_pivot_row</span></code></p></td>
+<td><p>Finds pivot element corresponding to a negative value in bottom row.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">simplex_networks_c.pivot</span></code></p></td>
+<td><p>Pivot about a value to remove negative in final column or row.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">problem_definition_c.add_cons</span></code></p></td>
+<td><p>Checks if 1 extra constraint can be added to the matrix, this means that there are at least two rows of all 0 elements.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">problem_definition_c.constrain</span></code></p></td>
+<td><p>Adds constraints to the problem.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">problem_definition_c.add_obj</span></code></p></td>
+<td><p>Verifies if the objective function can be added.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">problem_definition_c.obj</span></code></p></td>
+<td><p>Adds the objective function to the problem matrix.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">problem_definition_c.maxz</span></code></p></td>
+<td><p>Creates maximization function.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">problem_definition_c.convert_min</span></code></p></td>
+<td><p>This function multiplies by -1 the objective function for maximization problems.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">problem_definition_c.minz</span></code></p></td>
+<td><p>Creates minimization function.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">problem_definition_c.convert</span></code></p></td>
+<td><p>Converts equation into a list containing the coefficients of the equation.</p></td>
+</tr>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">general_c.convert_min</span></code></p></td>
 <td><p>This function multiplies by -1 the objective function for maximization problems.</p></td>
 </tr>
@@ -58,6 +106,12 @@
 </tr>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">general_c.convert</span></code></p></td>
 <td><p>Converts equation into a list containing the coefficients of the equation.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">maximizer_class_c.Maximizer</span></code>(n_variables, …)</p></td>
+<td><p>Maximize the objective function</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">minimizer_class_c.Minimizer</span></code>(n_variables, …)</p></td>
+<td><p>Minimize the objective function</p></td>
 </tr>
 </tbody>
 </table>
