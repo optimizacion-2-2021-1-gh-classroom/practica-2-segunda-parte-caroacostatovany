@@ -50,11 +50,12 @@ jobs:
       run: |
         git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
         git config --local user.name "github-actions[bot]"
-        kernprof -l -v src/profiling/tiempo/net_line_profiler.py > reports/net_time_profiling.txt
-        kernprof -l -v src/profiling/tiempo/max_line_profiler.py > reports/max_time_profiling.txt
-        kernprof -l -v src/profiling/tiempo/min_line_profiler.py > reports/min_time_profiling.txt
+        kernprof -l -v src/profiling/tiempo/problema_min_net.py > reports/problema_min_net.txt
+        kernprof -l -v src/profiling/tiempo/problema_max_pequenio.py > reports/problema_max_pequenio.txt
+        kernprof -l -v src/profiling/tiempo/problema_min_pequenio.py > reports/problema_min_pequenio.txt        
+        kernprof -l -v src/profiling/tiempo/problema_max_mediano.py > reports/problema_max_mediano.txt
         rm *.lprof
-        git add reports/net_time_profiling.txt reports/max_time_profiling.txt reports/min_time_profiling.txt
+        git add reports/problema_min_net.txt reports/problema_max_pequenio.txt reports/problema_min_pequenio.txt reports/problema_max_mediano.txt
         git commit -m "Agregar reporte del time profiling"
     - name: Push changes
       uses: ad-m/github-push-action@master
