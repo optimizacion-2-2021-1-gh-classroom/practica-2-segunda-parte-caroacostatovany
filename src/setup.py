@@ -21,5 +21,5 @@ setup(name="mex",
                           "guppy3"
                           ],
       cmdclass={'build_ext': build_ext},
-      ext_modules=[Extension("mex_c", sources=["general_c.pyx"], cython_directives={"embedsignature": True} )]
+      ext_modules=[Extension("mex_c", sources=["mex/mex_c/general_c.pyx"], cython_directives={"embedsignature": True} )]
       )
