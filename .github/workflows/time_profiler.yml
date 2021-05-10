@@ -55,7 +55,7 @@ jobs:
         kernprof -l -v src/profiling/tiempo/problema_min_pequenio.py > reports/problema_min_pequenio.txt        
         kernprof -l -v src/profiling/tiempo/problema_max_mediano.py > reports/problema_max_mediano.txt
         rm *.lprof
-        git add reports/problema_min_net.txt reports/problema_max_pequenio.txt reports/problema_min_pequenio.txt reports/problema_max_mediano.txt
+        git add reports/problema_min_red.txt reports/problema_max_pequenio.txt reports/problema_min_pequenio.txt reports/problema_max_mediano.txt
         git commit -m "Agregar reporte del time profiling"
     - name: Push changes
       uses: ad-m/github-push-action@master
