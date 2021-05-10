@@ -1,7 +1,3 @@
-import line_profiler
-profile = line_profiler.LineProfiler()
-
-
 @profile
 def convert_min(matrix):
     """

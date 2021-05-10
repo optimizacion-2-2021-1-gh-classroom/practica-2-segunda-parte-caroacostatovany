@@ -1,0 +1,5 @@
+*.lprof
+.idea/**
+notebooks/.ipynb_checkpoints/**
+src/mex/__pycache__/**
+src/mex/simplex/__pycache__/**

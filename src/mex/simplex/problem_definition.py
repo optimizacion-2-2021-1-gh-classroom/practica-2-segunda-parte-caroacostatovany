@@ -1,7 +1,5 @@
 import numpy as np
 import logging
-import line_profiler
-profile = line_profiler.LineProfiler()
 
 from mex.utils.general import gen_var, convert_min, convert
 from mex.simplex.simplex_networks import pivots_col, find_pivot_col, pivots_row, pivot, find_pivot_row
