@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>mex.utils &#8212; mex 0.1 documentation</title>
+    <title>mex.simplex.problem_definition &#8212; mex 0.1 documentation</title>
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
     
@@ -27,7 +27,7 @@
           <a href="../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="nav-item nav-item-0"><a href="../index.html">mex 0.1 documentation</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">mex.utils</a></li> 
+        <li class="nav-item nav-item-this"><a href="">mex.simplex.problem_definition</a></li> 
       </ul>
     </div>  
 
@@ -36,17 +36,32 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="module-mex.utils">
-<span id="mex-utils"></span><h1>mex.utils<a class="headerlink" href="#module-mex.utils" title="Permalink to this headline">¶</a></h1>
-<p class="rubric">Modules</p>
+  <div class="section" id="module-mex.simplex.problem_definition">
+<span id="mex-simplex-problem-definition"></span><h1>mex.simplex.problem_definition<a class="headerlink" href="#module-mex.simplex.problem_definition" title="Permalink to this headline">¶</a></h1>
+<p class="rubric">Functions</p>
 <table class="longtable docutils align-default">
 <colgroup>
 <col style="width: 10%" />
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="mex.utils.general.html#module-mex.utils.general" title="mex.utils.general"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mex.utils.general</span></code></a></p></td>
-<td><p></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="mex.simplex.problem_definition.add_cons.html#mex.simplex.problem_definition.add_cons" title="mex.simplex.problem_definition.add_cons"><code class="xref py py-obj docutils literal notranslate"><span class="pre">add_cons</span></code></a>(matrix)</p></td>
+<td><p>Checks if 1 extra constraint can be added to the matrix, this means that there are at least two rows of all 0 elements.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="mex.simplex.problem_definition.add_obj.html#mex.simplex.problem_definition.add_obj" title="mex.simplex.problem_definition.add_obj"><code class="xref py py-obj docutils literal notranslate"><span class="pre">add_obj</span></code></a>(matrix)</p></td>
+<td><p>Verifies if the objective function can be added.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="mex.simplex.problem_definition.constrain.html#mex.simplex.problem_definition.constrain" title="mex.simplex.problem_definition.constrain"><code class="xref py py-obj docutils literal notranslate"><span class="pre">constrain</span></code></a>(matrix, eq[, memory_prof])</p></td>
+<td><p>Adds constraints to the problem.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="mex.simplex.problem_definition.maxz.html#mex.simplex.problem_definition.maxz" title="mex.simplex.problem_definition.maxz"><code class="xref py py-obj docutils literal notranslate"><span class="pre">maxz</span></code></a>(matrix[, aux])</p></td>
+<td><p>Creates maximization function.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="mex.simplex.problem_definition.minz.html#mex.simplex.problem_definition.minz" title="mex.simplex.problem_definition.minz"><code class="xref py py-obj docutils literal notranslate"><span class="pre">minz</span></code></a>(matrix[, aux])</p></td>
+<td><p>Creates minimization function.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="mex.simplex.problem_definition.obj.html#mex.simplex.problem_definition.obj" title="mex.simplex.problem_definition.obj"><code class="xref py py-obj docutils literal notranslate"><span class="pre">obj</span></code></a>(matrix, eq[, memory_prof])</p></td>
+<td><p>Adds the objective function to the problem matrix.</p></td>
 </tr>
 </tbody>
 </table>
@@ -62,7 +77,7 @@
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
-      <li><a href="../_sources/_autosummary/mex.utils.rst.txt"
+      <li><a href="../_sources/_autosummary/mex.simplex.problem_definition.rst.txt"
             rel="nofollow">Show Source</a></li>
     </ul>
    </div>
@@ -90,7 +105,7 @@
           <a href="../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="nav-item nav-item-0"><a href="../index.html">mex 0.1 documentation</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">mex.utils</a></li> 
+        <li class="nav-item nav-item-this"><a href="">mex.simplex.problem_definition</a></li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">

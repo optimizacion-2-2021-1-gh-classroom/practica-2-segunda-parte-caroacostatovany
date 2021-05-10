@@ -1,0 +1,159 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>mex.utils.general &#8212; mex 0.1 documentation</title>
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/classic.css" type="text/css" />
+    
+    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">mex 0.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../index.html" accesskey="U">Module code</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">mex.utils.general</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <h1>Source code for mex.utils.general</h1><div class="highlight"><pre>
+<div class="viewcode-block" id="convert_min"><a class="viewcode-back" href="../../../_autosummary/mex.utils.general.convert_min.html#mex.simplex.problem_definition.convert_min">[docs]</a><span></span><span class="k">def</span> <span class="nf">convert_min</span><span class="p">(</span><span class="n">matrix</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    This function multiplies by -1 the objective function for maximization problems. This is because</span>
+<span class="sd">    if the problem to be solved is maximization then it is analogue to solve the problem -minimization.</span>
+<span class="sd">    </span>
+<span class="sd">    Args:</span>
+<span class="sd">    </span>
+<span class="sd">        matrix (numpy array): matrix to be updated.</span>
+<span class="sd">    </span>
+<span class="sd">    Returns:</span>
+<span class="sd">    </span>
+<span class="sd">        matrix (numpy array): matrix multiplied by -1.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    
+    <span class="n">matrix</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="p">:</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="o">*</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">matrix</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="p">:</span><span class="o">-</span><span class="mi">2</span><span class="p">]]</span>
+    <span class="n">matrix</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="o">*</span><span class="n">matrix</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+    
+    <span class="k">return</span> <span class="n">matrix</span></div>
+
+
+<div class="viewcode-block" id="gen_var"><a class="viewcode-back" href="../../../_autosummary/mex.utils.general.gen_var.html#mex.simplex.problem_definition.gen_var">[docs]</a><span class="k">def</span> <span class="nf">gen_var</span><span class="p">(</span><span class="n">matrix</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Generates the required number of variables. They are defined by the problem.</span>
+<span class="sd">    </span>
+<span class="sd">    Args:</span>
+<span class="sd">    </span>
+<span class="sd">        matrix (numpy array): matrix to be updated.</span>
+<span class="sd">    </span>
+<span class="sd">    Returns:</span>
+<span class="sd">    </span>
+<span class="sd">        v (list): list with problem variables.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    
+    <span class="n">lc</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">matrix</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="p">:])</span>
+    <span class="n">lr</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">matrix</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">])</span>
+    
+    <span class="n">var</span> <span class="o">=</span> <span class="n">lc</span> <span class="o">-</span> <span class="n">lr</span> <span class="o">-</span><span class="mi">1</span>
+    <span class="n">v</span> <span class="o">=</span> <span class="p">[]</span>
+    
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">var</span><span class="p">):</span>
+        <span class="n">v</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;x&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span>
+    
+    <span class="k">return</span> <span class="n">v</span></div>
+
+
+<div class="viewcode-block" id="convert"><a class="viewcode-back" href="../../../_autosummary/mex.utils.general.convert.html#mex.simplex.problem_definition.convert">[docs]</a><span class="k">def</span> <span class="nf">convert</span><span class="p">(</span><span class="n">eq</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Converts equation into a list containing the coefficients of the equation.</span>
+<span class="sd">    </span>
+<span class="sd">    Args:</span>
+<span class="sd">    </span>
+<span class="sd">        eq (string): equation defined with :func:`constrain`.</span>
+<span class="sd">    </span>
+<span class="sd">    Returns:</span>
+<span class="sd">    </span>
+<span class="sd">        eq (list): list with equation coefficients.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    
+    <span class="n">eq</span> <span class="o">=</span> <span class="n">eq</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">)</span>
+    
+    <span class="k">if</span> <span class="s1">&#39;G&#39;</span> <span class="ow">in</span> <span class="n">eq</span><span class="p">:</span>
+        <span class="n">g</span> <span class="o">=</span> <span class="n">eq</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s1">&#39;G&#39;</span><span class="p">)</span>
+        <span class="k">del</span> <span class="n">eq</span><span class="p">[</span><span class="n">g</span><span class="p">]</span>
+        <span class="n">eq</span> <span class="o">=</span> <span class="p">[</span><span class="nb">float</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">*-</span><span class="mi">1</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">eq</span><span class="p">]</span>
+        <span class="k">return</span> <span class="n">eq</span>
+    
+    <span class="k">if</span> <span class="s1">&#39;L&#39;</span> <span class="ow">in</span> <span class="n">eq</span><span class="p">:</span>
+        <span class="n">l</span> <span class="o">=</span> <span class="n">eq</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s1">&#39;L&#39;</span><span class="p">)</span>
+        <span class="k">del</span> <span class="n">eq</span><span class="p">[</span><span class="n">l</span><span class="p">]</span>
+        <span class="n">eq</span> <span class="o">=</span> <span class="p">[</span><span class="nb">float</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">eq</span><span class="p">]</span>
+        <span class="k">return</span> <span class="n">eq</span>
+    
+    <span class="k">if</span> <span class="s1">&#39;E&#39;</span> <span class="ow">in</span> <span class="n">eq</span><span class="p">:</span>
+        <span class="n">l</span> <span class="o">=</span> <span class="n">eq</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s1">&#39;E&#39;</span><span class="p">)</span>
+        <span class="k">del</span> <span class="n">eq</span><span class="p">[</span><span class="n">l</span><span class="p">]</span>
+        <span class="n">eq</span> <span class="o">=</span> <span class="p">[</span><span class="nb">float</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">eq</span><span class="p">]</span>
+        <span class="k">return</span> <span class="n">eq</span></div>
+</pre></div>
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">mex 0.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">mex.utils.general</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2021, cecyar, lecepe00, eduardo-moreno, caroacostatovany.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.4.3.
+    </div>
+  </body>
+</html>

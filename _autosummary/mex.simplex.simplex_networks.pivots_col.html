@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>General Modules &#8212; mex 0.1 documentation</title>
+    <title>mex.simplex.simplex_networks.pivots_col &#8212; mex 0.1 documentation</title>
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
     
@@ -16,8 +16,8 @@
     
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="mex.utils.general.convert_min" href="../_autosummary/mex.utils.general.convert_min.html" />
-    <link rel="prev" title="mex.simplex.problem_definition.convert" href="../_autosummary/mex.simplex.problem_definition.convert.html" /> 
+    <link rel="next" title="mex.simplex.simplex_networks.pivots_row" href="mex.simplex.simplex_networks.pivots_row.html" />
+    <link rel="prev" title="mex.simplex.simplex_networks.create_matrix" href="mex.simplex.simplex_networks.create_matrix.html" /> 
   </head><body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
@@ -29,13 +29,14 @@
           <a href="../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="../_autosummary/mex.utils.general.convert_min.html" title="mex.utils.general.convert_min"
+          <a href="mex.simplex.simplex_networks.pivots_row.html" title="mex.simplex.simplex_networks.pivots_row"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="../_autosummary/mex.simplex.problem_definition.convert.html" title="mex.simplex.problem_definition.convert"
+          <a href="mex.simplex.simplex_networks.create_matrix.html" title="mex.simplex.simplex_networks.create_matrix"
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../index.html">mex 0.1 documentation</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">General Modules</a></li> 
+          <li class="nav-item nav-item-1"><a href="../simplex/modules_autosummary.html" accesskey="U">Simplex method Modules</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">mex.simplex.simplex_networks.pivots_col</a></li> 
       </ul>
     </div>  
 
@@ -44,28 +45,26 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="general-modules">
-<h1>General Modules<a class="headerlink" href="#general-modules" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="general-functions">
-<h2>General functions<a class="headerlink" href="#general-functions" title="Permalink to this headline">¶</a></h2>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
-<tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="../_autosummary/mex.utils.general.convert_min.html#mex.utils.general.convert_min" title="mex.utils.general.convert_min"><code class="xref py py-obj docutils literal notranslate"><span class="pre">general.convert_min</span></code></a>(matrix)</p></td>
-<td><p>This function multiplies by -1 the objective function for maximization problems.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="../_autosummary/mex.utils.general.gen_var.html#mex.utils.general.gen_var" title="mex.utils.general.gen_var"><code class="xref py py-obj docutils literal notranslate"><span class="pre">general.gen_var</span></code></a>(matrix)</p></td>
-<td><p>Generates the required number of variables.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="../_autosummary/mex.utils.general.convert.html#mex.utils.general.convert" title="mex.utils.general.convert"><code class="xref py py-obj docutils literal notranslate"><span class="pre">general.convert</span></code></a>(eq)</p></td>
-<td><p>Converts equation into a list containing the coefficients of the equation.</p></td>
-</tr>
-</tbody>
-</table>
-</div>
+  <div class="section" id="mex-simplex-simplex-networks-pivots-col">
+<h1>mex.simplex.simplex_networks.pivots_col<a class="headerlink" href="#mex-simplex-simplex-networks-pivots-col" title="Permalink to this headline">¶</a></h1>
+<dl class="py function">
+<dt id="mex.simplex.simplex_networks.pivots_col">
+<code class="sig-prename descclassname">mex.simplex.simplex_networks.</code><code class="sig-name descname">pivots_col</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">matrix</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mex/simplex/simplex_networks.html#pivots_col"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mex.simplex.simplex_networks.pivots_col" title="Permalink to this definition">¶</a></dt>
+<dd><p>Checks to see if pivots are required due to negative values in right column,
+excluding the bottom value.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>matrix</strong> (<em>numpy array</em>) – matrix to be reviewed.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>True or False indicating whether a negative element was found.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>Flag (bool)</p>
+</dd>
+</dl>
+</dd></dl>
+
 </div>
 
 
@@ -75,24 +74,16 @@
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="../index.html">Table of Contents</a></h3>
-  <ul>
-<li><a class="reference internal" href="#">General Modules</a><ul>
-<li><a class="reference internal" href="#general-functions">General functions</a></li>
-</ul>
-</li>
-</ul>
-
   <h4>Previous topic</h4>
-  <p class="topless"><a href="../_autosummary/mex.simplex.problem_definition.convert.html"
-                        title="previous chapter">mex.simplex.problem_definition.convert</a></p>
+  <p class="topless"><a href="mex.simplex.simplex_networks.create_matrix.html"
+                        title="previous chapter">mex.simplex.simplex_networks.create_matrix</a></p>
   <h4>Next topic</h4>
-  <p class="topless"><a href="../_autosummary/mex.utils.general.convert_min.html"
-                        title="next chapter">mex.utils.general.convert_min</a></p>
+  <p class="topless"><a href="mex.simplex.simplex_networks.pivots_row.html"
+                        title="next chapter">mex.simplex.simplex_networks.pivots_row</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
-      <li><a href="../_sources/utils/modules_autosummary.rst.txt"
+      <li><a href="../_sources/_autosummary/mex.simplex.simplex_networks.pivots_col.rst.txt"
             rel="nofollow">Show Source</a></li>
     </ul>
    </div>
@@ -120,13 +111,14 @@
           <a href="../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="../_autosummary/mex.utils.general.convert_min.html" title="mex.utils.general.convert_min"
+          <a href="mex.simplex.simplex_networks.pivots_row.html" title="mex.simplex.simplex_networks.pivots_row"
              >next</a> |</li>
         <li class="right" >
-          <a href="../_autosummary/mex.simplex.problem_definition.convert.html" title="mex.simplex.problem_definition.convert"
+          <a href="mex.simplex.simplex_networks.create_matrix.html" title="mex.simplex.simplex_networks.create_matrix"
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../index.html">mex 0.1 documentation</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">General Modules</a></li> 
+          <li class="nav-item nav-item-1"><a href="../simplex/modules_autosummary.html" >Simplex method Modules</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">mex.simplex.simplex_networks.pivots_col</a></li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
