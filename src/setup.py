@@ -16,6 +16,6 @@ setup(name="mex",
                           "scipy",
                           "line_profiler",
                           "memory_profiler",
-                          "guppy"
+                          "guppy3"
                           ],
       )
