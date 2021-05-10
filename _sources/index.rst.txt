@@ -18,9 +18,10 @@ This package will help you to minimize or maximize a problem using the simplex m
 
    docker
    installation
+   quick_start
    simplex/modules_autosummary
    utils/modules_autosummary
-   mex_c/modules_autosummary
+   mex_c
       
 Index and tables
 ==================
