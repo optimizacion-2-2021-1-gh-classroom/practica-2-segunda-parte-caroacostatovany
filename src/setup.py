@@ -2,6 +2,7 @@
 from setuptools import setup, find_packages
 from distutils.core import setup
 from Cython.Build import cythonize
+from Cython.Distutils import build_ext
 
 setup(name="mex",
       version="0.2",
@@ -20,10 +21,10 @@ setup(name="mex",
                           "memory_profiler",
                           "guppy3"
                           ],
-      #cmdclass={'build_ext': build_ext},
+      cmdclass={'build_ext': build_ext},
       ext_modules=cythonize( ["mex/mex_c/general_c.pyx",
-                              "mex/mex_c/maximizer_class.pyx",
-                              "mex/mex_c/minimizer_clas.pyx",
+                              "mex/mex_c/maximizer_class_c.pyx",
+                              "mex/mex_c/minimizer_class_c.pyx",
                               "mex/mex_c/problem_definition.pyx",
                               "mex/mex_c/simplex_networks_c.pyx"] , compiler_directives={'language_level':3})
       )
