@@ -7,7 +7,7 @@
 | Nombre | User Github | Tarea a realizar |
 |:---:|:---:|:---|
 | Carolina Acosta | caroacostatovany| Perfilamiento de código / Imagen Docker |
-| Eduardo Moreno | Eduardo-Moreno| Perfilamiento de código |
+| Eduardo Moreno | Eduardo-Moreno| Perfilamiento de código / Tests |
 | Cecilia Avilés | cecyar| Reimplementación de código / Documentación |
 | Leonardo Ceja | lecepe00| Reimplementación de código / Arquitectura AWS / *Project-Manager* |
 
