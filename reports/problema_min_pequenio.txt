@@ -1,0 +1,666 @@
+Wrote profile results to problema_min_pequenio.py.lprof
+Timer unit: 1e-06 s
+
+Total time: 1.4e-05 s
+File: src/profiling/tiempo/general_profile.py
+Function: convert_min at line 2
+
+Line #      Hits         Time  Per Hit   % Time  Line Contents
+==============================================================
+     2                                           @profile
+     3                                           def convert_min(matrix):
+     4                                               """
+     5                                               This function multiplies by -1 the objective function for maximization problems. This is because
+     6                                               if the problem to be solved is maximization then it is analogue to solve the problem -minimization.
+     7                                               
+     8                                               Args:
+     9                                               
+    10                                                   matrix (numpy array): matrix to be updated.
+    11                                               
+    12                                               Returns:
+    13                                               
+    14                                                   matrix (numpy array): matrix multiplied by -1.
+    15                                               """
+    16                                               
+    17         1         12.0     12.0     85.7      matrix[-1, :-2] = [-1*i for i in matrix[-1, :-2]]
+    18         1          1.0      1.0      7.1      matrix[-1, -1] = -1*matrix[-1, -1]
+    19                                               
+    20         1          1.0      1.0      7.1      return matrix
+
+Total time: 1.4e-05 s
+File: src/profiling/tiempo/general_profile.py
+Function: gen_var at line 22
+
+Line #      Hits         Time  Per Hit   % Time  Line Contents
+==============================================================
+    22                                           @profile
+    23                                           def gen_var(matrix):
+    24                                               """
+    25                                               Generates the required number of variables. They are defined by the problem.
+    26                                               
+    27                                               Args:
+    28                                               
+    29                                                   matrix (numpy array): matrix to be updated.
+    30                                               
+    31                                               Returns:
+    32                                               
+    33                                                   v (list): list with problem variables.
+    34                                               """
+    35                                               
+    36         2          3.0      1.5     21.4      lc = len(matrix[0, :])
+    37         2          2.0      1.0     14.3      lr = len(matrix[:, 0])
+    38                                               
+    39         2          1.0      0.5      7.1      var = lc - lr -1
+    40         2          0.0      0.0      0.0      v = []
+    41                                               
+    42         6          3.0      0.5     21.4      for i in range(var):
+    43         4          5.0      1.2     35.7          v.append('x' + str(i+1))
+    44                                               
+    45         2          0.0      0.0      0.0      return v
+
+Total time: 2.4e-05 s
+File: src/profiling/tiempo/general_profile.py
+Function: convert at line 47
+
+Line #      Hits         Time  Per Hit   % Time  Line Contents
+==============================================================
+    47                                           @profile
+    48                                           def convert(eq):
+    49                                               """
+    50                                               Converts equation into a list containing the coefficients of the equation.
+    51                                               
+    52                                               Args:
+    53                                               
+    54                                                   eq (string): equation defined with :func:`constrain`.
+    55                                               
+    56                                               Returns:
+    57                                               
+    58                                                   eq (list): list with equation coefficients.
+    59                                               """
+    60                                               
+    61         2          4.0      2.0     16.7      eq = eq.split(',')
+    62                                               
+    63         2          2.0      1.0      8.3      if 'G' in eq:
+    64                                                   g = eq.index('G')
+    65                                                   del eq[g]
+    66                                                   eq = [float(i)*-1 for i in eq]
+    67                                                   return eq
+    68                                               
+    69         2          2.0      1.0      8.3      if 'L' in eq:
+    70         2          3.0      1.5     12.5          l = eq.index('L')
+    71         2          2.0      1.0      8.3          del eq[l]
+    72         2          9.0      4.5     37.5          eq = [float(i) for i in eq]
+    73         2          2.0      1.0      8.3          return eq
+    74                                               
+    75                                               if 'E' in eq:
+    76                                                   l = eq.index('E')
+    77                                                   del eq[l]
+    78                                                   eq = [float(i) for i in eq]
+    79                                                   return eq
+
+Total time: 0.000105 s
+File: src/profiling/tiempo/problem_definition_profile.py
+Function: add_cons at line 8
+
+Line #      Hits         Time  Per Hit   % Time  Line Contents
+==============================================================
+     8                                           @profile
+     9                                           def add_cons(matrix):
+    10                                               """
+    11                                               Checks if 1 extra constraint can be added to the matrix, this means that there are at least two rows of all
+    12                                               0 elements. If this condition is not satisfied, our program will not allow the user to add additional constraints.
+    13                                               
+    14                                               Args:
+    15                                               
+    16                                                   matrix (numpy array): matrix to be reviewed.
+    17                                               
+    18                                               Returns:
+    19                                               
+    20                                                   Flag (bool): True or False indicating whether 1+ constraints can be added.
+    21                                               """
+    22                                           
+    23         2          3.0      1.5      2.9      lr = len(matrix[:, 0])
+    24         2          1.0      0.5      1.0      empty = []
+    25                                           
+    26         8          7.0      0.9      6.7      for i in range(lr):
+    27         6          5.0      0.8      4.8          total = 0
+    28        42         38.0      0.9     36.2          for j in matrix[i, :]:
+    29        36         39.0      1.1     37.1              total += j**2
+    30         6          5.0      0.8      4.8          if total == 0:
+    31         5          5.0      1.0      4.8              empty.append(total)
+    32                                           
+    33         2          1.0      0.5      1.0      if len(empty) > 1:
+    34         2          1.0      0.5      1.0          return True
+    35                                               else:
+    36                                                   return False
+
+Total time: 0.000298 s
+File: src/profiling/tiempo/problem_definition_profile.py
+Function: constrain at line 38
+
+Line #      Hits         Time  Per Hit   % Time  Line Contents
+==============================================================
+    38                                           @profile
+    39                                           def constrain(matrix, eq, memory_prof=False):
+    40                                               """
+    41                                               Adds constraints to the problem.
+    42                                               
+    43                                               Args:
+    44                                                   matrix (numpy array): matrix defined with :mod:`create_matrix`.
+    45                                                   eq (string): coefficients of constraints expressions. Use **L** for *less than*, **G** for *greater than*,
+    46                                                   **E** for *equal to*.
+    47                                               
+    48                                               >>> problem_matrix = create_matrix(2,3)   # 2 variables and 3 constraints
+    49                                               >>> constrain(problem_matrix,'1,L,4')     # x_1 <= 4
+    50                                               >>> constrain(problem_matrix,'0,2,L,12')  # 2x_2 <= 12
+    51                                               >>> constrain(problem_matrix,'3,2,G,18')  # 3x_1 + 2x_2 >= 18
+    52                                               """
+    53                                           
+    54         2          2.0      1.0      0.7      if 'E' in eq:
+    55                                                   if add_cons(matrix):
+    56                                                       lc = len(matrix[0, :])
+    57                                                       lr = len(matrix[:, 0])
+    58                                                       var = lc - lr - 1
+    59                                                       j = 0
+    60                                           
+    61                                                       while j < lr:
+    62                                                           row_check = matrix[j,:]
+    63                                                           total = 0
+    64                                                           for i in row_check:
+    65                                                               total += float(i**2)
+    66                                                           if total == 0:
+    67                                                               row = row_check
+    68                                                               break
+    69                                                           j += 1
+    70                                                           
+    71                                                       eq = convert(eq)
+    72                                                       i = 0
+    73                                                       
+    74                                                       while i<len(eq)-1:
+    75                                                           row[i] = eq[i]
+    76                                                           i += 1
+    77                                                       
+    78                                                       row[-1] = eq[-1]
+    79                                                       #row[var+j] = 1
+    80                                                   
+    81                                                   else:
+    82                                                       logging.info('Cannot add another constraint.')
+    83                                                   
+    84                                               else:
+    85         2        163.0     81.5     54.7          if add_cons(matrix):
+    86         2          2.0      1.0      0.7              lc = len(matrix[0, :])
+    87         2          2.0      1.0      0.7              lr = len(matrix[:, 0])
+    88         2          2.0      1.0      0.7              var = lc - lr -1
+    89         2          2.0      1.0      0.7              j = 0
+    90                                                       
+    91         3          2.0      0.7      0.7              while j < lr:
+    92         3          2.0      0.7      0.7                  row_check = matrix[j, :]
+    93         3          1.0      0.3      0.3                  total = 0
+    94        21         22.0      1.0      7.4                  for i in row_check:
+    95        18         24.0      1.3      8.1                      total += float(i**2)
+    96         3          3.0      1.0      1.0                  if total == 0:
+    97         2          1.0      0.5      0.3                      row = row_check
+    98         2          1.0      0.5      0.3                      break
+    99         1          1.0      1.0      0.3                  j +=1
+   100                                                           
+   101         2         48.0     24.0     16.1              eq = convert(eq)
+   102         2          1.0      0.5      0.3              i = 0
+   103                                                       
+   104         6          6.0      1.0      2.0              while i<len(eq)-1:
+   105         4          2.0      0.5      0.7                  row[i] = eq[i]
+   106         4          4.0      1.0      1.3                  i += 1
+   107                                                       
+   108         2          2.0      1.0      0.7              row[-1] = eq[-1]
+   109         2          2.0      1.0      0.7              row[var+j] = 1
+   110                                                       
+   111                                                   else:
+   112                                                       logging.info('Cannot add another constraint.')
+   113         2          1.0      0.5      0.3      if memory_prof:
+   114                                                   return matrix
+   115                                           
+   116         2          2.0      1.0      0.7      if memory_prof:
+   117                                                   return matrix
+
+Total time: 4.7e-05 s
+File: src/profiling/tiempo/problem_definition_profile.py
+Function: add_obj at line 119
+
+Line #      Hits         Time  Per Hit   % Time  Line Contents
+==============================================================
+   119                                           @profile
+   120                                           def add_obj(matrix):
+   121                                               """
+   122                                               Verifies if the objective function can be added.
+   123                                               
+   124                                               Args:
+   125                                               
+   126                                                   matrix (numpy array): matrix to be reviewed.
+   127                                               
+   128                                               Returns:
+   129                                               
+   130                                                   Flag (bool): True or False indicating whether objective function can be added.
+   131                                               """
+   132                                               
+   133         1          2.0      2.0      4.3      lr = len(matrix[:,0])
+   134         1          1.0      1.0      2.1      empty = []
+   135                                               
+   136         4          3.0      0.8      6.4      for i in range(lr):
+   137         3          3.0      1.0      6.4          total = 0
+   138        21         16.0      0.8     34.0          for j in matrix[i, :]:
+   139        18         16.0      0.9     34.0              total += j**2
+   140         3          3.0      1.0      6.4          if total == 0:
+   141         1          1.0      1.0      2.1              empty.append(total)
+   142                                               
+   143         1          1.0      1.0      2.1      if len(empty) == 1:
+   144         1          1.0      1.0      2.1          return True
+   145                                               else:
+   146                                                   return False
+
+Total time: 8.7e-05 s
+File: src/profiling/tiempo/problem_definition_profile.py
+Function: obj at line 148
+
+Line #      Hits         Time  Per Hit   % Time  Line Contents
+==============================================================
+   148                                           @profile
+   149                                           def obj(matrix,eq,memory_prof=False):
+   150                                               """
+   151                                               Adds the objective function to the problem matrix.
+   152                                               
+   153                                               .. note::
+   154                                                   Objective function must be added **after** constraints have been input.
+   155                                               
+   156                                               Args:
+   157                                               
+   158                                                   matrix (numpy array): matrix defined with :mod:`create_matrix`.
+   159                                                   
+   160                                                   eq (string): coefficients of objective function.
+   161                                               
+   162                                               >>> problem_matrix = create_matrix(2,3)   # 2 variables and 3 constraints
+   163                                               >>> constrain(problem_matrix,'1,L,4')     # x_1 <= 4
+   164                                               >>> constrain(problem_matrix,'0,2,L,12')  # 2x_2 <= 12
+   165                                               >>> constrain(problem_matrix,'4,2,G,18')  # 4x_1 + 2x_2 >= 18
+   166                                               >>> obj(problem_matrix,'3,5,0')           # 3x_1 + 5x_2
+   167                                               """
+   168                                               
+   169         1         73.0     73.0     83.9      if add_obj(matrix):
+   170         1          4.0      4.0      4.6          eq = [float(i) for i in eq.split(',')]
+   171         1          1.0      1.0      1.1          lr = len(matrix[:,0])
+   172         1          1.0      1.0      1.1          row = matrix[lr-1,:]
+   173         1          1.0      1.0      1.1          i = 0
+   174         3          2.0      0.7      2.3          while i<len(eq)-1:
+   175         2          2.0      1.0      2.3              row[i] = eq[i]*-1
+   176         2          1.0      0.5      1.1              i +=1
+   177         1          0.0      0.0      0.0          row[-2] = 1
+   178         1          1.0      1.0      1.1          row[-1] = eq[-1]
+   179                                               else:
+   180                                                   logging.info('You must finish adding constraints before the objective function can be added.')
+   181                                           
+   182         1          1.0      1.0      1.1      if memory_prof:
+   183                                                   return matrix
+
+Total time: 0 s
+File: src/profiling/tiempo/problem_definition_profile.py
+Function: maxz at line 185
+
+Line #      Hits         Time  Per Hit   % Time  Line Contents
+==============================================================
+   185                                           @profile
+   186                                           def maxz(matrix, aux=True):
+   187                                               """
+   188                                               Creates maximization function. Determines if 1 extra pivot is required, locates the pivot element,
+   189                                               pivots about it and continues the process until all negative elements have been removed from
+   190                                               the last column and row.
+   191                                               
+   192                                               Args:
+   193                                               
+   194                                                   matrix (numpy array): problem matrix with constraints and objective function added.
+   195                                               
+   196                                               Returns:
+   197                                               
+   198                                                   *(dict)* A dictionary with Max and variables.
+   199                                                   
+   200                                               >>> problem_matrix = create_matrix(2,3)   # 2 variables and 3 constraints
+   201                                               >>> constrain(problem_matrix,'1,L,4')     # x_1 <= 4
+   202                                               >>> constrain(problem_matrix,'0,2,L,12')  # 2x_2 <= 12
+   203                                               >>> constrain(problem_matrix,'4,2,G,18')  # 4x_1 + 2x_2 >= 18
+   204                                               >>> obj(problem_matrix,'3,5,0')           # 3x_1 + 5x_2
+   205                                               >>> maxz(problem_matrix)
+   206                                               {'x1': 4.0, 'x2': 6.0, 'max': 42.0}
+   207                                               """
+   208                                               
+   209                                               while pivots_col(matrix):
+   210                                                   matrix = pivot(find_pivot_col(matrix)[0], find_pivot_col(matrix)[1], matrix)
+   211                                               while pivots_row(matrix):
+   212                                                   matrix = pivot(find_pivot_row(matrix)[0], find_pivot_row(matrix)[1], matrix)
+   213                                               
+   214                                               lc = len(matrix[0, :])
+   215                                               lr = len(matrix[:, 0])
+   216                                               var = lc - lr - 1
+   217                                               i = 0
+   218                                               val = {}
+   219                                               
+   220                                               for i in range(var):
+   221                                                   col = matrix[:, i]
+   222                                                   s = sum(col)
+   223                                                   m = max(col)
+   224                                                   if float(s) == float(m):
+   225                                                       loc = np.where(col == m)[0][0]
+   226                                                       val[gen_var(matrix)[i]] = matrix[loc, -1]
+   227                                                   else:
+   228                                                       val[gen_var(matrix)[i]] = 0
+   229                                               val['max'] = matrix[-1, -1]
+   230                                               
+   231                                               return val
+
+Total time: 0.000527 s
+File: src/profiling/tiempo/problem_definition_profile.py
+Function: minz at line 233
+
+Line #      Hits         Time  Per Hit   % Time  Line Contents
+==============================================================
+   233                                           @profile
+   234                                           def minz(matrix, aux=True):
+   235                                               """
+   236                                               Creates minimization function. Determines if 1 extra pivot is required, locates the pivot element,
+   237                                               pivots about it and continues the process until all negative elements have been removed from 
+   238                                               the last column and row.
+   239                                               
+   240                                               Args:
+   241                                               
+   242                                                   matrix (numpy array): problem matrix with constraints and objective function added.
+   243                                               
+   244                                               Returns:
+   245                                               
+   246                                                   (dict) A dictionary with Min and variables.
+   247                                                   
+   248                                               >>> problem_matrix = create_matrix(2,4)   # 2 variables and 4 constraints
+   249                                               >>> constrain(problem_matrix,'1,1,L,6')   # x_1 + x_2 <= 6
+   250                                               >>> constrain(problem_matrix,'-1,2,L,8')  # -x_1 + 2x_2 <= 8
+   251                                               >>> constrain(problem_matrix,'1,G,0')     # x_1 >= 0
+   252                                               >>> constrain(problem_matrix,'0,1,G,0')   # x_2 >= 0
+   253                                               >>> obj(problem_matrix,'-1,-3,0')         # -x_1 - 3x_2
+   254                                               >>> minz(problem_matrix)
+   255                                               {'x1': 1.3333333333333333, 'x2': 4.666666666666667}
+   256                                               """
+   257                                           
+   258         1         21.0     21.0      4.0      matrix = convert_min(matrix)
+   259         1         10.0     10.0      1.9      while pivots_col(matrix):
+   260                                                   matrix = pivot(find_pivot_col(matrix)[0], find_pivot_col(matrix)[1], matrix)
+   261         3         36.0     12.0      6.8      while pivots_row(matrix):
+   262         2        379.0    189.5     71.9          matrix = pivot(find_pivot_row(matrix)[0], find_pivot_row(matrix)[1], matrix)
+   263                                               
+   264         1          1.0      1.0      0.2      lc = len(matrix[0, :])
+   265         1          1.0      1.0      0.2      lr = len(matrix[:, 0])
+   266         1          1.0      1.0      0.2      var = lc - lr - 1
+   267         1          1.0      1.0      0.2      i = 0
+   268         1          1.0      1.0      0.2      val = {}
+   269                                               
+   270         3          2.0      0.7      0.4      for i in range(var):
+   271         2          3.0      1.5      0.6          col = matrix[:, i]
+   272         2          6.0      3.0      1.1          s = sum(col)
+   273         2          6.0      3.0      1.1          m = max(col)
+   274         2          2.0      1.0      0.4          if float(s) == float(m):
+   275         2         20.0     10.0      3.8              loc = np.where(col == m)[0][0]
+   276         2         34.0     17.0      6.5              val[gen_var(matrix)[i]] = matrix[loc, -1]
+   277                                                   else:
+   278                                                       val[gen_var(matrix)[i]] = 0
+   279         1          2.0      2.0      0.4      val['min'] = matrix[-1, -1]*-1
+   280                                           
+   281         1          1.0      1.0      0.2      if aux:
+   282         1          0.0      0.0      0.0          return val
+
+Total time: 6e-06 s
+File: src/profiling/tiempo/simplex_networks_profile.py
+Function: create_matrix at line 4
+
+Line #      Hits         Time  Per Hit   % Time  Line Contents
+==============================================================
+     4                                           @profile
+     5                                           def create_matrix(variables, constraints):
+     6                                               """
+     7                                               Creates a matrix with enough rows for each constraint plus the objective function
+     8                                               and enough columns for all the variables.
+     9                                               
+    10                                               Args:
+    11                                               
+    12                                                   variables (int): number of variables.
+    13                                                   
+    14                                                   constraints (int): number of constraints.
+    15                                               
+    16                                               Returns:
+    17                                               
+    18                                                   matrix (numpy array): zero matrix.
+    19                                               """
+    20                                               
+    21         1          6.0      6.0    100.0      matrix = np.zeros((constraints + 1, variables + constraints + 2))
+    22                                               
+    23         1          0.0      0.0      0.0      return matrix
+
+Total time: 5e-06 s
+File: src/profiling/tiempo/simplex_networks_profile.py
+Function: pivots_col at line 25
+
+Line #      Hits         Time  Per Hit   % Time  Line Contents
+==============================================================
+    25                                           @profile
+    26                                           def pivots_col(matrix):
+    27                                               """
+    28                                               Checks to see if pivots are required due to negative values in right column,
+    29                                               excluding the bottom value.
+    30                                               
+    31                                               Args:
+    32                                               
+    33                                                   matrix (numpy array): matrix to be reviewed.
+    34                                                   
+    35                                               Returns:
+    36                                               
+    37                                                   Flag (bool): True or False indicating whether a negative element was found.
+    38                                               """
+    39                                               
+    40         1          3.0      3.0     60.0      m = min(matrix[:-1, -1])
+    41         1          1.0      1.0     20.0      if m >= 0:
+    42         1          1.0      1.0     20.0          return False
+    43                                               else:
+    44                                                   return True
+
+Total time: 4.2e-05 s
+File: src/profiling/tiempo/simplex_networks_profile.py
+Function: pivots_row at line 46
+
+Line #      Hits         Time  Per Hit   % Time  Line Contents
+==============================================================
+    46                                           @profile
+    47                                           def pivots_row(matrix):
+    48                                               """
+    49                                               Checks to see if pivots are required due to negative values in bottom row, 
+    50                                               excluding the final value.
+    51                                               
+    52                                               Args:
+    53                                               
+    54                                                   matrix (numpy array): matrix to be reviewed.
+    55                                                   
+    56                                               Returns:
+    57                                               
+    58                                                   Flag (bool): True or False indicating whether a negative element was found.
+    59                                               """
+    60                                               
+    61         7         10.0      1.4     23.8      l = len(matrix[:, 0])
+    62         7         22.0      3.1     52.4      m = min(matrix[l-1, :-1])
+    63         7          7.0      1.0     16.7      if m >= 0:
+    64         1          0.0      0.0      0.0          return False
+    65                                               else:
+    66         6          3.0      0.5      7.1          return True
+
+Total time: 0 s
+File: src/profiling/tiempo/simplex_networks_profile.py
+Function: find_negative_col at line 68
+
+Line #      Hits         Time  Per Hit   % Time  Line Contents
+==============================================================
+    68                                           @profile
+    69                                           def find_negative_col(matrix):
+    70                                               """
+    71                                               Finds location of negative values in right column.
+    72                                               
+    73                                               Args:
+    74                                                   
+    75                                                   matrix (numpy array): matrix to be reviewed.
+    76                                                   
+    77                                               Returns:
+    78                                               
+    79                                                   n (int): index of negative value in right column.
+    80                                               """
+    81                                               
+    82                                               l = len(matrix[0, :])
+    83                                               m = min(matrix[:-1, l-1])
+    84                                               if m <= 0:
+    85                                                   n = np.where(matrix[:-1, l-1] == m)[0][0]
+    86                                               else:
+    87                                                   n = None
+    88                                               
+    89                                               return n
+
+Total time: 6.3e-05 s
+File: src/profiling/tiempo/simplex_networks_profile.py
+Function: find_negative_row at line 91
+
+Line #      Hits         Time  Per Hit   % Time  Line Contents
+==============================================================
+    91                                           @profile
+    92                                           def find_negative_row(matrix):
+    93                                               """
+    94                                               Finds location of negative values in bottom row.
+    95                                               
+    96                                               Args:
+    97                                                   
+    98                                                   matrix (numpy array): matrix to be reviewed.
+    99                                                   
+   100                                               Returns:
+   101                                               
+   102                                                   n (int): index of negative value in bottom row.
+   103                                               """
+   104                                               
+   105         4          4.0      1.0      6.3      l = len(matrix[:,0])
+   106         4         12.0      3.0     19.0      m = min(matrix[l-1,:-1])
+   107         4          2.0      0.5      3.2      if m <= 0:
+   108         4         42.0     10.5     66.7          n = np.where(matrix[l-1, :-1] == m)[0][0]
+   109                                               else:
+   110                                                   n = None
+   111                                               
+   112         4          3.0      0.8      4.8      return n
+
+Total time: 0 s
+File: src/profiling/tiempo/simplex_networks_profile.py
+Function: find_pivot_col at line 114
+
+Line #      Hits         Time  Per Hit   % Time  Line Contents
+==============================================================
+   114                                           @profile
+   115                                           def find_pivot_col(matrix):
+   116                                               """
+   117                                               Finds pivot element corresponding to a negative value in right column.
+   118                                               
+   119                                               Args:
+   120                                               
+   121                                                   matrix (numpy array): matrix to be reviewed.
+   122                                                   
+   123                                               Returns:
+   124                                                   
+   125                                                   index (int): index of most negative value.
+   126                                                   
+   127                                                   c (int): index smallest value on row.
+   128                                               """
+   129                                               
+   130                                               total = []
+   131                                               neg = find_negative_col(matrix)
+   132                                               row = matrix[neg, :-1]
+   133                                               m = min(row)
+   134                                               c = np.where(row == m)[0][0]
+   135                                               col = matrix[:-1, c]
+   136                                               for i,j in zip(col, matrix[:-1,-1]):  #i for col with neg, j for right col
+   137                                                   if i != 0 and j/i > 0:
+   138                                                       total.append(j/i)
+   139                                                   else:
+   140                                                       total.append(10000) #placeholder, might need to update for large scale
+   141                                               index = total.index(min(total))
+   142                                               
+   143                                               return [index,c]
+
+Total time: 0.000174 s
+File: src/profiling/tiempo/simplex_networks_profile.py
+Function: find_pivot_row at line 145
+
+Line #      Hits         Time  Per Hit   % Time  Line Contents
+==============================================================
+   145                                           @profile
+   146                                           def find_pivot_row(matrix):
+   147                                               """
+   148                                               Finds pivot element corresponding to a negative value in bottom row.
+   149                                               
+   150                                               Args:
+   151                                                   
+   152                                                   matrix (numpy array): matrix to be reviewed.
+   153                                                   
+   154                                               Returns:
+   155                                               
+   156                                                   index (int): index of most negative value.
+   157                                                   
+   158                                                   neg (int): index smallest value.
+   159                                               """
+   160                                               
+   161         4         40.0     10.0     23.0      if pivots_row(matrix):
+   162         4          3.0      0.8      1.7          total = []
+   163         4         85.0     21.2     48.9          neg = find_negative_row(matrix)
+   164        12         20.0      1.7     11.5          for i, j in zip(matrix[:-1, neg], matrix[:-1, -1]):
+   165         8         12.0      1.5      6.9              if i != 0 and j/i > 0:
+   166         6          4.0      0.7      2.3                  total.append(j/i)
+   167                                                       else:
+   168         2          0.0      0.0      0.0                  total.append(10000) #placeholder, might need to update for large scale
+   169         4          7.0      1.8      4.0          index = total.index(min(total))
+   170                                                   
+   171         4          3.0      0.8      1.7          return [index,neg]
+
+Total time: 0.000125 s
+File: src/profiling/tiempo/simplex_networks_profile.py
+Function: pivot at line 173
+
+Line #      Hits         Time  Per Hit   % Time  Line Contents
+==============================================================
+   173                                           @profile
+   174                                           def pivot(row,col,matrix):
+   175                                               """
+   176                                               Pivot about a value to remove negative in final column or row.
+   177                                               
+   178                                               Args:
+   179                                               
+   180                                                   matrix (numpy array): matrix to be reviewed.
+   181                                                   
+   182                                                   row (int): position to pivot.
+   183                                                   
+   184                                                   col (int): position to pivot.
+   185                                                   
+   186                                               Returns:
+   187                                               
+   188                                                   t (numpy array): updated matrix.
+   189                                               """
+   190                                               
+   191         2          3.0      1.5      2.4      lr = len(matrix[:, 0])
+   192         2          2.0      1.0      1.6      lc = len(matrix[0, :])
+   193         2          4.0      2.0      3.2      t = np.zeros((lr, lc))
+   194         2          2.0      1.0      1.6      pr = matrix[row, :]
+   195         2          5.0      2.5      4.0      if matrix[row, col]**2 > 0:
+   196         2          4.0      2.0      3.2          e = 1/matrix[row, col]
+   197         2          7.0      3.5      5.6          r = pr*e
+   198         8         11.0      1.4      8.8          for i in range(len(matrix[:, col])):
+   199         6          4.0      0.7      3.2              k = matrix[i, :]
+   200         6          5.0      0.8      4.0              c = matrix[i, col]
+   201         6         29.0      4.8     23.2              if list(k) == list(pr):
+   202         2          1.0      0.5      0.8                  continue
+   203                                                       else:
+   204         4         37.0      9.2     29.6                  t[i, :] = list(k-r*c)
+   205         2          9.0      4.5      7.2          t[row,:] = list(r)
+   206         2          2.0      1.0      1.6          return t
+   207                                               else:
+   208                                                   logging.info('Cannot pivot on this element')
+
