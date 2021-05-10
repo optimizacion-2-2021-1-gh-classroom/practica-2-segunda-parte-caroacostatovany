@@ -7,11 +7,12 @@ from mex.simplex.problem_definition import add_cons, constrain, add_obj, obj, ma
 from memory_profiler import profile
 
 @profile
-def profiling_memory_example(matrix, aux=True):
+def profiling_memory_example(aux=True):
     """
     Problema a resolver de optimización con el método Simplex
     """
     
+    matrix = create_matrix(20,30)
     #Restricciones 1-5:
     matrix=constrain(matrix,'90.09,50.61,45.03,16.83,26.92,36.29,51.61,2.450,25.15,30.22,81.78,2.444,34.71,57.17,41.14,92.00,69.17,26.77,38.44,25.35,L,79.72',True)
     matrix=constrain(matrix,'69.62,6.235,18.95,4.843,12.34,82.56,83.65,11.18,29.91,34.66,79.32,64.11,95.56,70.83,69.77,93.99,10.83,17.88,78.04,87.34,L,68.64',True)
@@ -235,6 +236,5 @@ if __name__ == "__main__":
     print("El valor aproximado obtenido con mex es: ", max_approx_1)
     print("Los coeficientes objetivos obtenidos con scipy son: ", coeff_obj_1)
     print("Los coeficientes aproximados obtenidos con mex son: ", coeff_approx_1)
-    
     assert max_approx_1 == approx(max_obj)
     assert np.round(coeff_obj,2) == approx(np.round(coeff_obj,2))
