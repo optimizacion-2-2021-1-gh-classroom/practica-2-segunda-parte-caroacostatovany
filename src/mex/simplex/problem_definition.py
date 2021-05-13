@@ -25,7 +25,7 @@ def add_cons(matrix):
     for i in range(lr):
         total = 0
         for j in matrix[i, :]:
-            total += j**2
+            total += j*j #j**2
         if total == 0:
             empty.append(total)
 
@@ -52,16 +52,16 @@ def constrain(matrix, eq, memory_prof=False):
 
     if 'E' in eq:
         if add_cons(matrix):
-            lc = len(matrix[0, :])
+            #lc = len(matrix[0, :])
             lr = len(matrix[:, 0])
-            var = lc - lr - 1
+            #var = lc - lr - 1
             j = 0
 
             while j < lr:
                 row_check = matrix[j,:]
                 total = 0
                 for i in row_check:
-                    total += float(i**2)
+                    total += float(i*i) #i**2
                 if total == 0:
                     row = row_check
                     break
@@ -84,23 +84,23 @@ def constrain(matrix, eq, memory_prof=False):
         if add_cons(matrix):
             lc = len(matrix[0, :])
             lr = len(matrix[:, 0])
-            var = lc - lr -1
+            var = lc - lr - 1
             j = 0
             
             while j < lr:
                 row_check = matrix[j, :]
                 total = 0
                 for i in row_check:
-                    total += float(i**2)
+                    total += float(i*i) #i**2
                 if total == 0:
                     row = row_check
                     break
-                j +=1
+                j += 1
                 
             eq = convert(eq)
             i = 0
             
-            while i<len(eq)-1:
+            while i < len(eq)-1:
                 row[i] = eq[i]
                 i += 1
             
@@ -109,9 +109,6 @@ def constrain(matrix, eq, memory_prof=False):
             
         else:
             logging.info('Cannot add another constraint.')
-    if memory_prof:
-        return matrix
-
     if memory_prof:
         return matrix
 
@@ -135,7 +132,7 @@ def add_obj(matrix):
     for i in range(lr):
         total = 0
         for j in matrix[i, :]:
-            total += j**2
+            total += j*j #j**2
         if total == 0:
             empty.append(total)
     
@@ -263,7 +260,7 @@ def minz(matrix, aux=True):
     lc = len(matrix[0, :])
     lr = len(matrix[:, 0])
     var = lc - lr - 1
-    i = 0
+    # i = 0
     val = {}
     
     for i in range(var):
