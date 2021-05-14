@@ -258,6 +258,7 @@ def minz(matrix, aux=True):
         pivot_row = find_pivot_row(matrix)
         matrix = pivot(pivot_row[0], pivot_row[1], matrix)
 
+    print(matrix)
     lc = matrix.shape[1]
     lr = matrix.shape[0]
     var = lc - lr - 1
