@@ -75,7 +75,7 @@ def constrain(matrix, eq, memory_prof=False):
             #row[var+j] = 1
         
         else:
-            logging.info('Cannot add another constraint.')
+            print('Cannot add another constraint.')
         
     else:
         if add_cons(matrix):
@@ -105,7 +105,7 @@ def constrain(matrix, eq, memory_prof=False):
             row[var+j] = 1
             
         else:
-            logging.info('Cannot add another constraint.')
+            print('Cannot add another constraint.')
     if memory_prof:
         return matrix
 
@@ -198,9 +198,11 @@ def maxz(matrix, aux=True):
     """
     
     while pivots_col(matrix):
-        matrix = pivot(find_pivot_col(matrix)[0], find_pivot_col(matrix)[1], matrix)
+        tmp_pivot_col = find_pivot_col(matrix)
+        matrix = pivot(tmp_pivot_col[0], tmp_pivot_col[1], matrix)
     while pivots_row(matrix):
-        matrix = pivot(find_pivot_row(matrix)[0], find_pivot_row(matrix)[1], matrix)
+        tmp_pivot_row = find_pivot_row(matrix)
+        matrix = pivot(tmp_pivot_row[0], tmp_pivot_row[1], matrix)
     
     lc = len(matrix[0, :])
     lr = len(matrix[:, 0])
@@ -208,15 +210,16 @@ def maxz(matrix, aux=True):
     i = 0
     val = {}
     
+    gen_variables = gen_var(lc, lr)
     for i in range(var):
         col = matrix[:, i]
         s = sum(col)
         m = max(col)
         if float(s) == float(m):
             loc = np.where(col == m)[0][0]
-            val[gen_var(matrix)[i]] = matrix[loc, -1]
+            val[gen_variables[i]] = matrix[loc, -1]
         else:
-            val[gen_var(matrix)[i]] = 0
+            val[gen_variables[i]] = 0
     val['max'] = matrix[-1, -1]
     
     return val
@@ -248,25 +251,29 @@ def minz(matrix, aux=True):
 
     matrix = convert_min(matrix)
     while pivots_col(matrix):
-        matrix = pivot(find_pivot_col(matrix)[0], find_pivot_col(matrix)[1], matrix)
+        pivot_col = find_pivot_col(matrix)
+        print(pivot_col)
+        matrix = pivot(pivot_col[0], pivot_col[1], matrix)
     while pivots_row(matrix):
-        matrix = pivot(find_pivot_row(matrix)[0], find_pivot_row(matrix)[1], matrix)
-    
-    lc = len(matrix[0, :])
-    lr = len(matrix[:, 0])
+        pivot_row = find_pivot_row(matrix)
+        matrix = pivot(pivot_row[0], pivot_row[1], matrix)
+
+    lc = matrix.shape[1]
+    lr = matrix.shape[0]
     var = lc - lr - 1
     # i = 0
     val = {}
-    
+    gen_variables = gen_var(lc, lr)
+
     for i in range(var):
         col = matrix[:, i]
         s = sum(col)
         m = max(col)
         if float(s) == float(m):
             loc = np.where(col == m)[0][0]
-            val[gen_var(matrix)[i]] = matrix[loc, -1]
+            val[gen_variables[i]] = matrix[loc, -1]
         else:
-            val[gen_var(matrix)[i]] = 0
+            val[gen_variables[i]] = 0
     val['min'] = matrix[-1, -1]*-1
 
     if aux:

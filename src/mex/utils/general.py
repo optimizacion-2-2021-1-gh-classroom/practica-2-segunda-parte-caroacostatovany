@@ -12,27 +12,25 @@ def convert_min(matrix):
         matrix (numpy array): matrix multiplied by -1.
     """
     
-    matrix[-1, :-2] = [-1*i for i in matrix[-1, :-2]]
+    matrix[-1, :-2] = -1*matrix[-1, :-2]
     matrix[-1, -1] = -1*matrix[-1, -1]
     
     return matrix
 
 
-def gen_var(matrix):
+def gen_var(lc, lr):
     """
     Generates the required number of variables. They are defined by the problem.
     
     Args:
     
-        matrix (numpy array): matrix to be updated.
+        lc : number of columns
+        lr : number of rows
     
     Returns:
     
         v (list): list with problem variables.
     """
-    
-    lc = len(matrix[0, :])
-    lr = len(matrix[:, 0])
     
     var = lc - lr -1
     v = []
