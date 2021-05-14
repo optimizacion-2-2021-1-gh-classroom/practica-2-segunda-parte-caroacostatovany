@@ -34,6 +34,9 @@ jobs:
       - name: Install scipy
         run: pip install scipy
 
+      - name: Install Cython
+        run: pip install Cython
+
       # Runs a single command using the runners shell
       - name: Run test
         run: cd src && pip install --editable . && pytest tests/test.py
