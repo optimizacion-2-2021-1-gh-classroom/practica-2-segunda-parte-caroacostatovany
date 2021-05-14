@@ -18,21 +18,18 @@ def add_cons(matrix):
     
         Flag (bool): True or False indicating whether 1+ constraints can be added.
     """
-
-    lr = len(matrix[:, 0])
-    empty = []
+    add = True
+    lr = matrix.shape[0]
 
     for i in range(lr):
-        total = 0
-        for j in matrix[i, :]:
-            total += j*j #j**2
+        total = sum(matrix[i, :] * matrix[i, :])
         if total == 0:
-            empty.append(total)
+            if i != (lr - 1):
+                break
+            else:
+                add = False
 
-    if len(empty) > 1:
-        return True
-    else:
-        return False
+    return add
 
 
 def constrain(matrix, eq, memory_prof=False):
@@ -125,21 +122,19 @@ def add_obj(matrix):
     
         Flag (bool): True or False indicating whether objective function can be added.
     """
-    
-    lr = len(matrix[:,0])
-    empty = []
-    
+
+    add = False
+    lr = matrix.shape[0]
+
     for i in range(lr):
-        total = 0
-        for j in matrix[i, :]:
-            total += j*j #j**2
+        total = sum(matrix[i, :] * matrix[i, :])
         if total == 0:
-            empty.append(total)
-    
-    if len(empty) == 1:
-        return True
-    else:
-        return False
+            if i != (lr - 1):
+                break
+            else:
+                add = True
+
+    return add
 
 
 def obj(matrix,eq,memory_prof=False):
@@ -164,12 +159,12 @@ def obj(matrix,eq,memory_prof=False):
     
     if add_obj(matrix):
         eq = [float(i) for i in eq.split(',')]
-        lr = len(matrix[:,0])
-        row = matrix[lr-1,:]
+        lr = matrix.shape[0]  # len(matrix[:,0])
+        row = matrix[lr-1, :]
         i = 0
         while i<len(eq)-1:
             row[i] = eq[i]*-1
-            i +=1
+            i += 1
         row[-2] = 1
         row[-1] = eq[-1]
     else:
