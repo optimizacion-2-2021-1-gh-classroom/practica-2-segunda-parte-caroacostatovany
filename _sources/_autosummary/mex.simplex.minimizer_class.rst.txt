@@ -1,7 +1,7 @@
-mex.simplex.minimzer\_class
-===========================
+mex.simplex.minimizer\_class
+============================
 
-.. automodule:: mex.simplex.minimzer_class
+.. automodule:: mex.simplex.minimizer_class
 
    
    
