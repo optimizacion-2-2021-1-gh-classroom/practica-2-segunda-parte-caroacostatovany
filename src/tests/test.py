@@ -6,7 +6,7 @@ from scipy.optimize import linprog
 #os.chdir("..")
 from mex.simplex.simplex_networks import create_matrix
 from mex.simplex.problem_definition import constrain, obj, minz, maxz
-from mex.simplex.minimzer_class import Minimzer
+from mex.simplex.minimzer_class import Minimizer
 from mex.simplex.maximizer_class import Maximizer
 
 def test_min_problem():
@@ -22,10 +22,10 @@ def test_min_problem():
     coeff_obj = linprog(c_min_obj, A_ub = A_min_obj, b_ub = b_min_obj).x
     
     # Definimos y resolvemos problema con nuestro paquete
-    minim = Minimzer(2, 2)
-    minim.add_constraint('1,1,L,6')
-    minim.add_constraint('-1,2,L,8')
-    minim.add_objective('-1,-3,0')
+    minim = Minimizer(A_min_obj, b_min_obj, c_min_obj)
+    #minim.add_constraint('1,1,L,6')
+    #minim.add_constraint('-1,2,L,8')
+    #minim.add_objective('-1,-3,0')
     minim.solve()
     min_approx = minim.get_min()
     coeff_approx = minim.get_coeff()
@@ -48,11 +48,11 @@ def test_max_problem():
     coeff_obj = linprog(c_max_obj, A_ub=A_max_obj, b_ub=b_max_obj).x
     
     # Definimos y resolvemos problema con nuestro paquete
-    maxim = Maximizer(2, 3)
-    maxim.add_constraint('1,0,L,4')
-    maxim.add_constraint('0,2,L,12')
-    maxim.add_constraint('3,2,L,18')
-    maxim.add_objective('3,5,0')
+    maxim = Maximizer(A_max_obj, b_max_obj, c_max_obj)
+    #maxim.add_constraint('1,0,L,4')
+    #maxim.add_constraint('0,2,L,12')
+    #maxim.add_constraint('3,2,L,18')
+    #maxim.add_objective('3,5,0')
     maxim.solve()
     max_approx = maxim.get_max()
     coeff_approx = maxim.get_coeff()
@@ -83,15 +83,15 @@ def test_net_problem():
     
     
     # Definimos y resolvemos problema con nuestro paquete
-    minim = Minimzer(7, 7)
-    minim.add_constraint('1,1,1,0,0,0,0,E,50')
-    minim.add_constraint('-1,0,0,1,0,0,0,E,40')
-    minim.add_constraint('0,-1,0,-1,1,0,0,E,0')
-    minim.add_constraint('0,0,-1,0,0,1,-1,E,-30')
-    minim.add_constraint('0,0,0,0,-1,-1,1,E,-60')
-    minim.add_constraint('1,0,0,0,0,0,0,L,10')
-    minim.add_constraint('0,0,0,0,1,0,0,L,80')
-    minim.add_objective('2,4,9,3,1,3,2,0')
+    minim = Minimizer(A_eq_net_obj, b_eq_net_obj, c_net_obj)
+    #minim.add_constraint('1,1,1,0,0,0,0,E,50')
+    #minim.add_constraint('-1,0,0,1,0,0,0,E,40')
+    #minim.add_constraint('0,-1,0,-1,1,0,0,E,0')
+    #minim.add_constraint('0,0,-1,0,0,1,-1,E,-30')
+    #minim.add_constraint('0,0,0,0,-1,-1,1,E,-60')
+    #minim.add_constraint('1,0,0,0,0,0,0,L,10')
+    #minim.add_constraint('0,0,0,0,1,0,0,L,80')
+    #minim.add_objective('2,4,9,3,1,3,2,0')
     minim.solve()
     net_approx = minim.get_min()
     net_coeff_approx = minim.get_coeff()
