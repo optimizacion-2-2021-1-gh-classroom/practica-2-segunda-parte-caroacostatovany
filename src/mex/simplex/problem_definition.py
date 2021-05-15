@@ -1,5 +1,4 @@
 import numpy as np
-import logging
 
 from mex.utils.general import gen_var, convert_min, convert
 from mex.simplex.simplex_networks import pivots_col, find_pivot_col, pivots_row, pivot, find_pivot_row
@@ -168,7 +167,7 @@ def obj(matrix,eq,memory_prof=False):
         row[-2] = 1
         row[-1] = eq[-1]
     else:
-        logging.info('You must finish adding constraints before the objective function can be added.')
+        print('You must finish adding constraints before the objective function can be added.')
 
     if memory_prof:
         return matrix
@@ -249,6 +248,7 @@ def minz(matrix, aux=True):
     {'x1': 1.3333333333333333, 'x2': 4.666666666666667}
     """
 
+    print(matrix)
     matrix = convert_min(matrix)
     while pivots_col(matrix):
         pivot_col = find_pivot_col(matrix)
@@ -258,11 +258,10 @@ def minz(matrix, aux=True):
         pivot_row = find_pivot_row(matrix)
         matrix = pivot(pivot_row[0], pivot_row[1], matrix)
 
-    print(matrix)
     lc = matrix.shape[1]
     lr = matrix.shape[0]
     var = lc - lr - 1
-    # i = 0
+    i = 0
     val = {}
     gen_variables = gen_var(lc, lr)
 

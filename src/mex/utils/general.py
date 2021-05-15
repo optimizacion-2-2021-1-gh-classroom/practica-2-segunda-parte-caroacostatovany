@@ -1,3 +1,6 @@
+import numpy as np
+
+
 def convert_min(matrix):
     """
     This function multiplies by -1 the objective function for maximization problems. This is because
@@ -12,7 +15,7 @@ def convert_min(matrix):
         matrix (numpy array): matrix multiplied by -1.
     """
     
-    matrix[-1, :-2] = [-1*i for i in matrix[-1, :-2]]
+    matrix[-1, :-2] = -1*matrix[-1, :-2]
     matrix[-1, -1] = -1*matrix[-1, -1]
     
     return matrix
@@ -73,3 +76,34 @@ def convert(eq):
         del eq[l]
         eq = [float(i) for i in eq]
         return eq
+
+
+def generates_matrix(A, b, c):
+    """
+    Generate matrix of a problem:
+    Ax <= b
+
+    Args:
+
+        A (matrix):
+        b (array):
+        c (array):
+
+    Returns:
+
+        A_new (matrix):
+    """
+
+    # Concatenar A_new con c de forma rbind
+    A_new = np.vstack([A, c.T])
+
+    nrow, ncol = A_new.shape
+    # Generar la matriz de pivoteo
+    I = np.eye(nrow, nrow)
+    # Crear nuevo vector de restricciones
+    b_new = np.concatenate([b, np.array([0])], axis=0)
+
+    # Concatenar A_new, b_new de forma cbind
+    A_new = np.c_[A_new, I, b_new]
+
+    return A_new
