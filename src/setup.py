@@ -1,5 +1,5 @@
 #see: https://setuptools.readthedocs.io/en/latest/userguide/package_discovery.html
-from setuptools import setup, find_packages
+from setuptools import find_packages
 from distutils.core import setup
 from Cython.Build import cythonize
 from Cython.Distutils import build_ext
