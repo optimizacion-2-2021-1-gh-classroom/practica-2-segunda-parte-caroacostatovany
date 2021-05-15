@@ -4,8 +4,8 @@ from mex.simplex.problem_definition import constrain, obj, minz
 from mex.utils.general import generates_matrix
 
 
-class Minimzer():
-    """Maximize the objective function"""
+class Minimizer():
+    """Minimize the objective function"""
     def __init__(self, A, b, c):
         self.matrix = generates_matrix(A, b, c)
         self.min = None
