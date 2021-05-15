@@ -6,7 +6,7 @@ from scipy.optimize import linprog
 #os.chdir("..")
 from mex.simplex.simplex_networks import create_matrix
 from mex.simplex.problem_definition import constrain, obj, minz, maxz
-from mex.simplex.minimzer_class import Minimizer
+from mex.simplex.minimizer_class import Minimizer
 from mex.simplex.maximizer_class import Maximizer
 
 def test_min_problem():
