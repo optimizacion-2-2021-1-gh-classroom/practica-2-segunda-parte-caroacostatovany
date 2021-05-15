@@ -19,8 +19,7 @@ setup(name="mex",
                           "scipy",
                           "line_profiler",
                           "memory_profiler",
-                          "guppy3",
-                          "Cython"
+                          "guppy3"
                           ],
       cmdclass={'build_ext': build_ext},
       ext_modules=cythonize( ["mex/mex_c/general_c.pyx",
