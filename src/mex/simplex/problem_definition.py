@@ -252,7 +252,7 @@ def minz(matrix, aux=True):
     iterations = 0
     cambio = 10
     tol = 0.0005
-    while pivots_col(matrix) and iterations < 1001 and cambio > tol:
+    while pivots_col(matrix) and iterations < 1001:
         z_0 = matrix[-1, -1]
         pivot_col = find_pivot_col(matrix)
         matrix = pivot(pivot_col[0], pivot_col[1], matrix)
@@ -263,7 +263,7 @@ def minz(matrix, aux=True):
     print("##################################\n Terminó pivoteo de columnas\n")
     iterations = 0
     cambio = 10
-    while pivots_row(matrix) and iterations < 1001 and cambio > tol:
+    while pivots_row(matrix) and iterations < 1001:
         z_0 = matrix[-1, -1]
         pivot_row = find_pivot_row(matrix)
         matrix = pivot(pivot_row[0], pivot_row[1], matrix)
