@@ -137,6 +137,8 @@ def find_pivot_col(matrix):
             tmp = j/i
             if tmp > 0:
                 total.append(tmp)
+            else:
+                total.append(10000)
         else:
             total.append(10000) #placeholder, might need to update for large scale
     index = total.index(min(total))
@@ -163,10 +165,12 @@ def find_pivot_row(matrix):
     total = []
     neg = find_negative_row(matrix)
     for i, j in zip(matrix[:-1, neg], matrix[:-1, -1]):
-        if i != 0 :
+        if i != 0:
             tmp = j/i
             if tmp > 0:
                 total.append(tmp)
+            else:
+                total.append(10000)
         else:
             total.append(10000) #placeholder, might need to update for large scale
     index = total.index(min(total))
