@@ -177,6 +177,8 @@
             <span class="n">tmp</span> <span class="o">=</span> <span class="n">j</span><span class="o">/</span><span class="n">i</span>
             <span class="k">if</span> <span class="n">tmp</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
                 <span class="n">total</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">tmp</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">total</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">10000</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="n">total</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">10000</span><span class="p">)</span> <span class="c1">#placeholder, might need to update for large scale</span>
     <span class="n">index</span> <span class="o">=</span> <span class="n">total</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">total</span><span class="p">))</span>
@@ -203,10 +205,12 @@
     <span class="n">total</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="n">neg</span> <span class="o">=</span> <span class="n">find_negative_row</span><span class="p">(</span><span class="n">matrix</span><span class="p">)</span>
     <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">matrix</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">neg</span><span class="p">],</span> <span class="n">matrix</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]):</span>
-        <span class="k">if</span> <span class="n">i</span> <span class="o">!=</span> <span class="mi">0</span> <span class="p">:</span>
+        <span class="k">if</span> <span class="n">i</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
             <span class="n">tmp</span> <span class="o">=</span> <span class="n">j</span><span class="o">/</span><span class="n">i</span>
             <span class="k">if</span> <span class="n">tmp</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
                 <span class="n">total</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">tmp</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">total</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">10000</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="n">total</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">10000</span><span class="p">)</span> <span class="c1">#placeholder, might need to update for large scale</span>
     <span class="n">index</span> <span class="o">=</span> <span class="n">total</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">total</span><span class="p">))</span>
