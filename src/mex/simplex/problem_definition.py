@@ -248,7 +248,6 @@ def minz(matrix, aux=True):
     {'x1': 1.3333333333333333, 'x2': 4.666666666666667}
     """
 
-    print(matrix)
     matrix = convert_min(matrix)
     while pivots_col(matrix):
         pivot_col = find_pivot_col(matrix)

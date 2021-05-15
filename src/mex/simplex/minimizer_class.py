@@ -7,7 +7,7 @@ from mex.utils.general import generates_matrix
 class Minimizer():
     """Minimize the objective function"""
     def __init__(self, A, b, c):
-        self.matrix = generates_matrix(A, b, c)
+        self.matrix = generates_matrix(A, b, [-1*x for x in c])
         self.min = None
         self.coeff = None
 
