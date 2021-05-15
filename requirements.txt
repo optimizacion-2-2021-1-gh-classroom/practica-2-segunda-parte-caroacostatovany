@@ -31,7 +31,6 @@ kiwisolver==1.3.1
 line-profiler==3.2.6
 MarkupSafe==1.1.1
 matplotlib==3.3.4
-git+https://github.com/optimizacion-2-2021-1-gh-classroom/practica-2-segunda-parte-caroacostatovany.git#egg=mex&subdirectory=src
 mistune==0.8.4
 mpmath==1.2.1
 nbclient==0.5.1
