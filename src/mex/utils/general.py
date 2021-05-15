@@ -35,7 +35,7 @@ def gen_var(lc, lr):
         v (list): list with problem variables.
     """
     
-    var = lc - lr -1
+    var = lc - lr - 1
     v = []
     
     for i in range(var):
@@ -78,16 +78,16 @@ def convert(eq):
         return eq
 
 
-def generates_matrix(A, b, c):
+def generates_matrix(A_matrix, b_vector, c_vector):
     """
     Generate matrix of a problem:
     Ax <= b
 
     Args:
 
-        A (matrix):
-        b (array):
-        c (array):
+        A_matrix (matrix):
+        b_vector (vector):
+        c_vector (vector):
 
     Returns:
 
@@ -95,13 +95,13 @@ def generates_matrix(A, b, c):
     """
 
     # Concatenar A_new con c de forma rbind
-    A_new = np.vstack([A, c.T])
+    A_new = np.vstack([A_matrix, np.transpose(c_vector)])
 
     nrow, ncol = A_new.shape
     # Generar la matriz de pivoteo
     I = np.eye(nrow, nrow)
     # Crear nuevo vector de restricciones
-    b_new = np.concatenate([b, np.array([0])], axis=0)
+    b_new = np.concatenate([b_vector, np.array([0])], axis=0)
 
     # Concatenar A_new, b_new de forma cbind
     A_new = np.c_[A_new, I, b_new]

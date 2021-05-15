@@ -17,6 +17,8 @@ setup(name="mex",
                           "pandas",
                           "sphinx",
                           "scipy",
+                          "line_profiler",
+                          "memory_profiler",
                           "guppy3"
                           ],
       cmdclass={'build_ext': build_ext},
