@@ -39,7 +39,6 @@
             
   <h1>Source code for mex.simplex.problem_definition</h1><div class="highlight"><pre>
 <span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">logging</span>
 
 <span class="kn">from</span> <span class="nn">mex.utils.general</span> <span class="kn">import</span> <span class="n">gen_var</span><span class="p">,</span> <span class="n">convert_min</span><span class="p">,</span> <span class="n">convert</span>
 <span class="kn">from</span> <span class="nn">mex.simplex.simplex_networks</span> <span class="kn">import</span> <span class="n">pivots_col</span><span class="p">,</span> <span class="n">find_pivot_col</span><span class="p">,</span> <span class="n">pivots_row</span><span class="p">,</span> <span class="n">pivot</span><span class="p">,</span> <span class="n">find_pivot_row</span>
@@ -208,7 +207,7 @@
         <span class="n">row</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
         <span class="n">row</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">eq</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
     <span class="k">else</span><span class="p">:</span>
-        <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;You must finish adding constraints before the objective function can be added.&#39;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;You must finish adding constraints before the objective function can be added.&#39;</span><span class="p">)</span>
 
     <span class="k">if</span> <span class="n">memory_prof</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">matrix</span></div>
@@ -289,6 +288,7 @@
 <span class="sd">    {&#39;x1&#39;: 1.3333333333333333, &#39;x2&#39;: 4.666666666666667}</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
+    <span class="nb">print</span><span class="p">(</span><span class="n">matrix</span><span class="p">)</span>
     <span class="n">matrix</span> <span class="o">=</span> <span class="n">convert_min</span><span class="p">(</span><span class="n">matrix</span><span class="p">)</span>
     <span class="k">while</span> <span class="n">pivots_col</span><span class="p">(</span><span class="n">matrix</span><span class="p">):</span>
         <span class="n">pivot_col</span> <span class="o">=</span> <span class="n">find_pivot_col</span><span class="p">(</span><span class="n">matrix</span><span class="p">)</span>
@@ -298,11 +298,10 @@
         <span class="n">pivot_row</span> <span class="o">=</span> <span class="n">find_pivot_row</span><span class="p">(</span><span class="n">matrix</span><span class="p">)</span>
         <span class="n">matrix</span> <span class="o">=</span> <span class="n">pivot</span><span class="p">(</span><span class="n">pivot_row</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">pivot_row</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">matrix</span><span class="p">)</span>
 
-    <span class="nb">print</span><span class="p">(</span><span class="n">matrix</span><span class="p">)</span>
     <span class="n">lc</span> <span class="o">=</span> <span class="n">matrix</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
     <span class="n">lr</span> <span class="o">=</span> <span class="n">matrix</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
     <span class="n">var</span> <span class="o">=</span> <span class="n">lc</span> <span class="o">-</span> <span class="n">lr</span> <span class="o">-</span> <span class="mi">1</span>
-    <span class="c1"># i = 0</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="n">val</span> <span class="o">=</span> <span class="p">{}</span>
     <span class="n">gen_variables</span> <span class="o">=</span> <span class="n">gen_var</span><span class="p">(</span><span class="n">lc</span><span class="p">,</span> <span class="n">lr</span><span class="p">)</span>
 
