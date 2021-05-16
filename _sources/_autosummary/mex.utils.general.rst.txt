@@ -16,6 +16,7 @@ mex.utils.general
       convert
       convert_min
       gen_var
+      generate_tableau
       generates_matrix
    
    
