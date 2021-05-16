@@ -249,28 +249,13 @@ def minz(matrix, aux=True):
     """
 
     matrix = convert_min(matrix)
-    iterations = 0
-    cambio = 10
-    tol = 0.0005
-    while pivots_col(matrix) and iterations < 1001:
-        z_0 = matrix[-1, -1]
+    while pivots_col(matrix):
         pivot_col = find_pivot_col(matrix)
         matrix = pivot(pivot_col[0], pivot_col[1], matrix)
-        iterations += 1
-        z_t = matrix[-1, -1]
-        cambio = abs(z_0 - z_t) / z_t
 
-    print("##################################\n Terminó pivoteo de columnas\n")
-    iterations = 0
-    cambio = 10
-    while pivots_row(matrix) and iterations < 1001:
-        z_0 = matrix[-1, -1]
+    while pivots_row(matrix):
         pivot_row = find_pivot_row(matrix)
         matrix = pivot(pivot_row[0], pivot_row[1], matrix)
-        iterations += 1
-        z_t = matrix[-1, -1]
-        cambio = abs(z_0 - z_t) / z_t
-    print("##################################\n Terminó pivoteo de renglones\n")
 
     lc = matrix.shape[1]
     lr = matrix.shape[0]
