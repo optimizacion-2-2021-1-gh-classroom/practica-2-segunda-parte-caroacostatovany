@@ -209,7 +209,6 @@ def pivot(row, col, matrix):
                 t[i, :] = list(k - r * c)
 
         t[row, :] = list(r)
-        print("Valor objetivo", t[-1, -1])
         return t
     else:
         print('Cannot pivot on this element')
