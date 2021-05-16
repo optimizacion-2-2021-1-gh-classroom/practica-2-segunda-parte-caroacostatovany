@@ -165,25 +165,25 @@
 <span class="sd">        </span>
 <span class="sd">        c (int): index smallest value on row.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    
+
     <span class="n">total</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="n">neg</span> <span class="o">=</span> <span class="n">find_negative_col</span><span class="p">(</span><span class="n">matrix</span><span class="p">)</span>
     <span class="n">row</span> <span class="o">=</span> <span class="n">matrix</span><span class="p">[</span><span class="n">neg</span><span class="p">,</span> <span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
     <span class="n">m</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">row</span><span class="p">)</span>
     <span class="n">c</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">row</span> <span class="o">==</span> <span class="n">m</span><span class="p">)[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
     <span class="n">col</span> <span class="o">=</span> <span class="n">matrix</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">c</span><span class="p">]</span>
-    <span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">j</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">col</span><span class="p">,</span> <span class="n">matrix</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">]):</span>  <span class="c1">#i for col with neg, j for right col</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">col</span><span class="p">,</span> <span class="n">matrix</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]):</span>  <span class="c1"># i for col with neg, j for right col</span>
         <span class="k">if</span> <span class="n">i</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
-            <span class="n">tmp</span> <span class="o">=</span> <span class="n">j</span><span class="o">/</span><span class="n">i</span>
+            <span class="n">tmp</span> <span class="o">=</span> <span class="n">j</span> <span class="o">/</span> <span class="n">i</span>
             <span class="k">if</span> <span class="n">tmp</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
                 <span class="n">total</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">tmp</span><span class="p">)</span>
             <span class="k">else</span><span class="p">:</span>
-                <span class="n">total</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">10000</span><span class="p">)</span>
+                <span class="n">total</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="n">total</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">10000</span><span class="p">)</span> <span class="c1">#placeholder, might need to update for large scale</span>
-    <span class="n">index</span> <span class="o">=</span> <span class="n">total</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">total</span><span class="p">))</span>
-    
-    <span class="k">return</span> <span class="p">[</span><span class="n">index</span><span class="p">,</span><span class="n">c</span><span class="p">]</span></div>
+            <span class="n">total</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span>  <span class="c1"># placeholder, might need to update for large scale</span>
+    <span class="n">index</span> <span class="o">=</span> <span class="n">total</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">total</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">i</span><span class="p">)))</span>
+
+    <span class="k">return</span> <span class="p">[</span><span class="n">index</span><span class="p">,</span> <span class="n">c</span><span class="p">]</span></div>
 
 
 <div class="viewcode-block" id="find_pivot_row"><a class="viewcode-back" href="../../../_autosummary/mex.simplex.simplex_networks.find_pivot_row.html#mex.simplex.simplex_networks.find_pivot_row">[docs]</a><span class="k">def</span> <span class="nf">find_pivot_row</span><span class="p">(</span><span class="n">matrix</span><span class="p">):</span>
@@ -200,8 +200,7 @@
 <span class="sd">        </span>
 <span class="sd">        neg (int): index smallest value.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    
-    <span class="c1">#if pivots_row(matrix):</span>
+
     <span class="n">total</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="n">neg</span> <span class="o">=</span> <span class="n">find_negative_row</span><span class="p">(</span><span class="n">matrix</span><span class="p">)</span>
     <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">matrix</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">neg</span><span class="p">],</span> <span class="n">matrix</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]):</span>
@@ -210,15 +209,15 @@
             <span class="k">if</span> <span class="n">tmp</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
                 <span class="n">total</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">tmp</span><span class="p">)</span>
             <span class="k">else</span><span class="p">:</span>
-                <span class="n">total</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">10000</span><span class="p">)</span>
+                <span class="n">total</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="n">total</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">10000</span><span class="p">)</span> <span class="c1">#placeholder, might need to update for large scale</span>
-    <span class="n">index</span> <span class="o">=</span> <span class="n">total</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">total</span><span class="p">))</span>
+            <span class="n">total</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span> <span class="c1">#placeholder, might need to update for large scale</span>
+    <span class="n">index</span> <span class="o">=</span> <span class="n">total</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">total</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">i</span><span class="p">)))</span>
 
     <span class="k">return</span> <span class="p">[</span><span class="n">index</span><span class="p">,</span><span class="n">neg</span><span class="p">]</span></div>
 
 
-<div class="viewcode-block" id="pivot"><a class="viewcode-back" href="../../../_autosummary/mex.simplex.simplex_networks.pivot.html#mex.simplex.simplex_networks.pivot">[docs]</a><span class="k">def</span> <span class="nf">pivot</span><span class="p">(</span><span class="n">row</span><span class="p">,</span><span class="n">col</span><span class="p">,</span><span class="n">matrix</span><span class="p">):</span>
+<div class="viewcode-block" id="pivot"><a class="viewcode-back" href="../../../_autosummary/mex.simplex.simplex_networks.pivot.html#mex.simplex.simplex_networks.pivot">[docs]</a><span class="k">def</span> <span class="nf">pivot</span><span class="p">(</span><span class="n">row</span><span class="p">,</span> <span class="n">col</span><span class="p">,</span> <span class="n">matrix</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Pivot about a value to remove negative in final column or row.</span>
 <span class="sd">    </span>

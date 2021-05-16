@@ -9,6 +9,17 @@ mex.mex\_c.problem\_definition\_c
 
    
    
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      add_cons
+      add_obj
+      constrain
+      maxz
+      minz
+      obj
+   
    
 
    
