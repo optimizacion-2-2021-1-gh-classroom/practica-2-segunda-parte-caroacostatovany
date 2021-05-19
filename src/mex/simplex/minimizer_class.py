@@ -7,9 +7,9 @@ from mex.utils.general import generates_matrix, generate_tableau
 class Minimizer():
     """Minimize the objective function"""
     def __init__(self, A, b, c):
-        self.A = A
-        self.b = b
-        self.c = c
+        self.A_matrix = A
+        self.b_vector = b
+        self.c_vector = c
         self.matrix = generates_matrix(A, b, [-1*x for x in c])
         self.min = None
         self.coeff = None
