@@ -149,7 +149,7 @@ def generate_tableau(A_matrix, b_vector, b_low, b_upp, c_vector, compr=True):
     A_new = np.c_[A_new, A_sint]
 
     # Juntar cotas de restricciones
-    b_new = np.concatenate((b_vector, b_upp, -b_low, np.array([[0]])), axis=0)
+    b_new = np.concatenate((b_vector, b_upp, -b_low, np.array([0])), axis=0)
 
     # Concatenar A_new, b_new de forma cbind
     A_new = np.c_[A_new, b_new]

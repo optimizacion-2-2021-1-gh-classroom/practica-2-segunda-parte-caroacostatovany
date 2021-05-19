@@ -15,7 +15,7 @@ class Maximizer():
         self.coeff = None
 
     def add_constraints(self, lowerbounds, upperbounds):
-        self.matrix = generate_tableau(self.A_matrix, self.b_vector, lowerbounds, upperbounds, self.c_vector, compr=True)
+        self.matrix = generate_tableau(self.A_matrix, self.b_vector, lowerbounds, upperbounds, self.c_vector, compr=False)
 
     def solve(self):
         solve = maxz(self.matrix)
