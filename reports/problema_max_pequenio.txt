@@ -27,7 +27,7 @@ Line #      Hits         Time  Per Hit   % Time  Line Contents
     19                                               
     20                                               return matrix
 
-Total time: 1.4e-05 s
+Total time: 1.3e-05 s
 File: src/profiling/tiempo/general_profile.py
 Function: gen_var at line 22
 
@@ -47,18 +47,18 @@ Line #      Hits         Time  Per Hit   % Time  Line Contents
     33                                                   v (list): list with problem variables.
     34                                               """
     35                                               
-    36         2          2.0      1.0     14.3      lc = len(matrix[0, :])
-    37         2          2.0      1.0     14.3      lr = len(matrix[:, 0])
+    36         2          2.0      1.0     15.4      lc = len(matrix[0, :])
+    37         2          2.0      1.0     15.4      lr = len(matrix[:, 0])
     38                                               
-    39         2          0.0      0.0      0.0      var = lc - lr -1
-    40         2          0.0      0.0      0.0      v = []
+    39         2          1.0      0.5      7.7      var = lc - lr -1
+    40         2          1.0      0.5      7.7      v = []
     41                                               
-    42         6          4.0      0.7     28.6      for i in range(var):
-    43         4          4.0      1.0     28.6          v.append('x' + str(i+1))
+    42         6          2.0      0.3     15.4      for i in range(var):
+    43         4          4.0      1.0     30.8          v.append('x' + str(i+1))
     44                                               
-    45         2          2.0      1.0     14.3      return v
+    45         2          1.0      0.5      7.7      return v
 
-Total time: 3.3e-05 s
+Total time: 3.1e-05 s
 File: src/profiling/tiempo/general_profile.py
 Function: convert at line 47
 
@@ -78,19 +78,19 @@ Line #      Hits         Time  Per Hit   % Time  Line Contents
     58                                                   eq (list): list with equation coefficients.
     59                                               """
     60                                               
-    61         3          4.0      1.3     12.1      eq = eq.split(',')
+    61         3          4.0      1.3     12.9      eq = eq.split(',')
     62                                               
-    63         3          3.0      1.0      9.1      if 'G' in eq:
+    63         3          4.0      1.3     12.9      if 'G' in eq:
     64                                                   g = eq.index('G')
     65                                                   del eq[g]
     66                                                   eq = [float(i)*-1 for i in eq]
     67                                                   return eq
     68                                               
-    69         3          3.0      1.0      9.1      if 'L' in eq:
-    70         3          4.0      1.3     12.1          l = eq.index('L')
-    71         3          4.0      1.3     12.1          del eq[l]
-    72         3         12.0      4.0     36.4          eq = [float(i) for i in eq]
-    73         3          3.0      1.0      9.1          return eq
+    69         3          2.0      0.7      6.5      if 'L' in eq:
+    70         3          5.0      1.7     16.1          l = eq.index('L')
+    71         3          3.0      1.0      9.7          del eq[l]
+    72         3         11.0      3.7     35.5          eq = [float(i) for i in eq]
+    73         3          2.0      0.7      6.5          return eq
     74                                               
     75                                               if 'E' in eq:
     76                                                   l = eq.index('E')
@@ -98,7 +98,7 @@ Line #      Hits         Time  Per Hit   % Time  Line Contents
     78                                                   eq = [float(i) for i in eq]
     79                                                   return eq
 
-Total time: 0.000208 s
+Total time: 0.000178 s
 File: src/profiling/tiempo/problem_definition_profile.py
 Function: add_cons at line 8
 
@@ -119,22 +119,22 @@ Line #      Hits         Time  Per Hit   % Time  Line Contents
     20                                                   Flag (bool): True or False indicating whether 1+ constraints can be added.
     21                                               """
     22                                           
-    23         3          5.0      1.7      2.4      lr = len(matrix[:, 0])
-    24         3          1.0      0.3      0.5      empty = []
+    23         3          4.0      1.3      2.2      lr = len(matrix[:, 0])
+    24         3          1.0      0.3      0.6      empty = []
     25                                           
-    26        15         12.0      0.8      5.8      for i in range(lr):
-    27        12          7.0      0.6      3.4          total = 0
-    28        96         75.0      0.8     36.1          for j in matrix[i, :]:
-    29        84         87.0      1.0     41.8              total += j**2
-    30        12         11.0      0.9      5.3          if total == 0:
-    31         9          6.0      0.7      2.9              empty.append(total)
+    26        15          9.0      0.6      5.1      for i in range(lr):
+    27        12          2.0      0.2      1.1          total = 0
+    28        96         63.0      0.7     35.4          for j in matrix[i, :]:
+    29        84         80.0      1.0     44.9              total += j**2
+    30        12          8.0      0.7      4.5          if total == 0:
+    31         9          6.0      0.7      3.4              empty.append(total)
     32                                           
-    33         3          3.0      1.0      1.4      if len(empty) > 1:
-    34         3          1.0      0.3      0.5          return True
+    33         3          3.0      1.0      1.7      if len(empty) > 1:
+    34         3          2.0      0.7      1.1          return True
     35                                               else:
     36                                                   return False
 
-Total time: 0.000569 s
+Total time: 0.000474 s
 File: src/profiling/tiempo/problem_definition_profile.py
 Function: constrain at line 38
 
@@ -156,7 +156,7 @@ Line #      Hits         Time  Per Hit   % Time  Line Contents
     51                                               >>> constrain(problem_matrix,'3,2,G,18')  # 3x_1 + 2x_2 >= 18
     52                                               """
     53                                           
-    54         3          3.0      1.0      0.5      if 'E' in eq:
+    54         3          2.0      0.7      0.4      if 'E' in eq:
     55                                                   if add_cons(matrix):
     56                                                       lc = len(matrix[0, :])
     57                                                       lr = len(matrix[:, 0])
@@ -187,41 +187,41 @@ Line #      Hits         Time  Per Hit   % Time  Line Contents
     82                                                       logging.info('Cannot add another constraint.')
     83                                                   
     84                                               else:
-    85         3        333.0    111.0     58.5          if add_cons(matrix):
-    86         3          4.0      1.3      0.7              lc = len(matrix[0, :])
-    87         3          4.0      1.3      0.7              lr = len(matrix[:, 0])
-    88         3          3.0      1.0      0.5              var = lc - lr -1
+    85         3        277.0     92.3     58.4          if add_cons(matrix):
+    86         3          3.0      1.0      0.6              lc = len(matrix[0, :])
+    87         3          3.0      1.0      0.6              lr = len(matrix[:, 0])
+    88         3          1.0      0.3      0.2              var = lc - lr -1
     89         3          2.0      0.7      0.4              j = 0
     90                                                       
-    91         6          5.0      0.8      0.9              while j < lr:
-    92         6          6.0      1.0      1.1                  row_check = matrix[j, :]
-    93         6          5.0      0.8      0.9                  total = 0
-    94        48         42.0      0.9      7.4                  for i in row_check:
-    95        42         53.0      1.3      9.3                      total += float(i**2)
-    96         6          4.0      0.7      0.7                  if total == 0:
-    97         3          2.0      0.7      0.4                      row = row_check
-    98         3          2.0      0.7      0.4                      break
-    99         3          1.0      0.3      0.2                  j +=1
+    91         6          4.0      0.7      0.8              while j < lr:
+    92         6          5.0      0.8      1.1                  row_check = matrix[j, :]
+    93         6          3.0      0.5      0.6                  total = 0
+    94        48         33.0      0.7      7.0                  for i in row_check:
+    95        42         46.0      1.1      9.7                      total += float(i**2)
+    96         6          3.0      0.5      0.6                  if total == 0:
+    97         3          3.0      1.0      0.6                      row = row_check
+    98         3          3.0      1.0      0.6                      break
+    99         3          0.0      0.0      0.0                  j +=1
    100                                                           
-   101         3         71.0     23.7     12.5              eq = convert(eq)
+   101         3         61.0     20.3     12.9              eq = convert(eq)
    102         3          2.0      0.7      0.4              i = 0
    103                                                       
-   104         9          6.0      0.7      1.1              while i<len(eq)-1:
-   105         6          7.0      1.2      1.2                  row[i] = eq[i]
-   106         6          5.0      0.8      0.9                  i += 1
+   104         9          7.0      0.8      1.5              while i<len(eq)-1:
+   105         6          5.0      0.8      1.1                  row[i] = eq[i]
+   106         6          5.0      0.8      1.1                  i += 1
    107                                                       
-   108         3          3.0      1.0      0.5              row[-1] = eq[-1]
+   108         3          3.0      1.0      0.6              row[-1] = eq[-1]
    109         3          2.0      0.7      0.4              row[var+j] = 1
    110                                                       
    111                                                   else:
    112                                                       logging.info('Cannot add another constraint.')
-   113         3          1.0      0.3      0.2      if memory_prof:
+   113         3          0.0      0.0      0.0      if memory_prof:
    114                                                   return matrix
    115                                           
-   116         3          3.0      1.0      0.5      if memory_prof:
+   116         3          1.0      0.3      0.2      if memory_prof:
    117                                                   return matrix
 
-Total time: 7.1e-05 s
+Total time: 7.7e-05 s
 File: src/profiling/tiempo/problem_definition_profile.py
 Function: add_obj at line 119
 
@@ -241,22 +241,22 @@ Line #      Hits         Time  Per Hit   % Time  Line Contents
    130                                                   Flag (bool): True or False indicating whether objective function can be added.
    131                                               """
    132                                               
-   133         1          1.0      1.0      1.4      lr = len(matrix[:,0])
-   134         1          0.0      0.0      0.0      empty = []
+   133         1          1.0      1.0      1.3      lr = len(matrix[:,0])
+   134         1          1.0      1.0      1.3      empty = []
    135                                               
-   136         5          4.0      0.8      5.6      for i in range(lr):
-   137         4          2.0      0.5      2.8          total = 0
-   138        32         26.0      0.8     36.6          for j in matrix[i, :]:
-   139        28         32.0      1.1     45.1              total += j**2
-   140         4          4.0      1.0      5.6          if total == 0:
-   141         1          0.0      0.0      0.0              empty.append(total)
+   136         5          2.0      0.4      2.6      for i in range(lr):
+   137         4          3.0      0.8      3.9          total = 0
+   138        32         25.0      0.8     32.5          for j in matrix[i, :]:
+   139        28         40.0      1.4     51.9              total += j**2
+   140         4          3.0      0.8      3.9          if total == 0:
+   141         1          1.0      1.0      1.3              empty.append(total)
    142                                               
-   143         1          1.0      1.0      1.4      if len(empty) == 1:
-   144         1          1.0      1.0      1.4          return True
+   143         1          1.0      1.0      1.3      if len(empty) == 1:
+   144         1          0.0      0.0      0.0          return True
    145                                               else:
    146                                                   return False
 
-Total time: 0.000132 s
+Total time: 0.00012 s
 File: src/profiling/tiempo/problem_definition_profile.py
 Function: obj at line 148
 
@@ -283,14 +283,14 @@ Line #      Hits         Time  Per Hit   % Time  Line Contents
    166                                               >>> obj(problem_matrix,'3,5,0')           # 3x_1 + 5x_2
    167                                               """
    168                                               
-   169         1        116.0    116.0     87.9      if add_obj(matrix):
-   170         1          4.0      4.0      3.0          eq = [float(i) for i in eq.split(',')]
-   171         1          2.0      2.0      1.5          lr = len(matrix[:,0])
+   169         1        107.0    107.0     89.2      if add_obj(matrix):
+   170         1          3.0      3.0      2.5          eq = [float(i) for i in eq.split(',')]
+   171         1          1.0      1.0      0.8          lr = len(matrix[:,0])
    172         1          1.0      1.0      0.8          row = matrix[lr-1,:]
-   173         1          1.0      1.0      0.8          i = 0
-   174         3          3.0      1.0      2.3          while i<len(eq)-1:
-   175         2          3.0      1.5      2.3              row[i] = eq[i]*-1
-   176         2          0.0      0.0      0.0              i +=1
+   173         1          0.0      0.0      0.0          i = 0
+   174         3          3.0      1.0      2.5          while i<len(eq)-1:
+   175         2          2.0      1.0      1.7              row[i] = eq[i]*-1
+   176         2          1.0      0.5      0.8              i +=1
    177         1          1.0      1.0      0.8          row[-2] = 1
    178         1          1.0      1.0      0.8          row[-1] = eq[-1]
    179                                               else:
@@ -299,7 +299,7 @@ Line #      Hits         Time  Per Hit   % Time  Line Contents
    182         1          0.0      0.0      0.0      if memory_prof:
    183                                                   return matrix
 
-Total time: 0.000591 s
+Total time: 0.000484 s
 File: src/profiling/tiempo/problem_definition_profile.py
 Function: maxz at line 185
 
@@ -329,29 +329,29 @@ Line #      Hits         Time  Per Hit   % Time  Line Contents
    206                                               {'x1': 4.0, 'x2': 6.0, 'max': 42.0}
    207                                               """
    208                                               
-   209         1         11.0     11.0      1.9      while pivots_col(matrix):
+   209         1         10.0     10.0      2.1      while pivots_col(matrix):
    210                                                   matrix = pivot(find_pivot_col(matrix)[0], find_pivot_col(matrix)[1], matrix)
-   211         3         38.0     12.7      6.4      while pivots_row(matrix):
-   212         2        462.0    231.0     78.2          matrix = pivot(find_pivot_row(matrix)[0], find_pivot_row(matrix)[1], matrix)
+   211         3         30.0     10.0      6.2      while pivots_row(matrix):
+   212         2        375.0    187.5     77.5          matrix = pivot(find_pivot_row(matrix)[0], find_pivot_row(matrix)[1], matrix)
    213                                               
-   214         1          2.0      2.0      0.3      lc = len(matrix[0, :])
+   214         1          1.0      1.0      0.2      lc = len(matrix[0, :])
    215         1          1.0      1.0      0.2      lr = len(matrix[:, 0])
-   216         1          1.0      1.0      0.2      var = lc - lr - 1
-   217         1          0.0      0.0      0.0      i = 0
+   216         1          0.0      0.0      0.0      var = lc - lr - 1
+   217         1          1.0      1.0      0.2      i = 0
    218         1          1.0      1.0      0.2      val = {}
    219                                               
-   220         3          3.0      1.0      0.5      for i in range(var):
-   221         2          2.0      1.0      0.3          col = matrix[:, i]
-   222         2          6.0      3.0      1.0          s = sum(col)
-   223         2          5.0      2.5      0.8          m = max(col)
-   224         2          2.0      1.0      0.3          if float(s) == float(m):
-   225         2         21.0     10.5      3.6              loc = np.where(col == m)[0][0]
-   226         2         33.0     16.5      5.6              val[gen_var(matrix)[i]] = matrix[loc, -1]
+   220         3          3.0      1.0      0.6      for i in range(var):
+   221         2          3.0      1.5      0.6          col = matrix[:, i]
+   222         2          6.0      3.0      1.2          s = sum(col)
+   223         2          5.0      2.5      1.0          m = max(col)
+   224         2          2.0      1.0      0.4          if float(s) == float(m):
+   225         2         14.0      7.0      2.9              loc = np.where(col == m)[0][0]
+   226         2         31.0     15.5      6.4              val[gen_var(matrix)[i]] = matrix[loc, -1]
    227                                                   else:
    228                                                       val[gen_var(matrix)[i]] = 0
-   229         1          2.0      2.0      0.3      val['max'] = matrix[-1, -1]
+   229         1          1.0      1.0      0.2      val['max'] = matrix[-1, -1]
    230                                               
-   231         1          1.0      1.0      0.2      return val
+   231         1          0.0      0.0      0.0      return val
 
 Total time: 0 s
 File: src/profiling/tiempo/problem_definition_profile.py
@@ -410,7 +410,7 @@ Line #      Hits         Time  Per Hit   % Time  Line Contents
    281                                               if aux:
    282                                                   return val
 
-Total time: 1e-05 s
+Total time: 8e-06 s
 File: src/profiling/tiempo/simplex_networks_profile.py
 Function: create_matrix at line 4
 
@@ -433,11 +433,11 @@ Line #      Hits         Time  Per Hit   % Time  Line Contents
     18                                                   matrix (numpy array): zero matrix.
     19                                               """
     20                                               
-    21         1          9.0      9.0     90.0      matrix = np.zeros((constraints + 1, variables + constraints + 2))
+    21         1          8.0      8.0    100.0      matrix = np.zeros((constraints + 1, variables + constraints + 2))
     22                                               
-    23         1          1.0      1.0     10.0      return matrix
+    23         1          0.0      0.0      0.0      return matrix
 
-Total time: 4e-06 s
+Total time: 5e-06 s
 File: src/profiling/tiempo/simplex_networks_profile.py
 Function: pivots_col at line 25
 
@@ -458,13 +458,13 @@ Line #      Hits         Time  Per Hit   % Time  Line Contents
     37                                                   Flag (bool): True or False indicating whether a negative element was found.
     38                                               """
     39                                               
-    40         1          3.0      3.0     75.0      m = min(matrix[:-1, -1])
-    41         1          1.0      1.0     25.0      if m >= 0:
+    40         1          4.0      4.0     80.0      m = min(matrix[:-1, -1])
+    41         1          1.0      1.0     20.0      if m >= 0:
     42         1          0.0      0.0      0.0          return False
     43                                               else:
     44                                                   return True
 
-Total time: 3.7e-05 s
+Total time: 3.5e-05 s
 File: src/profiling/tiempo/simplex_networks_profile.py
 Function: pivots_row at line 46
 
@@ -485,12 +485,12 @@ Line #      Hits         Time  Per Hit   % Time  Line Contents
     58                                                   Flag (bool): True or False indicating whether a negative element was found.
     59                                               """
     60                                               
-    61         7          8.0      1.1     21.6      l = len(matrix[:, 0])
-    62         7         21.0      3.0     56.8      m = min(matrix[l-1, :-1])
-    63         7          6.0      0.9     16.2      if m >= 0:
-    64         1          1.0      1.0      2.7          return False
+    61         7          7.0      1.0     20.0      l = len(matrix[:, 0])
+    62         7         20.0      2.9     57.1      m = min(matrix[l-1, :-1])
+    63         7          6.0      0.9     17.1      if m >= 0:
+    64         1          0.0      0.0      0.0          return False
     65                                               else:
-    66         6          1.0      0.2      2.7          return True
+    66         6          2.0      0.3      5.7          return True
 
 Total time: 0 s
 File: src/profiling/tiempo/simplex_networks_profile.py
@@ -521,7 +521,7 @@ Line #      Hits         Time  Per Hit   % Time  Line Contents
     88                                               
     89                                               return n
 
-Total time: 6.5e-05 s
+Total time: 5.3e-05 s
 File: src/profiling/tiempo/simplex_networks_profile.py
 Function: find_negative_row at line 91
 
@@ -541,14 +541,14 @@ Line #      Hits         Time  Per Hit   % Time  Line Contents
    102                                                   n (int): index of negative value in bottom row.
    103                                               """
    104                                               
-   105         4          4.0      1.0      6.2      l = len(matrix[:,0])
-   106         4         17.0      4.2     26.2      m = min(matrix[l-1,:-1])
-   107         4          3.0      0.8      4.6      if m <= 0:
-   108         4         38.0      9.5     58.5          n = np.where(matrix[l-1, :-1] == m)[0][0]
+   105         4          5.0      1.2      9.4      l = len(matrix[:,0])
+   106         4         14.0      3.5     26.4      m = min(matrix[l-1,:-1])
+   107         4          2.0      0.5      3.8      if m <= 0:
+   108         4         32.0      8.0     60.4          n = np.where(matrix[l-1, :-1] == m)[0][0]
    109                                               else:
    110                                                   n = None
    111                                               
-   112         4          3.0      0.8      4.6      return n
+   112         4          0.0      0.0      0.0      return n
 
 Total time: 0 s
 File: src/profiling/tiempo/simplex_networks_profile.py
@@ -587,7 +587,7 @@ Line #      Hits         Time  Per Hit   % Time  Line Contents
    142                                               
    143                                               return [index,c]
 
-Total time: 0.000195 s
+Total time: 0.000162 s
 File: src/profiling/tiempo/simplex_networks_profile.py
 Function: find_pivot_row at line 145
 
@@ -609,19 +609,19 @@ Line #      Hits         Time  Per Hit   % Time  Line Contents
    158                                                   neg (int): index smallest value.
    159                                               """
    160                                               
-   161         4         43.0     10.8     22.1      if pivots_row(matrix):
-   162         4          1.0      0.2      0.5          total = []
-   163         4         89.0     22.2     45.6          neg = find_negative_row(matrix)
-   164        16         27.0      1.7     13.8          for i, j in zip(matrix[:-1, neg], matrix[:-1, -1]):
-   165        12         14.0      1.2      7.2              if i != 0 and j/i > 0:
-   166         8          6.0      0.8      3.1                  total.append(j/i)
+   161         4         35.0      8.8     21.6      if pivots_row(matrix):
+   162         4          2.0      0.5      1.2          total = []
+   163         4         74.0     18.5     45.7          neg = find_negative_row(matrix)
+   164        16         23.0      1.4     14.2          for i, j in zip(matrix[:-1, neg], matrix[:-1, -1]):
+   165        12         13.0      1.1      8.0              if i != 0 and j/i > 0:
+   166         8          5.0      0.6      3.1                  total.append(j/i)
    167                                                       else:
-   168         4          4.0      1.0      2.1                  total.append(10000) #placeholder, might need to update for large scale
-   169         4         10.0      2.5      5.1          index = total.index(min(total))
+   168         4          2.0      0.5      1.2                  total.append(10000) #placeholder, might need to update for large scale
+   169         4          7.0      1.8      4.3          index = total.index(min(total))
    170                                                   
-   171         4          1.0      0.2      0.5          return [index,neg]
+   171         4          1.0      0.2      0.6          return [index,neg]
 
-Total time: 0.000148 s
+Total time: 0.000122 s
 File: src/profiling/tiempo/simplex_networks_profile.py
 Function: pivot at line 173
 
@@ -645,22 +645,22 @@ Line #      Hits         Time  Per Hit   % Time  Line Contents
    188                                                   t (numpy array): updated matrix.
    189                                               """
    190                                               
-   191         2          2.0      1.0      1.4      lr = len(matrix[:, 0])
-   192         2          2.0      1.0      1.4      lc = len(matrix[0, :])
-   193         2          4.0      2.0      2.7      t = np.zeros((lr, lc))
-   194         2          2.0      1.0      1.4      pr = matrix[row, :]
-   195         2          4.0      2.0      2.7      if matrix[row, col]**2 > 0:
-   196         2          2.0      1.0      1.4          e = 1/matrix[row, col]
-   197         2          6.0      3.0      4.1          r = pr*e
-   198        10         11.0      1.1      7.4          for i in range(len(matrix[:, col])):
-   199         8          7.0      0.9      4.7              k = matrix[i, :]
-   200         8          7.0      0.9      4.7              c = matrix[i, col]
-   201         8         38.0      4.8     25.7              if list(k) == list(pr):
-   202         2          1.0      0.5      0.7                  continue
+   191         2          2.0      1.0      1.6      lr = len(matrix[:, 0])
+   192         2          2.0      1.0      1.6      lc = len(matrix[0, :])
+   193         2          4.0      2.0      3.3      t = np.zeros((lr, lc))
+   194         2          2.0      1.0      1.6      pr = matrix[row, :]
+   195         2          3.0      1.5      2.5      if matrix[row, col]**2 > 0:
+   196         2          2.0      1.0      1.6          e = 1/matrix[row, col]
+   197         2          5.0      2.5      4.1          r = pr*e
+   198        10          6.0      0.6      4.9          for i in range(len(matrix[:, col])):
+   199         8          6.0      0.8      4.9              k = matrix[i, :]
+   200         8          6.0      0.8      4.9              c = matrix[i, col]
+   201         8         32.0      4.0     26.2              if list(k) == list(pr):
+   202         2          0.0      0.0      0.0                  continue
    203                                                       else:
-   204         6         50.0      8.3     33.8                  t[i, :] = list(k-r*c)
-   205         2         10.0      5.0      6.8          t[row,:] = list(r)
-   206         2          2.0      1.0      1.4          return t
+   204         6         44.0      7.3     36.1                  t[i, :] = list(k-r*c)
+   205         2          8.0      4.0      6.6          t[row,:] = list(r)
+   206         2          0.0      0.0      0.0          return t
    207                                               else:
    208                                                   logging.info('Cannot pivot on this element')
 
